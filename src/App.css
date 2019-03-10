@@ -1,0 +1,17 @@
+/* one {
+    background-image: url(./components/one.jpeg);
+}
+; */
+
+
+img {
+    width: 95%;
+    height: 230px;
+    display: flex;
+    margin: auto;
+}
+
+;
+span {
+    text-align: center
+};

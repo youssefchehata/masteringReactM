@@ -1,0 +1,6 @@
+echo "# Mastering-React" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/youssefchehata/Mastering-React.git
+git push -u origin master
