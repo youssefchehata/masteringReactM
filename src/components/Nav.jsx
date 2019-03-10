@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import {Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class Nav extends Component {
   state = {};
@@ -25,9 +25,9 @@ class Nav extends Component {
         <div className="collapse navbar-collapse" id="navbarColor01">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item active">
-              <a className="nav-link" to="#">
+              <Link className="nav-link" to="#">
                 Vidly <span className="sr-only">(current)</span>
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/app">
