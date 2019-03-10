@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-
-
 import './App.css';
 import Movies from './components/Movies';
 import { getMovies } from './services/fakeMovieService';
@@ -45,13 +43,9 @@ class App extends Component {
   render() {
     //  console.log(this.state.currentPage)
     return (
-      
       <main className="container">
-      
-         
-          
         {/* <Nav /> */}
-        
+
         {/* <p>Showing {this.state.movies.length} movies in the database.</p> */}
         <img src={one} alt="one" />
         <div className="starter-template">
@@ -75,12 +69,8 @@ class App extends Component {
           />
         </div>
       </main>
-      
-     );
-     
+    );
   }
-  
 }
-
 
 export default App;
