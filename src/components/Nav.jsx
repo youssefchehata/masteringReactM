@@ -44,6 +44,11 @@ class Nav extends Component {
                 Rentals
               </Link>
             </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/bootstrap">
+                Bootstrap
+              </Link>
+            </li>
           </ul>
           <form className="form-inline my-2 my-lg-0">
             <input
