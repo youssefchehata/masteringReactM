@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import { Link } from 'react-router-dom';
 
+
 class Nav extends Component {
   state = {};
   render() {
@@ -47,6 +48,16 @@ class Nav extends Component {
             <li className="nav-item">
               <Link className="nav-link" to="/bootstrap">
                 Bootstrap
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/bootstrap2">
+                Bootstrap2
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/divers">
+                Divers
               </Link>
             </li>
           </ul>
