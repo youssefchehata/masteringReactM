@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 const Bootstrap = () => {
   return (
     <div className="container">
@@ -55,7 +55,9 @@ const Bootstrap = () => {
       </blockquote>
       <p className="blockquote text-center">.plockquote.text-center</p>
       <p className="blockquote text-right">p.blockquote.text-right</p>
+
       <p className="">p.text-left</p>
+      <hr />
     </div>
   );
 };
