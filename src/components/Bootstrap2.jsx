@@ -25,7 +25,14 @@ const Bootstrap2 = () => {
       </h1>
       <h1 className="d-none d-sm-block">h1.d-none.d-sm-block'HIDDEN ON xs'</h1>
       <h1 className="d-none d-md-block">h1.d-none.d-md-block'HIDDEN ON md</h1>
+      <hr/>
+      <span className="d-inline d-sm-none">XS</span>
+      <span className="d-none">SM</span>
+      <span className="d-none">MD</span>
+      <span className="d-none">LG</span>
+      <span className="d-none">XL</span>
     </div>
+    
   );
 };
 
