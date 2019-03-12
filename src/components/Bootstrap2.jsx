@@ -70,6 +70,9 @@ const Bootstrap2 = () => {
       </div>
       <hr />
       <p>
+      <h2 className="bg-info text-black">
+      0 - for classes that eliminate the margin or padding by setting it to 0
+        </h2>
         <h2 className="bg-info text-black">
           t - for classes that set margin-top or padding-top
         </h2>
