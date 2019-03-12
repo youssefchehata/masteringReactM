@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 // import './Bootstrap2.css';
-import DateCalander from './DateCalander';
+import DateCalander from "./DateCalander";
 const Bootstrap2 = () => {
   return (
     <div className="container">
@@ -56,10 +56,39 @@ const Bootstrap2 = () => {
       </span>
       <hr />
       <span className="shadow-sm">hhh</span>
-      <div class="shadow-none p-3 mb-5 bg-light rounded">No shadow</div>
-      <div class="shadow-sm p-3 mb-5 bg-white rounded">Small shadow</div>
-      <div class="shadow p-3 mb-5 bg-white rounded">Regular shadow</div>
-      <div class="shadow-lg p-3 mb-5 bg-white rounded">Larger shadow</div>
+      <div class="shadow-none p-3 mb-5 bg-light rounded">
+        No shadow_shadow-none p-3 mb-5 bg-light rounded
+      </div>
+      <div class="shadow-sm p-3 mb-5 bg-white rounded">
+        Small shadow_shadow-sm p-3 mb-5 bg-white rounded
+      </div>
+      <div class="shadow p-3 mb-5 bg-white rounded">
+        Regular shadow_shadow p-3 mb-5 bg-white rounded
+      </div>
+      <div class="shadow-lg p-3 mb-5 bg-white rounded">
+        Larger shadow_shadow-lg p-3 mb-5 bg-white rounded
+      </div>
+      <hr />
+      <p>
+        <h2 className="bg-info text-black">
+          t - for classes that set margin-top or padding-top
+        </h2>
+        <h2 className="bg-info text-black">
+          b - for classes that set margin-bottom or padding-bottom
+        </h2>
+        <h2 className="bg-info text-black">
+          l - for classes that set margin-left or padding-left
+        </h2>
+        <h2 className="bg-info text-black">
+          r - for classes that set margin-right or padding-right
+        </h2>
+        <h2 className="bg-info text-black">
+          x - for classes that set both *-left and *-right
+        </h2>
+        <h2 className="bg-info text-black">
+          y - for classes that set both *-top and *-bottom
+        </h2>
+      </p>
     </div>
   );
 };
