@@ -1,10 +1,10 @@
 import React from 'react';
 // import './Bootstrap2.css';
-// import DateCalander from './DateCalander';
+import DateCalander from './DateCalander';
 const Bootstrap2 = () => {
   return (
     <div className="container">
-      {/* <DateCalander /> */}
+      <DateCalander />
       <h1 className="bg-dark text-white">h1.bg-dark.text-white</h1>
       <h1 className="bg-dark text-white d-none">
         h1.bg-dark.text-white.d-none
@@ -54,12 +54,12 @@ const Bootstrap2 = () => {
       <span className="border border-success rounded-circle">
         span.border.border-succecc.rounded-circle
       </span>
-<hr/>
-<span className="shadow-sm">hhh</span>
-<div class="shadow-none p-3 mb-5 bg-light rounded">No shadow</div>
-<div class="shadow-sm p-3 mb-5 bg-white rounded">Small shadow</div>
-<div class="shadow p-3 mb-5 bg-white rounded">Regular shadow</div>
-<div class="shadow-lg p-3 mb-5 bg-white rounded">Larger shadow</div>
+      <hr />
+      <span className="shadow-sm">hhh</span>
+      <div class="shadow-none p-3 mb-5 bg-light rounded">No shadow</div>
+      <div class="shadow-sm p-3 mb-5 bg-white rounded">Small shadow</div>
+      <div class="shadow p-3 mb-5 bg-white rounded">Regular shadow</div>
+      <div class="shadow-lg p-3 mb-5 bg-white rounded">Larger shadow</div>
     </div>
   );
 };
