@@ -118,7 +118,10 @@ const Bootstrap2 = () => {
       <p className="m-2  bg-danger d-inline-block">with</p>
       <p className="m-2  bg-danger d-inline-block">with</p>
       <div className="d-inline-block bg-success" style={{width: 201,height:200}}>Height 200%</div>
-      
+      <div className="border border-success d-inline-block ">hello</div>
+      <div className="div  shadow-lg d-inline-block">shadow-lg</div>
+      <button className="p-0 p-md-2 p-xl-5  btn-lg btn-info shadow-lg">button</button>
+      <p className="border-success text-white bg-info text-center">hello</p>
     </div>
   );
 };
