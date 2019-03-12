@@ -92,6 +92,33 @@ const Bootstrap2 = () => {
           y - for classes that set both *-top and *-bottom
         </h2>
       </p>
+      <h1>Padding Utility</h1>
+      <p className="p-0 bg-success d-inline-block">p-0</p>
+      <p className="p-1 bg-success d-inline-block">p-1</p>
+      <p className="p-2 bg-success d-inline-block">p-2</p>
+      <p className="p-3 bg-success d-inline-block">p-3</p>
+      <p className="p-4 bg-success d-inline-block">p-4</p>
+      <hr/>
+      <button className="btn-warning pt-5">btn.btn-warning.pt-5</button>
+      <button className="btn-warning pb-5">btn.btn-warning.pb-5</button>
+      <button className="btn-warning pr-5">btn.btn-warning.pr-5</button>
+      <button className="btn-warning pl-5">btn.btn-warning.pl-5</button>
+      <button className="btn-warning px-5">btn.btn-warning.px-5</button>
+      <button className="btn-warning py-5">btn.btn-warning.py-5</button>
+      <h1>Margin Utility</h1>
+      <h1 className="m-0 bg-success d-inline-block">h1.m-0.bg-success.d-inline-block</h1>
+      <h1 className="m-1 bg-success d-inline-block">h1.m-0.bg-success.d-inline-block</h1>
+      <h1 className="m-2 bg-success d-inline-block">h1.m-0.bg-success.d-inline-block</h1>
+      <h1 className="m-3 bg-success d-inline-block">h1.m-0.bg-success.d-inline-block</h1>
+      <h1 className="m-4 bg-success d-inline-block">h1.m-0.bg-success.d-inline-block</h1>
+      <hr/>
+      <p className="m-2  bg-danger d-inline-block">with</p>
+      <p className="m-2  bg-danger d-inline-block">with</p>
+      <p className="m-2  bg-danger d-inline-block">with</p>
+      <p className="m-2  bg-danger d-inline-block">with</p>
+      <p className="m-2  bg-danger d-inline-block">with</p>
+      <div className="d-inline-block bg-success" style={{width: 201,height:200}}>Height 200%</div>
+      
     </div>
   );
 };
