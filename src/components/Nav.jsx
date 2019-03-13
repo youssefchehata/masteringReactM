@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
 class Nav extends Component {
   state = {};
   render() {
@@ -38,8 +38,8 @@ class Nav extends Component {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/rentals">
-                Rentals
+              <Link className="nav-link" to="/input">
+                Inputs
               </Link>
             </li>
             <li className="nav-item">
@@ -57,21 +57,33 @@ class Nav extends Component {
                 Divers
               </Link>
             </li>
-            
+
             <div class="input-group-prepend">
-    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</button>
-    <div class="dropdown-menu">
-      <Link className="dropdown-item" to="/grid">Grid</Link>
-      <Link className="dropdown-item" to="card">Card</Link>
-      <Link className="dropdown-item" to="#">Something else here</Link>
-      <div role="separator" class="dropdown-divider"></div>
-      <Link className="dropdown-item" to="#">Separated link</Link>
-    </div>
-  </div>
-
-
-
-
+              <button
+                class="btn btn-outline-secondary dropdown-toggle"
+                type="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Dropdown
+              </button>
+              <div class="dropdown-menu">
+                <Link className="dropdown-item" to="/grid">
+                  Grid
+                </Link>
+                <Link className="dropdown-item" to="/card">
+                  Card
+                </Link>
+                <Link className="dropdown-item" to="/flex">
+                  Flex
+                </Link>
+                <div role="separator" class="dropdown-divider" />
+                <Link className="dropdown-item" to="#">
+                  Separated link
+                </Link>
+              </div>
+            </div>
           </ul>
           <form className="form-inline my-2 my-lg-0">
             <input
