@@ -81,6 +81,36 @@ const Flex = () => {
         <button className="btn-lg btn-success">Button 3</button>
         <button className="btn-lg btn-info">Button 4</button>
       </div>
+      {/* --------------------------- */}
+      <h1 className="text-center">
+        "d-flex  align-items-center border justify-content-center "style=height:200
+      </h1>
+      <div className="d-flex  align-items-center justify-content-center border " style={{ height: 200 }}>
+        <button className="btn-lg btn-danger">Button 1</button>
+        <button className="btn-lg btn-warning">Button 2</button>
+        <button className="btn-lg btn-success">Button 3</button>
+        <button className="btn-lg btn-info">Button 4</button>
+      </div>
+      {/* --------------------------- */}
+      <h1 className="text-center">
+        "d-flex  flex-column justify-content-between border "style=height:400
+      </h1>
+      <div className="d-flex  flex-column justify-content-between border " style={{ height: 400 }}>
+        <button className="btn-lg btn-danger">Button 1</button>
+        <button className="btn-lg btn-warning">Button 2</button>
+        <button className="btn-lg btn-success">Button 3</button>
+        <button className="btn-lg btn-info">Button 4</button>
+      </div>
+      {/* --------------------------- */}
+      <h1 className="text-center">
+        "d-flex  flex-column justify-content-between border "style=height:400
+      </h1>
+      <div className="d-flex  flex-column justify-content-between align-items-center border " style={{ height: 400 }}>
+        <button className="btn-lg btn-danger">Button 1</button>
+        <button className="btn-lg btn-warning">Button 2</button>
+        <button className="btn-lg btn-success">Button 3</button>
+        <button className="btn-lg btn-info">Button 4</button>
+      </div>
     </div>
   );
 };
