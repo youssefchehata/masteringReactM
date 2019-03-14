@@ -58,9 +58,12 @@ class Nav extends Component {
               </Link>
             </li>
 
-            <div class="input-group-prepend">
+            <div
+              className=" input-group-prepend  border d-flex justify-content-center "
+              style={{ width: 200 }}
+            >
               <button
-                class="btn btn-outline-secondary dropdown-toggle"
+                className="btn btn-outline-black dropdown-toggle "
                 type="button"
                 data-toggle="dropdown"
                 aria-haspopup="true"
@@ -78,7 +81,7 @@ class Nav extends Component {
                 <Link className="dropdown-item" to="/flex">
                   Flex
                 </Link>
-                <div role="separator" class="dropdown-divider" />
+                <div role="separator" className="dropdown-divider" />
                 <Link className="dropdown-item" to="#">
                   Separated link
                 </Link>
@@ -91,7 +94,7 @@ class Nav extends Component {
               type="text"
               placeholder="Search"
             />
-            <button className="btn btn-secondary my-2 my-sm-0" type="submit">
+            <button className=" btn btn-secondary my-2 my-sm-0" type="submit">
               Search
             </button>
           </form>
