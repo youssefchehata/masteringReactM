@@ -4,7 +4,7 @@ class Nav extends Component {
   state = {};
   render() {
     return (
-      <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-primary ">
         <Link className="navbar-brand" to="/">
           Navbar
         </Link>
@@ -100,6 +100,8 @@ class Nav extends Component {
           </form>
         </div>
       </nav>
+      
+  
     );
   }
 }
