@@ -11,6 +11,7 @@ import Divers from "./divers";
 import Grid from "./Grid";
 import Card from "./Card";
 import Flex from "./Flex";
+import CssOne from './Css/cssOne/1';
 class Routes extends Component {
   render() {
     return (
@@ -26,6 +27,7 @@ class Routes extends Component {
           <Route exact path="/card" component={Card} />
           <Route exact path="/flex" component={Flex} />
           <Route exact path="/divers" component={Divers} />
+          <Route exact path="/Css/cssOne/1" component={CssOne} />
           <Route exact path="/" component={App} />
           {/* <Route path="/movies/:id" component={Movie} /> */}
           <Redirect to="/not_found" />
