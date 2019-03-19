@@ -3,7 +3,6 @@ import { Route, Redirect, Switch } from "react-router-dom";
 import App from "../App.js";
 import Rentals from "./Input";
 import Customers from "./customers";
-import Movie from "./Movie.jsx";
 import Not_found from "./not_found";
 import Bootstrap from "./Bootstrap";
 import Bootstrap2 from "./Bootstrap2";
