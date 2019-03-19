@@ -1,7 +1,5 @@
 import React from "react";
-
 import axios from "axios";
-
 class Get extends React.Component {
   state = {
     persons: []
@@ -18,7 +16,7 @@ class Get extends React.Component {
     return (
       <ul>
         {this.state.persons.map(person => (
-          <li>{person.name}</li>
+          <li key={person._id}>{person.name}</li>
         ))}
       </ul>
     );

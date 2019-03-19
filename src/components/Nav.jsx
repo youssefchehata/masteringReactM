@@ -71,7 +71,7 @@ class Nav extends Component {
               >
                 Dropdown
               </button>
-              <div class="dropdown-menu">
+              <div className="dropdown-menu">
                 <Link className="dropdown-item" to="/grid">
                   Grid
                 </Link>
