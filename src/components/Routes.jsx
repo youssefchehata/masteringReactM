@@ -12,6 +12,7 @@ import Grid from "./Grid";
 import Card from "./Card";
 import Flex from "./Flex";
 import CssOne from './Css/cssOne/1';
+import Axios from "./axios/Axios";
 class Routes extends Component {
   render() {
     return (
@@ -28,6 +29,8 @@ class Routes extends Component {
           <Route exact path="/flex" component={Flex} />
           <Route exact path="/divers" component={Divers} />
           <Route exact path="/Css/cssOne/1" component={CssOne} />
+          <Route exact path="/axios/Axios" component={Axios} />
+
           <Route exact path="/" component={App} />
           {/* <Route path="/movies/:id" component={Movie} /> */}
           <Redirect to="/not_found" />
