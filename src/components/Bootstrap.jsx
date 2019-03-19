@@ -17,11 +17,9 @@ const Bootstrap = () => {
       <button className="btn btn-outline-primary">
         btn.btn-outline-primary
       </button>
-
       <button type="button" className="btn btn-outline-warning m-2">
         Warning
       </button>
-
       <button className="btn btn-info btn-sm">btn.btn.btn-info.btn-sm</button>
       <button className="btn btn-warning btn-lg">
         btn.btn.btn-warning.btn-lg
