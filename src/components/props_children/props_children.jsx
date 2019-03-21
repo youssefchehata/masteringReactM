@@ -11,8 +11,8 @@ class props_children extends Component {
           text={"First Button"}
         /> */}
         <PrimaryButton onClick={this.somehandler}>
-          <i class="fas fa-file-export" />
-          this.props.children
+          <i className="fas fa-file-export" />
+          props_children
         </PrimaryButton>
       </div>
     );
