@@ -12,7 +12,7 @@ class Movie extends Component {
         {this.props.liked ? (
           <i className="fa fa-heart" aria-hidden="true" />
         ) : (
-          <i className="fa fa-heart-o" aria-hidden="false" />
+          <i  className="far fa-heart" aria-hidden="false" />
         )}
       </button>
     );
