@@ -25,7 +25,7 @@ class Axios extends Component {
             <h1 className="bg-info text-white ">DELETE JS</h1>
             <Delete2 />
           </div>
-
+        
         </div>
       </div>
     );
