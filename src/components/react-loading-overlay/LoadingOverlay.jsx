@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Spinner from "react-spinkit";
 import LoadingOverlay from "react-loading-overlay";
-
 import Flex from "../Flex";
 class loadingOverlay extends Component {
   state = {
@@ -17,9 +16,7 @@ class loadingOverlay extends Component {
       <div className="container">
         <LoadingOverlay
           active={isActive}
-          spinner={
-            <Spinner name="ball-clip-rotate"  color="orange" />
-          }
+          spinner={<Spinner name="ball-clip-rotate" color="orange" />}
           styles={{
             spinner: base => ({
               ...base,
@@ -47,3 +44,5 @@ class loadingOverlay extends Component {
 }
 
 export default loadingOverlay;
+
+// npm install react-spinkit --save
