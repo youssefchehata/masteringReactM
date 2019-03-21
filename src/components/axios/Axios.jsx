@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import Get from "./GET";
 import Post from "./POST";
-import Delete from './DELETE';
-import Delete2 from './Delete.js'
+// import Delete from './DELETE';
+import Delete2 from './Delete.js';
 class Axios extends Component {
   state = {};
   render() {
@@ -19,7 +19,7 @@ class Axios extends Component {
           </div>
           <div className="col-md-3">
             <h1 className="bg-info text-white ">Delete Requests</h1>
-            <Delete />
+            {/* <Delete /> */}
           </div>
           <div className="col-md-3">
             <h1 className="bg-info text-white ">DELETE JS</h1>
