@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Spinner from "react-spinkit";
 import LoadingOverlay from "react-loading-overlay";
-// import styled from 'styled-components'
+
 import Flex from "../Flex";
 class loadingOverlay extends Component {
   state = {
