@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-class PersonList extends React.Component {
+class Post extends React.Component {
   state = {
     name: ''
   };
@@ -34,4 +34,4 @@ class PersonList extends React.Component {
     );
   }
 }
-export default PersonList;
+export default Post;

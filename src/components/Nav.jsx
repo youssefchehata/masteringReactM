@@ -84,6 +84,9 @@ class Nav extends Component {
                 <Link className="dropdown-item" to="/flex">
                   Flex
                 </Link>
+                <Link className="dropdown-item" to="/inputfile">
+                InputFile
+                </Link>
                 <div role="separator" className="dropdown-divider" />
                 <Link className="dropdown-item" to="/css/cssOne/1">
                   Css
