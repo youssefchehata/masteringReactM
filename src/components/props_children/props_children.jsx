@@ -14,6 +14,13 @@ class props_children extends Component {
           <i className="fas fa-file-export" />
           props_children
         </PrimaryButton>
+        <p className="bg-info mt-2">
+          children is the only prop that's not passed via attribute like onClick
+          onChange key or style. Rather, it's implicitly passed when you wrap it
+          with a React component (considered the "parent" component). The
+          language of "parent" and "child" is from HTML where you have parent
+          and children DOM nodes.
+        </p>
       </div>
     );
   }
