@@ -16,7 +16,7 @@ class Get extends React.Component {
     return (
       <ul>
         {this.state.persons.map(person => (
-          <li key={person._id}>{person.name}</li>
+          <li key={person.id}>{person.name}</li>
         ))}
       </ul>
     );
