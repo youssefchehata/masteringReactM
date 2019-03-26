@@ -19,7 +19,6 @@ class Nav extends Component {
         >
           <span className="navbar-toggler-icon" />
         </button>
-
         <div className="collapse navbar-collapse" id="navbarColor01">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item active">
@@ -84,8 +83,8 @@ class Nav extends Component {
                 <Link className="dropdown-item" to="/flex">
                   Flex
                 </Link>
-                <Link className="dropdown-item" to="/flex">
-                  Flex
+                <Link className="dropdown-item" to="/axiosMosh/axiosMosh">
+                AxiosMosh
                 </Link>
                 <Link className="dropdown-item" to="/props_children/props_children">
                 props_children

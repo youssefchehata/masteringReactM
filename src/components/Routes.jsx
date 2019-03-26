@@ -12,6 +12,7 @@ import Card from "./Card";
 import Flex from "./Flex";
 import CssOne from './Css/cssOne/1';
 import Axios from "./axios/Axios";
+import AxiosMosh from "./axiosMosh/AxiosMosh";
 import Inputfile from './inputfile';
 import props_children from './props_children/props_children'
 class Routes extends Component {
@@ -31,6 +32,7 @@ class Routes extends Component {
           <Route exact path="/divers" component={Divers} />
           <Route exact path="/Css/cssOne/1" component={CssOne} />
           <Route exact path="/axios/Axios" component={Axios} />
+          <Route exact path="/axiosMosh/AxiosMosh" component={AxiosMosh}/>
           <Route exact path="/props_children/props_children" component={props_children} />
           <Route exact path="/inputfile/inputfile" component={Inputfile} />
 
