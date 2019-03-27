@@ -32,11 +32,18 @@ class AxiosMosh extends Component {
   };
 
   handleDelete = async post => {
-    await axios.delete(apiEndpoint + "/" + post.id);
+    const originalPosts = this.state.posts;
     const posts = this.state.posts.filter(p => p.id !== post.id);
-    this.setState({posts})
+    this.setState({ posts });
+    try {
+      await axios.delete(apiEndpoint + "/" + post.id);
+      throw new Error("")
+    } catch (ex) {
+      alert("something failed while deleting a post!");
+      this.setState({ posts: originalPosts });
+    }
 
-    console.log("Delete", post);
+    // console.log("Delete", post);
   };
 
   render() {
