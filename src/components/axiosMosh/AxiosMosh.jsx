@@ -1,20 +1,20 @@
 import React, { Component } from "react";
-
+import config from './config.json'
 import http from "./services/httpService";
 
-const apiEndpoint = "https://jsonplaceholder.typicode.com/posts";
+// const apiEndpoint = "https://jsonplaceholder.typicode.com/posts";
 class httpMosh extends Component {
   state = {
     posts: []
   };
   async componentDidMount() {
-    const { data: posts } = await http.get(apiEndpoint);
+    const { data: posts } = await http.get(config.apiEndpoint);
     this.setState({ posts });
   }
   handleAdd = async () => {
     // console.log('Add');
     const obj = { title: "a", body: "b" };
-    const { data: post } = await http.post(apiEndpoint, obj);
+    const { data: post } = await http.post(config.apiEndpoint, obj);
     //    console.log(post)
     const posts = [post, ...this.state.posts];
     this.setState({ posts });
@@ -24,7 +24,7 @@ class httpMosh extends Component {
     // console.log('Update', post);
     post.title = "UPDATED";
 
-    const { data } = await http.put(apiEndpoint + "/" + post.id, post);
+    const { data } = await http.put(config.apiEndpoint + "/" + post.id, post);
     // http.patch(apiEndpoint + "/" + post.id, { title: post.title });
     const posts = [...this.state.posts];
 
@@ -42,7 +42,7 @@ class httpMosh extends Component {
 
     try {
       // await http.delete(apiEndpoint + "/" + post.id);
-      await http.delete(apiEndpoint + "/");
+      await http.delete(config.apiEndpoint + "/");
     } catch (ex) {
       if (ex.response && ex.response.status === 404)
         alert("This post has already been deleted.");
@@ -51,27 +51,24 @@ class httpMosh extends Component {
     }
   };
 
-  // handleDelete = async post => {
-  //   const originalPosts = this.state.posts;
-
-  //   const posts = this.state.posts.filter(p => p.id !== post.id);
-  //   this.setState({ posts });
-
-  //   try {
-  //     // await http.delete(apiEndpoint + "/" + post.id);
-  //     await http.delete(apiEndpoint + "/");
-  //     // throw new Error("");
-  //   } catch (ex) {
-  //     if (ex.response && ex.response.status === 404)
-  //       alert("This post has already been deleted.");
-  //     else {
-  //       alert("An unexpected error occurred.");
+  //  handleDelete = async post => {
+  //     const originalPosts = this.state.posts;
+  //     const posts = this.state.posts.filter(p => p.id !== post.id);
+  //     this.setState({ posts });
+  //     try {
+  //       // await axios.delete(apiEndpoint + "/" + post.id);
+  //       await axios.delete(apiEndpoint + "/");
+  //       // throw new Error("");
+  //     } catch (ex) {
+  //       if (ex.response && ex.response.status === 404)
+  //         alert("This post has already been deleted.");
+  //       else {
+  //         alert("An unexpected error occurred.");
+  //       }
+  //       this.setState({ posts: originalPosts });
   //     }
-  //     this.setState({ posts: originalPosts });
-  //   }
-  //   // console.log("Delete", post);
-  // };
-
+  //     // console.log("Delete", post);
+  //   };
   render() {
     return (
       <React.Fragment>
