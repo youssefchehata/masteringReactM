@@ -21,6 +21,7 @@ class AxiosMosh extends Component {
 
   handleUpdate = post => {
     console.log('Update', post);
+    post.title = 'UPDATED'
   };
 
   handleDelete = post => {
