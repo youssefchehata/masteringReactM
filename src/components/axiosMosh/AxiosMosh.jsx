@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import axios from 'axios';
+import React, { Component } from "react";
+import axios from "axios";
 
-const apiEndpoint = 'https://jsonplaceholder.typicode.com/posts';
+const apiEndpoint = "https://jsonplaceholder.typicode.com/posts";
 class AxiosMosh extends Component {
   state = {
     posts: []
@@ -12,20 +12,27 @@ class AxiosMosh extends Component {
   }
   handleAdd = async () => {
     // console.log('Add');
- const obj = {title:'a', body:'b'}
- const {data:post} = await axios.post(apiEndpoint , obj)
-//    console.log(post)
-   const posts = [post, ...this.state.posts]
-   this.setState({posts})
+    const obj = { title: "a", body: "b" };
+    const { data: post } = await axios.post(apiEndpoint, obj);
+    //    console.log(post)
+    const posts = [post, ...this.state.posts];
+    this.setState({ posts });
   };
 
-  handleUpdate = post => {
-    console.log('Update', post);
-    post.title = 'UPDATED'
+  handleUpdate = async post => {
+    // console.log('Update', post);
+    post.title = "UPDATED";
+    const { data } = await axios.put(apiEndpoint + "/" + post.id, post);
+    // axios.patch(apiEndpoint + "/" + post.id, { title: post.title });
+    const posts = [...this.state.posts];
+    const index = posts.indexOf(post);
+    posts[index] = { ...post };
+    this.setState({ posts });
+    console.log(data);
   };
 
   handleDelete = post => {
-    console.log('Delete', post);
+    console.log("Delete", post);
   };
 
   render() {
