@@ -1,18 +1,24 @@
 import React, { Component } from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import config from './config.json'
+import config from "./config.json";
 import http from "./services/httpService";
 
 // const apiEndpoint = "https://jsonplaceholder.typicode.com/posts";
+
 class httpMosh extends Component {
   state = {
     posts: []
   };
+
+
   async componentDidMount() {
     const { data: posts } = await http.get(config.apiEndpoint);
     this.setState({ posts });
   }
+
+
+  
   handleAdd = async () => {
     // console.log('Add');
     const obj = { title: "a", body: "b" };
@@ -44,7 +50,7 @@ class httpMosh extends Component {
 
     try {
       // await http.delete(apiEndpoint + "/" + post.id);
-      await http.delete(1+config.apiEndpoint + "/");
+      await http.delete(1 + config.apiEndpoint + "/");
     } catch (ex) {
       if (ex.response && ex.response.status === 404)
         alert("This post has already been deleted.");
@@ -53,24 +59,6 @@ class httpMosh extends Component {
     }
   };
 
-  //  handleDelete = async post => {
-  //     const originalPosts = this.state.posts;
-  //     const posts = this.state.posts.filter(p => p.id !== post.id);
-  //     this.setState({ posts });
-  //     try {
-  //       // await axios.delete(apiEndpoint + "/" + post.id);
-  //       await axios.delete(apiEndpoint + "/");
-  //       // throw new Error("");
-  //     } catch (ex) {
-  //       if (ex.response && ex.response.status === 404)
-  //         alert("This post has already been deleted.");
-  //       else {
-  //         alert("An unexpected error occurred.");
-  //       }
-  //       this.setState({ posts: originalPosts });
-  //     }
-  //     // console.log("Delete", post);
-  //   };
   render() {
     return (
       <React.Fragment>

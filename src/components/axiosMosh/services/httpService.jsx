@@ -1,5 +1,6 @@
 import axios from "axios";
 import { toast } from "react-toastify";
+// npm i react-toastify@4.1
 axios.interceptors.response.use(null, error => {
   const expectedError =
     error.response &&
@@ -17,3 +18,6 @@ export default {
     put:axios.put,
     delete:axios.delete
 }
+
+
+
