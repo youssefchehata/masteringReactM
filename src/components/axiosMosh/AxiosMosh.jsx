@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import config from './config.json'
 import http from "./services/httpService";
 
@@ -42,7 +44,7 @@ class httpMosh extends Component {
 
     try {
       // await http.delete(apiEndpoint + "/" + post.id);
-      await http.delete(config.apiEndpoint + "/");
+      await http.delete(1+config.apiEndpoint + "/");
     } catch (ex) {
       if (ex.response && ex.response.status === 404)
         alert("This post has already been deleted.");
@@ -72,6 +74,7 @@ class httpMosh extends Component {
   render() {
     return (
       <React.Fragment>
+        <ToastContainer />
         <button className="btn btn-primary" onClick={this.handleAdd}>
           Add
         </button>
