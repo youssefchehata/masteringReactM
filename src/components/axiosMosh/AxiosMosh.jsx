@@ -4,6 +4,8 @@ import "react-toastify/dist/ReactToastify.css";
 import config from "./config.json";
 import http from "./services/httpService";
 
+import SortBy from "./SortBy";
+
 // const apiEndpoint = "https://jsonplaceholder.typicode.com/posts";
 
 class httpMosh extends Component {
@@ -11,14 +13,11 @@ class httpMosh extends Component {
     posts: []
   };
 
-
   async componentDidMount() {
     const { data: posts } = await http.get(config.apiEndpoint);
     this.setState({ posts });
   }
 
-
-  
   handleAdd = async () => {
     // console.log('Add');
     const obj = { title: "a", body: "b" };
@@ -50,7 +49,7 @@ class httpMosh extends Component {
 
     try {
       // await http.delete(apiEndpoint + "/" + post.id);
-      await http.delete(1 + config.apiEndpoint + "/");
+      await http.delete(config.apiEndpoint + "/");
     } catch (ex) {
       if (ex.response && ex.response.status === 404)
         alert("This post has already been deleted.");
@@ -60,6 +59,7 @@ class httpMosh extends Component {
   };
 
   render() {
+    console.log(this.props.sortBy);
     return (
       <React.Fragment>
         <ToastContainer />
@@ -70,6 +70,15 @@ class httpMosh extends Component {
           <thead>
             <tr>
               <th>Title</th>
+
+              <SortBy  title={"id"} 
+              posts={this.state.posts}
+              />
+
+              {/* <th>
+                <button onClick={() => this.sortBy("id")}>Id</button>
+              </th> */}
+
               <th>Update</th>
               <th>Delete</th>
             </tr>
@@ -78,6 +87,7 @@ class httpMosh extends Component {
             {this.state.posts.map(post => (
               <tr key={post.id}>
                 <td>{post.title}</td>
+                <td>{post.id}</td>
                 <td>
                   <button
                     className="btn btn-info btn-sm"
