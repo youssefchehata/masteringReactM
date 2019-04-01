@@ -1,16 +1,21 @@
-import React, { Component } from "react";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import config from "./config.json";
-import http from "./services/httpService";
+import React, { Component } from 'react';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import config from './config.json';
+import http from './services/httpService';
+import _ from 'lodash';
 
-import SortBy from "./SortBy";
+// import SortBy from './SortBy';
 
 // const apiEndpoint = "https://jsonplaceholder.typicode.com/posts";
 
 class httpMosh extends Component {
   state = {
-    posts: []
+    posts: [],
+    sortColumn: { path:'title' , order: 'asc' },
+    direction: {
+      title: 'asc'
+    }
   };
 
   async componentDidMount() {
@@ -20,7 +25,7 @@ class httpMosh extends Component {
 
   handleAdd = async () => {
     // console.log('Add');
-    const obj = { title: "a", body: "b" };
+    const obj = { title: 'a', body: 'b' };
     const { data: post } = await http.post(config.apiEndpoint, obj);
     //    console.log(post)
     const posts = [post, ...this.state.posts];
@@ -29,9 +34,9 @@ class httpMosh extends Component {
 
   handleUpdate = async post => {
     // console.log('Update', post);
-    post.title = "UPDATED";
+    post.title = 'UPDATED';
 
-    const { data } = await http.put(config.apiEndpoint + "/" + post.id, post);
+    const { data } = await http.put(config.apiEndpoint + '/' + post.id, post);
     // http.patch(apiEndpoint + "/" + post.id, { title: post.title });
     const posts = [...this.state.posts];
 
@@ -49,17 +54,36 @@ class httpMosh extends Component {
 
     try {
       // await http.delete(apiEndpoint + "/" + post.id);
-      await http.delete(config.apiEndpoint + "/");
+      await http.delete(config.apiEndpoint + '/');
     } catch (ex) {
       if (ex.response && ex.response.status === 404)
-        alert("This post has already been deleted.");
+        alert('This post has already been deleted.');
 
       this.setState({ posts: originalPosts });
     }
   };
-
+  sortBy = key => {
+    const data = this.state.posts;
+    // console.log(data);
+    this.setState({
+      data: data.sort((a, b) =>
+        this.state.direction[key] === 'asc'
+          ? parseFloat(a[key]) - parseFloat(b[key])
+          : parseFloat(b[key]) - parseFloat(a[key])
+      ),
+      direction: {
+        [key]: this.state.direction[key] === 'asc' ? 'desc' : 'asc'
+      }
+    });
+  };
+  onSort = path => {
+    console.log(path);
+    this.setState({ sortColumn: { path , order: 'asc' } });
+  };
   render() {
-    console.log(this.props.sortBy);
+   const {sortColumn}= this.state
+    const sorted =_.orderBy([sortColumn.path])
+
     return (
       <React.Fragment>
         <ToastContainer />
@@ -69,15 +93,16 @@ class httpMosh extends Component {
         <table className="table">
           <thead>
             <tr>
-              <th>Title</th>
+              <th onClick={() => this.onSort('title')}>Title</th>
 
-              <SortBy  title={"id"} 
-              posts={this.state.posts}
-              />
+              {/* <SortBy  
+              data={this.state.posts}
+           
+              /> */}
 
-              {/* <th>
-                <button onClick={() => this.sortBy("id")}>Id</button>
-              </th> */}
+              <th>
+                <button onClick={() => this.sortBy('id')}>Id</button>
+              </th>
 
               <th>Update</th>
               <th>Delete</th>

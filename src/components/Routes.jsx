@@ -15,6 +15,8 @@ import Axios from "./axios/Axios";
 import AxiosMosh from "./axiosMosh/AxiosMosh";
 import Inputfile from './inputfile';
 import props_children from './props_children/props_children'
+
+import ShowTable from './table/showtable';
 class Routes extends Component {
   render() {
     return (
@@ -35,6 +37,7 @@ class Routes extends Component {
           <Route exact path="/axiosMosh/AxiosMosh" component={AxiosMosh}/>
           <Route exact path="/props_children/props_children" component={props_children} />
           <Route exact path="/inputfile/inputfile" component={Inputfile} />
+          <Route exact path="/table/showtable" component={ShowTable} />
 
           <Route exact path="/" component={App} />
           {/* <Route path="/movies/:id" component={Movie} /> */}
