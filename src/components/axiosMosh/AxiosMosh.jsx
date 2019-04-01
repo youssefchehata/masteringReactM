@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import config from './config.json';
-import http from './services/httpService';
-import _ from 'lodash';
+import React, { Component } from "react";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import config from "./config.json";
+import http from "./services/httpService";
+// import _ from "lodash";
 
 // import SortBy from './SortBy';
 
@@ -12,9 +12,9 @@ import _ from 'lodash';
 class httpMosh extends Component {
   state = {
     posts: [],
-    sortColumn: { path:'title' , order: 'asc' },
+    sortColumn: { path: "title", order: "asc" },
     direction: {
-      title: 'asc'
+      title: "asc"
     }
   };
 
@@ -25,7 +25,7 @@ class httpMosh extends Component {
 
   handleAdd = async () => {
     // console.log('Add');
-    const obj = { title: 'a', body: 'b' };
+    const obj = { title: "a", body: "b" };
     const { data: post } = await http.post(config.apiEndpoint, obj);
     //    console.log(post)
     const posts = [post, ...this.state.posts];
@@ -34,9 +34,9 @@ class httpMosh extends Component {
 
   handleUpdate = async post => {
     // console.log('Update', post);
-    post.title = 'UPDATED';
+    post.title = "UPDATED";
 
-    const { data } = await http.put(config.apiEndpoint + '/' + post.id, post);
+    const { data } = await http.put(config.apiEndpoint + "/" + post.id, post);
     // http.patch(apiEndpoint + "/" + post.id, { title: post.title });
     const posts = [...this.state.posts];
 
@@ -54,36 +54,52 @@ class httpMosh extends Component {
 
     try {
       // await http.delete(apiEndpoint + "/" + post.id);
-      await http.delete(config.apiEndpoint + '/');
+      await http.delete(config.apiEndpoint + "/");
     } catch (ex) {
       if (ex.response && ex.response.status === 404)
-        alert('This post has already been deleted.');
+        alert("This post has already been deleted.");
 
       this.setState({ posts: originalPosts });
     }
   };
+  // -----SortByNumber----------
   sortBy = key => {
     const data = this.state.posts;
     // console.log(data);
     this.setState({
       data: data.sort((a, b) =>
-        this.state.direction[key] === 'asc'
+        this.state.direction[key] === "asc"
           ? parseFloat(a[key]) - parseFloat(b[key])
           : parseFloat(b[key]) - parseFloat(a[key])
       ),
       direction: {
-        [key]: this.state.direction[key] === 'asc' ? 'desc' : 'asc'
+        [key]: this.state.direction[key] === "asc" ? "desc" : "asc"
       }
     });
   };
-  onSort = path => {
-    console.log(path);
-    this.setState({ sortColumn: { path , order: 'asc' } });
-  };
-  render() {
-   const {sortColumn}= this.state
-    const sorted =_.orderBy([sortColumn.path])
+  // -------sortByString---------------
+  onSort(sortKey) {
+    const data = this.state.posts;
+    data.sort((a, b) => a[sortKey].localeCompare(b[sortKey]));
+    this.setState({ data });
+  }
+  // --------sort by Num+string----
+  compareBy(key) {
+    return function(a, b) {
+      if (a[key] < b[key]) return -1;
+      if (a[key] > b[key]) return 1;
+      return 0;
+    };
+  }
 
+  sort(key) {
+   
+    const arrayCopy = [...this.state.posts];
+    arrayCopy.sort(this.compareBy(key));
+    this.setState({ posts: arrayCopy });
+  }
+
+  render() {
     return (
       <React.Fragment>
         <ToastContainer />
@@ -93,17 +109,14 @@ class httpMosh extends Component {
         <table className="table">
           <thead>
             <tr>
-              <th onClick={() => this.onSort('title')}>Title</th>
-
-              {/* <SortBy  
-              data={this.state.posts}
-           
-              /> */}
+              <th onClick={() => this.onSort("title")}>Title</th>
 
               <th>
-                <button onClick={() => this.sortBy('id')}>Id</button>
+                <button onClick={() => this.sort("id")}>Id</button>
               </th>
-
+              <th>
+                <button onClick={() => this.onSort("id")}>N°</button>
+              </th>
               <th>Update</th>
               <th>Delete</th>
             </tr>
@@ -112,6 +125,7 @@ class httpMosh extends Component {
             {this.state.posts.map(post => (
               <tr key={post.id}>
                 <td>{post.title}</td>
+                <td>{post.id}</td>
                 <td>{post.id}</td>
                 <td>
                   <button
