@@ -3,12 +3,13 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import config from "./config.json";
 import http from "./services/httpService";
+// import { Table, Thead, Tbody, Tr, Th, Td } from 'react-amazing-table-sorter';
 // import _ from "lodash";
 
 // import SortBy from './SortBy';
 
 // const apiEndpoint = "https://jsonplaceholder.typicode.com/posts";
-
+// rce
 class httpMosh extends Component {
   state = {
     posts: [],
