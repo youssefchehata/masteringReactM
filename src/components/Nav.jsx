@@ -21,6 +21,23 @@ class Nav extends Component {
         </button>
         <div className="collapse navbar-collapse" id="navbarColor01">
           <ul className="navbar-nav mr-auto">
+            <div class="btn-group">
+              <button
+                type="button"
+                class="btn btn-danger dropdown-toggle"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Table
+              </button>
+              <div class="dropdown-menu">
+                <Link className="dropdown-item" to="/table_sort/table_sort">
+                  table_sort
+                </Link>
+              </div>
+            </div>
+
             <li className="nav-item active">
               <Link className="nav-link" to="/table/showtable">
                 Table <span className="sr-only">(current)</span>
@@ -56,21 +73,17 @@ class Nav extends Component {
                 Divers
               </Link>
             </li>
-
-            <div
-              className=" input-group-prepend  border d-flex justify-content-center "
-              style={{ width: 200 }}
-            >
+            <div class="btn-group">
               <button
-                className="btn btn-outline-black dropdown-toggle "
                 type="button"
+                className="btn btn-info dropdown-toggle"
                 data-toggle="dropdown"
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-                Dropdown
+                dropdown
               </button>
-              <div className="dropdown-menu">
+              <div class="dropdown-menu">
                 <Link className="dropdown-item" to="/grid">
                   Grid
                 </Link>
@@ -84,10 +97,13 @@ class Nav extends Component {
                   Flex
                 </Link>
                 <Link className="dropdown-item" to="/axiosMosh/axiosMosh">
-                AxiosMosh
+                  AxiosMosh
                 </Link>
-                <Link className="dropdown-item" to="/props_children/props_children">
-                props_children
+                <Link
+                  className="dropdown-item"
+                  to="/props_children/props_children"
+                >
+                  props_children
                 </Link>
                 <div role="separator" className="dropdown-divider" />
                 <Link className="dropdown-item" to="/css/cssOne/1">
@@ -108,8 +124,6 @@ class Nav extends Component {
           </form>
         </div>
       </nav>
-      
-  
     );
   }
 }

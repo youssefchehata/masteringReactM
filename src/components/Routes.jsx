@@ -10,13 +10,14 @@ import Divers from "./divers";
 import Grid from "./Grid";
 import Card from "./Card";
 import Flex from "./Flex";
-import CssOne from './Css/cssOne/1';
+import CssOne from "./Css/cssOne/1";
 import Axios from "./axios/Axios";
 import AxiosMosh from "./axiosMosh/AxiosMosh";
-import Inputfile from './inputfile';
-import props_children from './props_children/props_children'
+import Inputfile from "./inputfile";
+import props_children from "./props_children/props_children";
+import Table_sort from "./table_sort/table_sort";
 
-import ShowTable from './table/showtable';
+import ShowTable from "./table/showtable";
 class Routes extends Component {
   render() {
     return (
@@ -34,11 +35,15 @@ class Routes extends Component {
           <Route exact path="/divers" component={Divers} />
           <Route exact path="/Css/cssOne/1" component={CssOne} />
           <Route exact path="/axios/Axios" component={Axios} />
-          <Route exact path="/axiosMosh/AxiosMosh" component={AxiosMosh}/>
-          <Route exact path="/props_children/props_children" component={props_children} />
+          <Route exact path="/axiosMosh/AxiosMosh" component={AxiosMosh} />
+          <Route
+            exact
+            path="/props_children/props_children"
+            component={props_children}
+          />
           <Route exact path="/inputfile/inputfile" component={Inputfile} />
           <Route exact path="/table/showtable" component={ShowTable} />
-
+          <Route exact path="/table_sort/table_sort" component={Table_sort} />
           <Route exact path="/" component={App} />
           {/* <Route path="/movies/:id" component={Movie} /> */}
           <Redirect to="/not_found" />
