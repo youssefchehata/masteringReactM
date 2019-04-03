@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import axios from "axios";
 class Table_sort extends React.Component {
   state = {
@@ -161,7 +161,7 @@ class Table_sort extends React.Component {
       return (
         <li class={number == currentPage ? "page-item active" : "page-item"}>
           <a
-            class="page-link"
+            className="page-link"
             key={number}
             id={number}
             onClick={this.handleClick}
@@ -174,7 +174,7 @@ class Table_sort extends React.Component {
 
     return (
       <div>
-        <div class="container">
+        <div className="container">
           <header className="text-center mt-4">
             <h2>Recently released movies</h2>
             <p>
