@@ -79,6 +79,7 @@ class Table_sort extends React.Component {
       orderAsc: !this.state.orderAsc
     });
   };
+  
   prev = e => {
     const { currentPage } = this.state;
     if (currentPage == 1) return false;
