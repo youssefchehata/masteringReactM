@@ -62,6 +62,7 @@ class Table_sort extends React.Component {
     const id = target.id;
     let allIcon = Array.from(target.parentNode.querySelectorAll("i"));
     allIcon.map(item => {
+      return
       item.className = "fas fa-sort ml-3";
     });
     let targetIcon = target.querySelector("i");
