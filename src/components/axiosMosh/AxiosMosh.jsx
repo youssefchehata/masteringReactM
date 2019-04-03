@@ -12,14 +12,13 @@ import http from "./services/httpService";
 // rce
 class httpMosh extends Component {
   state = {
-    posts: [{date:22/10/2014},
-    ],
-    sortColumn: { path: "title", order: "asc" },
+    posts: [],
+    // sortColumn: { path: "title", order: "asc" },
     direction: {
       title: "asc"
     },
     orderBy: "",
-      orderAsc: true,
+    orderAsc: true
   };
 
   async componentDidMount() {
@@ -70,7 +69,6 @@ class httpMosh extends Component {
   sortBy = key => {
     const data = this.state.posts;
 
-    // console.log(data);
     this.setState({
       data: data.sort((a, b) =>
         this.state.direction[key] === "asc"
@@ -83,20 +81,20 @@ class httpMosh extends Component {
     });
   };
   // -------sortByString---------------
-  onSort=(key) =>{
+  onSort = key => {
     const data = this.state.posts;
 
-        this.setState({
-     data: data.sort((a, b) => 
-       this.state.direction[key] === "asc"
-    ? a[key].localeCompare(b[key])
-    :b[key].localeCompare(a[key])
-    ),
-    direction: {
-      [key]: this.state.direction[key] === "asc" ? "desc" : "asc"
-    }
+    this.setState({
+      data: data.sort((a, b) =>
+        this.state.direction[key] === "asc"
+          ? a[key].localeCompare(b[key])
+          : b[key].localeCompare(a[key])
+      ),
+      direction: {
+        [key]: this.state.direction[key] === "asc" ? "desc" : "asc"
+      }
     });
-  }
+  };
   // --------sort by Num+string----
   compareBy(key) {
     return function(a, b) {
@@ -113,8 +111,9 @@ class httpMosh extends Component {
       posts: arrayCopy
     });
   }
-  // -------------------------
-  compareBy=(key) =>{
+  // ----------all sort---------------
+
+  compareBy = key => {
     const { orderAsc } = this.state;
     if (orderAsc) {
       return function(a, b) {
@@ -122,23 +121,22 @@ class httpMosh extends Component {
         if (a[key] > b[key]) return 1;
         return 0;
       };
-    }else {
+    } else {
       return function(a, b) {
         if (a[key] > b[key]) return -1;
         if (a[key] < b[key]) return 1;
         return 0;
       };
     }
-  }
+  };
 
-  sorter=(e)=> {
+  sorter = e => {
     // const results = this.state.posts
-    const { results = [] } = this.state.posts;
+    const { posts = [] } = this.state;
     const target = e.target;
     const id = target.id;
     let allIcon = Array.from(target.parentNode.querySelectorAll("i"));
     allIcon.map(item => {
-      
       item.className = "fas fa-sort ml-3";
     });
     let targetIcon = target.querySelector("i");
@@ -149,12 +147,11 @@ class httpMosh extends Component {
     }
 
     this.setState({
-      currentPage: 1,
       orderBy: id,
-      results: results.sort(this.compareBy(id)),
+      posts: posts.sort(this.compareBy(id)),
       orderAsc: !this.state.orderAsc
     });
-  }
+  };
   render() {
     return (
       <React.Fragment>
@@ -165,20 +162,19 @@ class httpMosh extends Component {
         <table className="table">
           <thead>
             <tr>
-              <th onClick={() => this.onSort("title")}>onSort</th>
-              <th id="title" onClick={(e) => this.sorter(e)}>sorter</th>
+              <th id="title" onClick={this.sorter}>
+                sorter <i class="fas fa-sort ml-3" />
+              </th>
+              <th>
+                <button onClick={() => this.onSort("title")}>onSort</button>
+              </th>
               <th>
                 <button onClick={() => this.sortBy("id")}>sortBy</button>
               </th>
               <th>
                 <button onClick={() => this.sort("id")}>sort</button>
               </th>
-              <th>
-                <button onClick={() => this.onSort("id")}>N°</button>
-              </th>
-              <th>
-                <button onClick={() => this.onSort("date")}>date</button>
-              </th>
+
               <th>Update</th>
               <th>Delete</th>
             </tr>
@@ -190,8 +186,7 @@ class httpMosh extends Component {
                 <td>{post.title}</td>
                 <td>{post.id}</td>
                 <td>{post.id}</td>
-                <td>{post.id}</td>
-                <td>{post.date}</td>
+
                 <td>
                   <button
                     className="btn btn-info btn-sm"

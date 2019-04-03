@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 import React from 'react';
 import axios from 'axios';
+=======
+import React from "react";
+import axios from "axios";
+>>>>>>> 012df6578b742abf8320d0df5aa237f710810414
 class Table_sort extends React.Component {
   state = {
     orderBy: '',
@@ -161,8 +166,12 @@ class Table_sort extends React.Component {
       return (
         <li class={number == currentPage ? 'page-item active' : 'page-item'}>
           <a
+<<<<<<< HEAD
             href="/"
             class="page-link"
+=======
+            className="page-link"
+>>>>>>> 012df6578b742abf8320d0df5aa237f710810414
             key={number}
             id={number}
             onClick={this.handleClick}
@@ -175,7 +184,7 @@ class Table_sort extends React.Component {
 
     return (
       <div>
-        <div class="container">
+        <div className="container">
           <header className="text-center mt-4">
             <h2>Recently released movies</h2>
             <p>
