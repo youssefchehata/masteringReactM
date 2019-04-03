@@ -1,19 +1,19 @@
 import React from 'react';
-import axios from "axios";
+import axios from 'axios';
 class Table_sort extends React.Component {
   state = {
-    orderBy: "",
+    orderBy: '',
     orderAsc: true,
     dates: {
-      maximum: "",
-      minimum: ""
+      maximum: '',
+      minimum: ''
     },
     results: [
       {
-        title: "",
-        poster_path: "",
-        popularity: "",
-        release_date: ""
+        title: '',
+        poster_path: '',
+        popularity: '',
+        release_date: ''
       }
     ],
     currentPage: 1,
@@ -25,7 +25,7 @@ class Table_sort extends React.Component {
   componentDidMount() {
     axios
       .get(
-        "https://api.themoviedb.org/3/movie/now_playing?api_key=23785b1559bb39249c40d56934f80e6c&language=zh-TW&page=1"
+        'https://api.themoviedb.org/3/movie/now_playing?api_key=23785b1559bb39249c40d56934f80e6c&language=zh-TW&page=1'
       )
       .then(res => {
         // console.log(res);
@@ -59,15 +59,15 @@ class Table_sort extends React.Component {
     const { results = [] } = this.state;
     const target = e.target;
     const id = target.id;
-    let allIcon = Array.from(target.parentNode.querySelectorAll("i"));
+    let allIcon = Array.from(target.parentNode.querySelectorAll('i'));
     allIcon.map(item => {
-      item.className = "fas fa-sort ml-3";
+      item.className = 'fas fa-sort ml-3';
     });
-    let targetIcon = target.querySelector("i");
+    let targetIcon = target.querySelector('i');
     if (this.state.orderAsc) {
-      targetIcon.className = "fas fa-caret-down ml-3";
+      targetIcon.className = 'fas fa-caret-down ml-3';
     } else {
-      targetIcon.className = "fas fa-caret-up ml-3";
+      targetIcon.className = 'fas fa-caret-up ml-3';
     }
 
     this.setState({
@@ -93,18 +93,18 @@ class Table_sort extends React.Component {
     });
   };
 
-  // 搜尋功能
+  // search function
   keyUpHandle = (e, target) => {
-    let input = document.querySelector("#inputS");
-    let tables = document.querySelector("#tableS");
-    let rows = tables.querySelector("tbody").rows;
+    let input = document.querySelector('#inputS');
+    let tables = document.querySelector('#tableS');
+    let rows = tables.querySelector('tbody').rows;
     this.filter(input, rows);
   };
   filter = (input, rows) => {
     Array.from(rows).map(row => {
-      var text = row.textContent.toLowerCase(),
+      const text = row.textContent.toLowerCase(),
         val = input.value.toLowerCase();
-      row.style.display = text.indexOf(val) === -1 ? "none" : "table-row";
+      row.style.display = text.indexOf(val) === -1 ? 'none' : 'table-row';
     });
   };
 
@@ -114,7 +114,7 @@ class Table_sort extends React.Component {
       currentPage: Number(event.target.id)
     });
   };
-  // 切換筆數
+  // Switch the number of pens
 
   pagesHandle = e => {
     const { results } = this.state;
@@ -141,7 +141,7 @@ class Table_sort extends React.Component {
           <td className="d-inline-block col-12 col-md-2">{val.title}</td>
           <td className="d-inline-block col-12 col-md-4">
             <img
-              src={"https://image.tmdb.org/t/p/w500" + val.poster_path}
+              src={'https://image.tmdb.org/t/p/w500' + val.poster_path}
               className="img-fluid"
             />
           </td>
@@ -159,8 +159,9 @@ class Table_sort extends React.Component {
 
     const renderPageNumbers = pageNumbers.map(number => {
       return (
-        <li class={number == currentPage ? "page-item active" : "page-item"}>
+        <li class={number == currentPage ? 'page-item active' : 'page-item'}>
           <a
+            href="/"
             class="page-link"
             key={number}
             id={number}
@@ -202,19 +203,21 @@ class Table_sort extends React.Component {
               </div>
               <div className="form-inline">
                 <input
-                  placeholder="搜尋"
+                  placeholder="search"
                   id="inputS"
-                  onKeyUp={e => this.keyUpHandle(e, "name")}
+                  onKeyUp={e => this.keyUpHandle(e, 'name')}
                   className="form-control"
                 />
               </div>
               <div className="d-flex align-items-center ml-3">
                 {results.length <= 0
                   ? null
-                  : `目前從 ${indexOfFirstTodo + 1} ~ ${currentPage *
+                  : `
+                  Currently from ${indexOfFirstTodo + 1} ~ ${currentPage *
                       (totlePage > results.length
                         ? results.length
-                        : totlePage)} 共 ${results.length} 筆`}
+                        : totlePage)} 
+                        Total ${results.length} pen`}
               </div>
             </div>
 
@@ -224,7 +227,7 @@ class Table_sort extends React.Component {
                   <li class="page-item">
                     <a
                       class="page-link"
-                      href="#"
+                      href="/"
                       aria-label="Previous"
                       onClick={this.prev}
                     >
@@ -236,7 +239,7 @@ class Table_sort extends React.Component {
                   <li class="page-item">
                     <a
                       class="page-link"
-                      href="#"
+                      href="/"
                       aria-label="Next"
                       onClick={this.next}
                     >
