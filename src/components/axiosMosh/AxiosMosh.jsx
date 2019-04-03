@@ -162,7 +162,9 @@ class httpMosh extends Component {
         <table className="table">
           <thead>
             <tr>
-              <th id="title" onClick={this.sorter}>
+              <th 
+              style={{ cursor: "pointer" }}
+              id="title" onClick={this.sorter}>
                 sorter <i class="fas fa-sort ml-3" />
               </th>
               <th>
