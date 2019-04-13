@@ -259,6 +259,7 @@ class Table_sort extends React.Component {
               <tr className="row m-0">
                 <th
                   id="release_date"
+                  style={{ cursor: "pointer" }}
                   className="d-inline-block col-12 col-md-2"
                   onClick={this.sortBy}
                 >
