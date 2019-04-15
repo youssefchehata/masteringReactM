@@ -1,20 +1,20 @@
-import React from "react";
-import axios from "axios";
+import React from 'react';
+import axios from 'axios';
 
 class Table_sort extends React.Component {
   state = {
-    orderBy: "",
+    orderBy: '',
     orderAsc: true,
     dates: {
-      maximum: "",
-      minimum: ""
+      maximum: '',
+      minimum: ''
     },
     results: [
       {
-        title: "",
-        poster_path: "",
-        popularity: "",
-        release_date: ""
+        title: '',
+        poster_path: '',
+        popularity: '',
+        release_date: ''
       }
     ],
     currentPage: 1,
@@ -26,7 +26,7 @@ class Table_sort extends React.Component {
   componentDidMount() {
     axios
       .get(
-        "https://api.themoviedb.org/3/movie/now_playing?api_key=23785b1559bb39249c40d56934f80e6c&language=zh-TW&page=1"
+        'https://api.themoviedb.org/3/movie/now_playing?api_key=23785b1559bb39249c40d56934f80e6c&language=zh-TW&page=1'
       )
       .then(res => {
         // console.log(res);
@@ -60,16 +60,16 @@ class Table_sort extends React.Component {
     const { results = [] } = this.state;
     const target = e.target;
     const id = target.id;
-    let allIcon = Array.from(target.parentNode.querySelectorAll("i"));
+    let allIcon = Array.from(target.parentNode.querySelectorAll('i'));
     allIcon.map(item => {
-      return
-      item.className = "fas fa-sort ml-3";
+      return;
+      item.className = 'fas fa-sort ml-3';
     });
-    let targetIcon = target.querySelector("i");
+    let targetIcon = target.querySelector('i');
     if (this.state.orderAsc) {
-      targetIcon.className = "fas fa-caret-down ml-3";
+      targetIcon.className = 'fas fa-caret-down ml-3';
     } else {
-      targetIcon.className = "fas fa-caret-up ml-3";
+      targetIcon.className = 'fas fa-caret-up ml-3';
     }
 
     this.setState({
@@ -79,10 +79,10 @@ class Table_sort extends React.Component {
       orderAsc: !this.state.orderAsc
     });
   };
-  
+
   prev = e => {
     const { currentPage } = this.state;
-    if (currentPage == 1) return false;
+    if (currentPage === 1) return false;
     this.setState({
       currentPage: currentPage - 1
     });
@@ -90,7 +90,7 @@ class Table_sort extends React.Component {
   next = e => {
     const { currentPage, totlePage, dates, results } = this.state;
     let totalPager = Math.ceil(results.length / totlePage);
-    if (totalPager == currentPage) return false;
+    if (totalPager === currentPage) return false;
     this.setState({
       currentPage: currentPage + 1
     });
@@ -98,16 +98,16 @@ class Table_sort extends React.Component {
 
   // search function
   keyUpHandle = (e, target) => {
-    let input = document.querySelector("#inputS");
-    let tables = document.querySelector("#tableS");
-    let rows = tables.querySelector("tbody").rows;
+    let input = document.querySelector('#inputS');
+    let tables = document.querySelector('#tableS');
+    let rows = tables.querySelector('tbody').rows;
     this.filter(input, rows);
   };
   filter = (input, rows) => {
     Array.from(rows).map(row => {
       const text = row.textContent.toLowerCase(),
         val = input.value.toLowerCase();
-      row.style.display = text.indexOf(val) === -1 ? "none" : "table-row";
+      row.style.display = text.indexOf(val) === -1 ? 'none' : 'table-row';
     });
   };
 
@@ -144,7 +144,7 @@ class Table_sort extends React.Component {
           <td className="d-inline-block col-12 col-md-2">{val.title}</td>
           <td className="d-inline-block col-12 col-md-4">
             <img
-              src={"https://image.tmdb.org/t/p/w500" + val.poster_path}
+              src={'https://image.tmdb.org/t/p/w500' + val.poster_path}
               className="img-fluid"
             />
           </td>
@@ -162,7 +162,7 @@ class Table_sort extends React.Component {
 
     const renderPageNumbers = pageNumbers.map(number => {
       return (
-        <li class={number == currentPage ? "page-item active" : "page-item"}>
+        <li class={number === currentPage ? 'page-item active' : 'page-item'}>
           <a
             href="/"
             class="page-link"
@@ -208,7 +208,7 @@ class Table_sort extends React.Component {
                 <input
                   placeholder="search"
                   id="inputS"
-                  onKeyUp={e => this.keyUpHandle(e, "name")}
+                  onKeyUp={e => this.keyUpHandle(e, 'name')}
                   className="form-control"
                 />
               </div>
@@ -259,7 +259,7 @@ class Table_sort extends React.Component {
               <tr className="row m-0">
                 <th
                   id="release_date"
-                  style={{ cursor: "pointer" }}
+                  style={{ cursor: 'pointer' }}
                   className="d-inline-block col-12 col-md-2"
                   onClick={this.sortBy}
                 >

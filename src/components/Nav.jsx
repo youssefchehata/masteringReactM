@@ -35,6 +35,9 @@ class Nav extends Component {
                 <Link className="dropdown-item" to="/table_sort/table_sort">
                   table_sort
                 </Link>
+                <Link className="dropdown-item" to="/javascript">
+                  javascript
+                </Link>
               </div>
             </div>
 

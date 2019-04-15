@@ -16,6 +16,7 @@ import AxiosMosh from "./axiosMosh/AxiosMosh";
 import Inputfile from "./inputfile";
 import props_children from "./props_children/props_children";
 import Table_sort from "./table_sort/table_sort";
+import Javascript from "./javascript";
 
 import ShowTable from "./table/showtable";
 class Routes extends Component {
@@ -44,6 +45,7 @@ class Routes extends Component {
           <Route exact path="/inputfile/inputfile" component={Inputfile} />
           <Route exact path="/table/showtable" component={ShowTable} />
           <Route exact path="/table_sort/table_sort" component={Table_sort} />
+          <Route exact path="/javascript" component={Javascript} />
           <Route exact path="/" component={App} />
           {/* <Route path="/movies/:id" component={Movie} /> */}
           <Redirect to="/not_found" />
