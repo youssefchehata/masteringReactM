@@ -38,6 +38,9 @@ class Nav extends Component {
                 <Link className="dropdown-item" to="/javascript">
                   javascript
                 </Link>
+                <Link className="dropdown-item" to="/modal/modal_view">
+                  Modal_view
+                </Link>
               </div>
             </div>
 

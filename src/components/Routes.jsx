@@ -17,8 +17,11 @@ import Inputfile from "./inputfile";
 import props_children from "./props_children/props_children";
 import Table_sort from "./table_sort/table_sort";
 import Javascript from "./javascript";
+import Modal_view from './modal/modal_view';
+
 
 import ShowTable from "./table/showtable";
+
 class Routes extends Component {
   render() {
     return (
@@ -46,6 +49,7 @@ class Routes extends Component {
           <Route exact path="/table/showtable" component={ShowTable} />
           <Route exact path="/table_sort/table_sort" component={Table_sort} />
           <Route exact path="/javascript" component={Javascript} />
+          <Route exact path="/modal/modal_view" component={Modal_view} />
           <Route exact path="/" component={App} />
           {/* <Route path="/movies/:id" component={Movie} /> */}
           <Redirect to="/not_found" />
