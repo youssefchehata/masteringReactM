@@ -1,0 +1,29 @@
+
+.nav-tabs .nav-link {
+    display:inline-block;
+    padding:10px ;
+    color:#666766;
+   
+   
+   }
+   .nav-tabs .nav-link.active{
+    position: relative;
+    border:0 none;
+    border-bottom: 1px solid #edb30d;
+    color:#edb30d;
+   }
+   .nav-tabs .nav-link:hover {
+    border:0 none
+   }
+   .nav-tabs .nav-link.active:after
+    {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: auto;
+      width: 0px;
+      bottom: -14px;
+      border: 7px solid transparent;
+      border-top: 7px solid #f2be04 !important;
+   }

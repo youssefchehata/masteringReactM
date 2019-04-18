@@ -32,32 +32,22 @@ class Nav extends Component {
                 Table
               </button>
               <div class="dropdown-menu">
-                <Link className="dropdown-item" to="/table_sort/table_sort">
-                  table_sort
-                </Link>
-                <Link className="dropdown-item" to="/javascript">
-                  javascript
-                </Link>
-                <Link className="dropdown-item" to="/modal/modal_view">
-                  Modal_view
-                </Link>
+                < Link className="dropdown-item" to="/table_sort/table_sort"   > table_sort   </Link >
+                < Link className="dropdown-item" to="/javascript"              > javascript   </Link >
+                < Link className="dropdown-item" to="/modal/modal1/modal_view" > Modal_view_1 </Link >
+                < Link className="dropdown-item" to="/modal/modal2/modal_view2"> Modal_view_2 </Link >
+                < Link className="dropdown-item" to="/navs/navsViews"          > navsView     </Link >
               </div>
             </div>
 
             <li className="nav-item active">
-              <Link className="nav-link" to="/table/showtable">
-                Table <span className="sr-only">(current)</span>
-              </Link>
+              <Link className="nav-link" to="/table/showtable"> Table <span className="sr-only">(current)</span> </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/app">
-                Movies
-              </Link>
+              <Link className="nav-link" to="/app"> Movies </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/customers">
-                Customers
-              </Link>
+              <Link className="nav-link" to="/customers"> Customers </Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/input">
