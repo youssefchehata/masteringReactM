@@ -18,9 +18,9 @@ active " id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-co
   </div>
 </nav>
 <div className="tab-content" id="nav-tabContent">
-  <div className="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"> body-one</div>
-  <div className="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">body tow</div>
-  <div className="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">body three</div>
+  <div className="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"> body-one...</div>
+  <div className="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">body tow....</div>
+  <div className="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">body three...</div>
 </div>
         </div>
     );

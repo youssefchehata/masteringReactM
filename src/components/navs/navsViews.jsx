@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import NavsBootstrap from "./navsBootstarp";
 import One from "./one";
 import Tow from "./tow";
-import Tab from "./reutilisablenavs";
+import Reutilisablenavs from "./reutilisablenavs";
 class NavsViews extends Component {
   state = {};
 
@@ -11,7 +11,9 @@ class NavsViews extends Component {
       <div className="container">
         <h1>Navs_Views</h1>
         <NavsBootstrap />
+        
         <hr />
+        <Reutilisablenavs/>
       </div>
     );
   }
