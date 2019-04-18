@@ -20,6 +20,7 @@ import Javascript from "./javascript";
 import Modal_view from "./modal/modal1/modal_view";
 import Modal_view2 from "./modal/modal2/modal_view2";
 import NavsViews from "./navs/navsViews";
+import toggleView_1 from "./toggle/toggleView_1";
 
 import ShowTable from "./table/showtable";
 
@@ -49,6 +50,7 @@ class Routes extends Component {
           <Route exact path="/modal/modal1/modal_view"       component={Modal_view    } />
           <Route exact path="/modal/modal2/modal_view2"      component={Modal_view2   } />
           <Route exact path="/navs/navsViews"                component={NavsViews     } />
+          <Route exact path="/toggle/toggleView_1"                component={toggleView_1     } />
           <Route exact path="/"                              component={App           } />
           {/* <Route path="/movies/:id" component={Movie} /> */}
           <Redirect to="/not_found" />
