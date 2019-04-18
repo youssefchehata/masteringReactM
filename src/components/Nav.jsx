@@ -17,11 +17,12 @@ class Nav extends Component {
             <div class="btn-group">
               <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" > Table </button>
               <div class="dropdown-menu">
-                < Link className="dropdown-item" to="/table_sort/table_sort"   > table_sort   </Link >
-                < Link className="dropdown-item" to="/javascript"              > javascript   </Link >
-                < Link className="dropdown-item" to="/modal/modal1/modal_view" > Modal_view_1 </Link >
-                < Link className="dropdown-item" to="/modal/modal2/modal_view2"> Modal_view_2 </Link >
-                < Link className="dropdown-item" to="/navs/navsViews"          > navsView     </Link >
+                < Link className="dropdown-item" to="/table_sort/table_sort"    > table_sort   </Link >
+                < Link className="dropdown-item" to="/javascript"               > javascript   </Link >
+                < Link className="dropdown-item" to="/modal/modal1/modal_view"  > Modal_view_1 </Link >
+                < Link className="dropdown-item" to="/modal/modal2/modal_view2" > Modal_view_2 </Link >
+                < Link className="dropdown-item" to="/navs/navsViews"           > navsView     </Link >
+                < Link className="dropdown-item" to="/toggle/toggleView_1"      > toggleView_1 </Link >
               </div>
             </div>
             {/* Bootstrap */}
