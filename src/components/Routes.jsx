@@ -21,6 +21,7 @@ import Modal_view from "./modal/modal1/modal_view";
 import Modal_view2 from "./modal/modal2/modal_view2";
 import NavsViews from "./navs/navsViews";
 import toggleView_1 from "./toggle/toggleView_1";
+import CheckBoxView from "./checkBox/CheckBoxView";
 
 import ShowTable from "./table/showtable";
 
@@ -29,29 +30,30 @@ class Routes extends Component {
     return (
       <div>
         <Switch>
-          <Route exact path="/app"                           component={App           } />
-          <Route exact path="/input"                         component={Rentals       } />
-          <Route exact path="/customers"                     component={Customers     } />
-          <Route exact path="/not_found"                     component={Not_found     } />
-          <Route exact path="/bootstrap"                     component={Bootstrap     } />
-          <Route exact path="/bootstrap2"                    component={Bootstrap2    } />
-          <Route exact path="/grid"                          component={Grid          } />
-          <Route exact path="/card"                          component={Card          } />
-          <Route exact path="/flex"                          component={Flex          } />
-          <Route exact path="/divers"                        component={Divers        } />
-          <Route exact path="/Css/cssOne/1"                  component={CssOne        } />
-          <Route exact path="/axios/Axios"                   component={Axios         } />
-          <Route exact path="/axiosMosh/AxiosMosh"           component={AxiosMosh     } />
-          <Route exact path="/props_children/props_children" component={props_children} />
-          <Route exact path="/inputfile/inputfile"           component={Inputfile     } />
-          <Route exact path="/table/showtable"               component={ShowTable     } />
-          <Route exact path="/table_sort/table_sort"         component={Table_sort    } />
-          <Route exact path="/javascript"                    component={Javascript    } />
-          <Route exact path="/modal/modal1/modal_view"       component={Modal_view    } />
-          <Route exact path="/modal/modal2/modal_view2"      component={Modal_view2   } />
-          <Route exact path="/navs/navsViews"                component={NavsViews     } />
-          <Route exact path="/toggle/toggleView_1"                component={toggleView_1     } />
-          <Route exact path="/"                              component={App           } />
+          <Route exact path="/app"                           component={App            } />
+          <Route exact path="/input"                         component={Rentals        } />
+          <Route exact path="/customers"                     component={Customers      } />
+          <Route exact path="/not_found"                     component={Not_found      } />
+          <Route exact path="/bootstrap"                     component={Bootstrap      } />
+          <Route exact path="/bootstrap2"                    component={Bootstrap2     } />
+          <Route exact path="/grid"                          component={Grid           } />
+          <Route exact path="/card"                          component={Card           } />
+          <Route exact path="/flex"                          component={Flex           } />
+          <Route exact path="/divers"                        component={Divers         } />
+          <Route exact path="/Css/cssOne/1"                  component={CssOne         } />
+          <Route exact path="/axios/Axios"                   component={Axios          } />
+          <Route exact path="/axiosMosh/AxiosMosh"           component={AxiosMosh      } />
+          <Route exact path="/props_children/props_children" component={props_children } />
+          <Route exact path="/inputfile/inputfile"           component={Inputfile      } />
+          <Route exact path="/table/showtable"               component={ShowTable      } />
+          <Route exact path="/table_sort/table_sort"         component={Table_sort     } />
+          <Route exact path="/javascript"                    component={Javascript     } />
+          <Route exact path="/modal/modal1/modal_view"       component={Modal_view     } />
+          <Route exact path="/modal/modal2/modal_view2"      component={Modal_view2    } />
+          <Route exact path="/navs/navsViews"                component={NavsViews      } />
+          <Route exact path="/toggle/toggleView_1"           component={toggleView_1   } />
+          <Route exact path="/checkBox/CheckBoxView"         component={CheckBoxView   } />
+          <Route exact path="/"                              component={App            } />
           {/* <Route path="/movies/:id" component={Movie} /> */}
           <Redirect to="/not_found" />
         </Switch>

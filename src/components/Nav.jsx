@@ -23,6 +23,7 @@ class Nav extends Component {
                 < Link className="dropdown-item" to="/modal/modal2/modal_view2" > Modal_view_2 </Link >
                 < Link className="dropdown-item" to="/navs/navsViews"           > navsView     </Link >
                 < Link className="dropdown-item" to="/toggle/toggleView_1"      > toggleView_1 </Link >
+                < Link className="dropdown-item" to="/checkBox/CheckBoxView"    >CheckBoxView </Link >
               </div>
             </div>
             {/* Bootstrap */}
