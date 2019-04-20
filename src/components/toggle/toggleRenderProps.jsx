@@ -12,13 +12,10 @@ export default class Toggle extends Component {
   };
 
   render() {
-    const { render } = this.props;
+    const { children } = this.props;
     return (
       <div>
-        {render({
-          on: this.state.on,
-          toggle: this.toggle
-        })}
+        {children({ on: this.state.on, toggle: this.toggle })}
       </div>
     );
   }

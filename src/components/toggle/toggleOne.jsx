@@ -13,7 +13,12 @@ class ToggleOne extends Component {
     const { data: posts } = await axios.get(apiEndpoint);
     this.setState({ posts });
   }
-  
+  // componentDidMount=()=>{
+  //   this.fetch(this.props)
+  // }
+  // async fetch(props){
+  //   let res = await
+  // }
   handleUpdate = async post => {
       // console.log('Update', post);
       post.title = "UPDATED";
