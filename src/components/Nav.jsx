@@ -38,8 +38,9 @@ class Nav extends Component {
              <Link className="dropdown-item" to="/card"       > Card       </Link>
              <Link className="dropdown-item" to="/flex"       > Flex       </Link>
              <div role="separator" className="dropdown-divider" />
-             <Link className="dropdown-item" to="/css/cssOne/1" > Css    </Link>
-             <Link className="dropdown-item" to="/divers"       > Divers </Link> 
+             <Link className="dropdown-item" to="/css/cssOne/1"           > Css         </Link>
+             <Link className="dropdown-item" to="/divers"                 > Divers      </Link>
+             <Link className="dropdown-item" to="/semantic-ui/SemanticUi" > semantic-ui </Link> 
 
             </div>
             </div>

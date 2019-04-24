@@ -24,7 +24,7 @@ class toggleView_1 extends Component {
        
       
         {/* ------------------------------------------ */}
-           <Show_hide> <div>hhhh</div> {/* <ToggleOne /> */} </Show_hide>
+           <Show_hide> <div>hhhh</div> {/* <ToggleOne /> */} /</Show_hide>>
       </div>
     );
   }
