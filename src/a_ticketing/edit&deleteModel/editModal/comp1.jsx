@@ -19,22 +19,30 @@ class Info extends Component {
   
 
 
-  fetchData = (id) => {
-    this.setState({ loading: true })
-    if (id) {
-      this.bankService.get(id)
-        .then((response) => {
-          const model = new BankEditModel(
-            response.data.id, (response.data.label) ? response.data.label : "");
-          console.log(model);
-          this.setState({ model: model, loading: false });
-        })
-        .catch(error => { alert("error"); }
-        );
+    async componentDidMount() {
+      try {
+      const { data: model } = await this.bankService.get(this.props.id)
+    
+      this.setState({ model , loading: false })
+    } catch (ex) { alert("An unexpected error occurred.") }
+  
     }
-  }
+  // fetchData = (id) => {
+  //   this.setState({ loading: true })
+  //   if (id) {
+  //     this.bankService.get(id)
+  //       .then((response) => {
+  //         const model = new BankEditModel(
+  //           response.data.id, (response.data.label) ? response.data.label : "");
+  //         console.log(model);
+  //         this.setState({ model: model, loading: false });
+  //       })
+  //       .catch(error => { alert("error"); }
+  //       );
+  //   }
+  // }
 
-  componentDidMount = () => this.fetchData(this.props.id)
+  // componentDidMount = () => this.fetchData(this.props.id)
 
 
   render() {
