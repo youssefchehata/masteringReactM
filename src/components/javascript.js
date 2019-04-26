@@ -42,6 +42,34 @@ class Javascript extends Component {
   };
 
   render() {
+    // ----------this Keyword-------------
+const video = {
+  title:"a",
+  play(){
+    console.log(this)
+  }
+};
+function video(title){
+  this.title=title
+  console.log(this)
+}
+const v = new video("b")//{}
+// ------------cloning-------------
+const circle={
+  radius:1,
+  draw(){
+    console.log("draw")
+  }
+}
+// const another={}
+// for(let key in circle)
+// another[key]=circle[key]
+// -----
+// const another = Object.assign({color:'yellow'},circle);
+// console.log(another)
+// -----
+const another ={...circle}
+// -------------------
     //string , Numbers , Boolean , null , undefined
     const age = 30;
     const name = `youssef age :`;
