@@ -8,17 +8,9 @@ import BankService from "../../../../../../services/bank.service";
 
 
 class Info extends Component {
-  state = {
+  state = { model: {}, submitted: false, error: false, loading: true, };
 
-    model: {},
-    submitted: false,
-    error: false,
-    loading: true,
-
-
-  };
   bankService = new BankService()
-
 
   async componentDidMount() {
     try {
@@ -45,64 +37,31 @@ class Info extends Component {
       this.bankService
         .put(this.state.model)
 
-        .then((response) => {
-          alert("submitted")
-
-        })
+        .then((response) => { alert("submitted") })
         .catch(error => {
           this.setState({ error: true });
-          alert(
-            'error'
-          )
+          alert( 'error' )
         });
     }
   }
 
   render() {
-    // console.log(this.state.model);
-    const { onClick } = this.props;
     const { model } = this.state;
-
-
     return (
-
       <div className="container" >
         <LoadingOverlay text="Loading ..." active={this.state.loading} spinner={<Spinner name="ball-clip-rotate" color="white" />} >
-
           <div className="row">
             <div className="col">
-              <form  submitted={this.state.submitted}>
-                <div className="form-group">
-                  <label>Nom d'utilisateur</label>
-                  <input type="text" className="form-control" name="label" value={model.label} onChange={this.handleChange} />
-                </div>
-              </form>
-              <div className="form-group">
-                <label>Nom</label>
-                <input type="text" className="form-control" name="code" value={model.code} onChange={this.handleChange} />
-              </div>
-              <div className="form-group">
-                <label>Prénom</label>
-                <input type="text" className="form-control" name="label" value={model.label} onChange={this.handleChange} />
-              </div>
-              <div className="form-group">
-                <label>Téléphone</label>
-                <input type="text" className="form-control" name="label" value={model.label} onChange={this.handleChange} />
-              </div>
-              <div className="form-group">
-                <label>Email</label>
-                <input type="email" className="form-control" name="label" value={model.label} onChange={this.handleChange} />
-              </div>
-              <div className="form-group">
-                <label>Position</label>
-                <input type="text" className="form-control" name="label" value={model.label} onChange={this.handleChange} />
-              </div>
+<form  submitted={this.state.submitted}>
+<div className="form-group">
+  <label>Nom d'utilisateur</label>
+  <input type="text" className="form-control" name="label" value={model.label} onChange={this.handleChange} />
+</div>
+</form>
 
-              <div className="form-group">
-
-                <button type="button" className="btn btn-custom-yellow" onClick={this.handleSubmit} > Enregistrer </button>
-
-              </div>
+<div className="form-group">
+<button type="button" className="btn btn-custom-yellow" onClick={this.handleSubmit} > Enregistrer </button>
+</div>
             </div>
           </div>
 

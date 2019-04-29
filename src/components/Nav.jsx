@@ -24,6 +24,7 @@ class Nav extends Component {
                 < Link className="dropdown-item" to="/navs/navsViews"           > navsView     </Link >
                 < Link className="dropdown-item" to="/toggle/toggleView_1"      > toggleView_1 </Link >
                 < Link className="dropdown-item" to="/checkBox/CheckBoxView"    >CheckBoxView </Link >
+                < Link className="dropdown-item" to="/contextAPI/ContextApi"    >ContextAPI </Link >
               </div>
             </div>
             {/* Bootstrap */}

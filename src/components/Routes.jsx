@@ -24,6 +24,7 @@ import toggleView_1   from "./toggle/toggleView_1"          ;
 import CheckBoxView   from "./checkBox/CheckBoxView"        ;
 import SemanticUi     from "./semantic-ui/SemanticUi"       ;
 import ShowTable      from "./table/showtable"              ;
+import ContextApi      from "./contextAPI/ContextApi"       ;
 
 class Routes extends Component {
   render() {
@@ -54,6 +55,7 @@ class Routes extends Component {
           <Route exact path="/navs/navsViews"                component={NavsViews      } />
           <Route exact path="/toggle/toggleView_1"           component={toggleView_1   } />
           <Route exact path="/checkBox/CheckBoxView"         component={CheckBoxView   } />
+          <Route exact path="/contextAPI/ContextApi"         component={ContextApi  } />
           <Route exact path="/"                              component={App            } />
           {/* <Route path="/movies/:id" component={Movie} /> */}
           <Redirect to="/not_found" />

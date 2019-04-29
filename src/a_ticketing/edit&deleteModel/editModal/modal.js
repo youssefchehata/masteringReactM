@@ -5,7 +5,13 @@ import MotDePasse from "./UserEditTab/MotDePasse";
 import Groupes    from "./UserEditTab/Groupes"   ;
 
 class UserEdit extends Component {
-  state = { showCreate: this.props.showCreate, model: "", filter: this.props.filter, submitted: false, error: false, loading: true };
+  state = { 
+    showCreate: this.props.showCreate,
+     model: "",
+      filter: this.props.filter,
+       submitted: false,
+        error: false,
+         loading: true };
  
   handleChange = e => { this.setState({ [e.target.name]: e.target.value }); };
 
