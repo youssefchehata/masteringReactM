@@ -1,21 +1,26 @@
 import React, { Component } from "react";
-import Modal      from "react-bootstrap/Modal"   ;
-import Info       from "./UserEditTab/Info"      ;
+import Modal from "react-bootstrap/Modal";
+
+import { Link } from "react-router-dom";
+import Info from "./UserEditTab/Info";
 import MotDePasse from "./UserEditTab/MotDePasse";
-import Groupes    from "./UserEditTab/Groupes"   ;
+import Groupes from "./UserEditTab/Groupes";
 
 class UserEdit extends Component {
-  state = { 
+  state = {
     showCreate: this.props.showCreate,
-     model: "",
-      filter: this.props.filter,
-       submitted: false,
-        error: false,
-         loading: true };
- 
-  handleChange = e => { this.setState({ [e.target.name]: e.target.value }); };
+    model: "",
+    filter: this.props.filter,
+    submitted: false,
+    error: false,
+    loading: true
+  };
 
-  closeModal = () => { this.props.handleHide(); };
+ 
+  
+  // -----------------------------------------
+
+  
 
   componentWillReceiveProps = nextProps => {
     this.setState({ filter: nextProps.filter });
@@ -31,10 +36,11 @@ class UserEdit extends Component {
   };
 
   render() {
-    const { submitted, model } = this.state;
+    const { showCreate, model } = this.state;
+   const {handleHide,handleShow}=this.props
     return (
 
-<Modal show={this.state.showCreate} onHide={this.props.handleHide} onShow={this.props.handleShow} dialogClassName="modal-lg" aria-labelledby="payment-create" >
+<Modal show={showCreate} onHide={handleHide} onShow={handleShow} dialogClassName="modal-lg" aria-labelledby="payment-create" >
 <Modal.Header closeButton>
 <Modal.Title id="client-agence-edit">
 <h5 className="title-14 mb-0"> <span className="title-13">Modifier Utilisateur :</span> {model.raisonSocial} </h5>
@@ -50,9 +56,10 @@ class UserEdit extends Component {
 </div>
 </nav>
 <div className="tab-content" id="nav-tabContent">
-<div className="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"><Info id={this.props.id} onClick={this.handleSubmit} model={this.state.model} onChange={this.handleChange} /></div>
+<div className="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+<Info id={this.props.id} handleHide={this.props.handleHide} refresh={this.props.handlePagination }/></div>
 <div className="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"><MotDePasse onClick={this.handleSubmit} model={this.state.model} onChange={this.handleChange} /></div>
-<div className="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab"><Groupes onClick={this.handleSubmit} model={this.state.model} /></div>
+<div className="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab"><Groupes onClick={this.handleSubmit} model={this.state.model} onChange={this.handleChange}/></div>
 </div>
 </Modal.Body>
         {/* ------------------- */}

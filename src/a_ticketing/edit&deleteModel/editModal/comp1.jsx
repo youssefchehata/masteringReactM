@@ -8,9 +8,17 @@ import BankService from "../../../../../../services/bank.service";
 
 
 class Info extends Component {
-  state = { model: {}, submitted: false, error: false, loading: true, };
+  state = {
 
+    model: {},
+    submitted: false,
+    error: false,
+    loading: true,
+
+
+  };
   bankService = new BankService()
+
 
   async componentDidMount() {
     try {
@@ -27,7 +35,7 @@ class Info extends Component {
     model[e.target.name]=e.target.value
     this.setState({  model })
    };
-  
+
   // -----------submit-------------
   handleSubmit = (e) => {
 
@@ -37,31 +45,48 @@ class Info extends Component {
       this.bankService
         .put(this.state.model)
 
-        .then((response) => { alert("submitted") })
-        .catch(error => {
+        .then((response) => {
+          alert("submitted")
+            /* alert updated successfully */
+            this.props.handleHide();//hide modal
+            this.props.refresh()//refresh list
+        })
+          .catch(error => {
           this.setState({ error: true });
-          alert( 'error' )
+          alert(
+            'error'
+          )
         });
     }
   }
 
+
   render() {
+    console.log(this.props.refrech);
+   
     const { model } = this.state;
+
+
     return (
+
       <div className="container" >
         <LoadingOverlay text="Loading ..." active={this.state.loading} spinner={<Spinner name="ball-clip-rotate" color="white" />} >
+
           <div className="row">
             <div className="col">
-<form  submitted={this.state.submitted}>
-<div className="form-group">
-  <label>Nom d'utilisateur</label>
-  <input type="text" className="form-control" name="label" value={model.label} onChange={this.handleChange} />
-</div>
-</form>
+              <form  submitted={this.state.submitted}>
+                <div className="form-group">
+                  <label>Nom d'utilisateur</label>
+                  <input type="text" className="form-control" name="label" value={model.label} onChange={this.handleChange} />
+                </div>
+              </form>
+              
 
-<div className="form-group">
-<button type="button" className="btn btn-custom-yellow" onClick={this.handleSubmit} > Enregistrer </button>
-</div>
+              <div className="form-group">
+
+                <button type="button" className="btn btn-custom-yellow" onClick={this.handleSubmit} > Enregistrer </button>
+
+              </div>
             </div>
           </div>
 
