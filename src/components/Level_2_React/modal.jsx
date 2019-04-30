@@ -6,16 +6,14 @@ export default class Modal extends Component {
     return (
       <React.Fragment>
            {on && (
-     <div className='div'>
-          
-<div class='card'>
-  <button onClick={toggle}>
-    close
- </button>
-  <div>{children}</div>
- </div>
-<div className='div' onClick={toggle} />
-</div> 
+    <div className='div'>
+    <div class='card'>
+    <button className="btn-info"  onClick={toggle}>close</button>
+     
+      <div>{children}</div>
+    </div>
+    <div className='div' onClick={toggle} />
+  </div>
         )}
       </React.Fragment>
     );

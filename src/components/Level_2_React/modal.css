@@ -1,4 +1,4 @@
-/* .div{
+.div{
     position: absolute;
     top: 0;
     left: 0;
@@ -24,11 +24,15 @@
     z-index: 10;
     margin-bottom: 100px;
 }
-.button{
+/* .button{
     position: absolute;
   top: 0;
   right: 0;
   border: none;
   background: transparent;
   padding: 10px;
+  width: max-content;
 } */
+.btn-info{
+    width: max-content;
+}
