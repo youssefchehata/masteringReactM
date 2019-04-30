@@ -1,14 +1,22 @@
 import React, { Component, Fragment } from 'react';
+import ToggleOne from './toggleOne'        ;
+import Show_hide from './show_hide'        ;
+import Toggle    from './toggleRenderProps';
+import Portal    from './../../portal'     ;
 
-import ToggleOne from './toggleOne';
-import Show_hide from './show_hide';
-import Toggle from './toggleRenderProps';
 
 import Search from './search';
+
 class toggleView_1 extends Component {
   render() {
     return (
       <div className="container">
+
+      <Portal>
+        <h1>i'm in a portal! "root_portal"</h1>
+      </Portal>
+
+      
         <h1>toggleView_1</h1>
         <p>show/hide component reutilisable avec props_children</p>
 
@@ -17,6 +25,7 @@ class toggleView_1 extends Component {
              {({ on, toggle }) => (
             <div>
               <button onClick={toggle}>Show / Hide</button>
+              
               {on && <ToggleOne  />}
             </div>
           )}

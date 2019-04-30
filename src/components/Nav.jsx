@@ -14,9 +14,9 @@ class Nav extends Component {
           <ul className="navbar-nav mr-auto">
 
           {/* Table */}
-            <div class="btn-group">
-              <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" > Table </button>
-              <div class="dropdown-menu">
+            <div className="btn-group">
+              <button type="button" className="btn btn-success dropdown-toggle mr-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  > Table </button>
+              <div className="dropdown-menu">
                 < Link className="dropdown-item" to="/table_sort/table_sort"    > table_sort   </Link >
                 < Link className="dropdown-item" to="/javascript"               > javascript   </Link >
                 < Link className="dropdown-item" to="/modal/modal1/modal_view"  > Modal_view_1 </Link >
@@ -28,9 +28,9 @@ class Nav extends Component {
               </div>
             </div>
             {/* Bootstrap */}
-            <div class="btn-group">
+            <div className="btn-group">
               <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" > Bootstrap </button>
-            <div class="dropdown-menu">
+              <div className="dropdown-menu">
                
              <Link className="dropdown-item" to="/input"      > Inputs     </Link>
              <Link className="dropdown-item" to="/bootstrap"  > Bootstrap  </Link>
@@ -39,17 +39,34 @@ class Nav extends Component {
              <Link className="dropdown-item" to="/card"       > Card       </Link>
              <Link className="dropdown-item" to="/flex"       > Flex       </Link>
              <div role="separator" className="dropdown-divider" />
-             <Link className="dropdown-item" to="/css/cssOne/1"           > Css         </Link>
-             <Link className="dropdown-item" to="/divers"                 > Divers      </Link>
-             <Link className="dropdown-item" to="/semantic-ui/SemanticUi" > semantic-ui </Link> 
+             <Link className="dropdown-item" to="/customers"              > Customers     </Link>
+             <Link className="dropdown-item" to="/css/cssOne/1"           > Css           </Link>
+             <Link className="dropdown-item" to="/divers"                 > Divers        </Link>
+             <Link className="dropdown-item" to="/semantic-ui/SemanticUi" > semantic  -ui </Link> 
 
             </div>
             </div>
 
             <li className="nav-item active"> <Link className="nav-link" to="/table/showtable"> Table <span className="sr-only">(current)</span> </Link> </li>
             <li className="nav-item"> <Link className="nav-link" to="/app"       > Movies     </Link> </li>
-            <li className="nav-item"> <Link className="nav-link" to="/customers" > Customers  </Link> </li>
+            
+            
           
+            <div class="btn-group">
+              <button
+                type="button" className="btn btn-warning dropdown-toggle mr-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+               Level_2_React
+              </button>
+              <div class="dropdown-menu">
+               
+                <Link className="dropdown-item" to="/Level_2_React/Level_2_React" >Level_2_React</Link>
+            
+
+               
+
+              </div>
+              
+            </div>
             <div class="btn-group">
               <button
                 type="button" className="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
