@@ -1,10 +1,24 @@
-import React, { Component } from 'react';
+import React, { Component ,Fragment} from 'react';
+import Toggle from './toggleRenderProps'
+import Modal from './modal'
 class Level_2_React extends Component {
     state = {  }
     render() { 
-        return ( <div>
-            Level_2_React
-        </div> );
+        return ( 
+            <Toggle>
+
+            {({ on, toggle }) => (
+           <Fragment>
+               <button className="btn-warning " onClick={toggle}>login</button>
+
+             <Modal on={on} toggle={toggle} >
+                 childrenhhhhhhhhhhhhhhhhh
+                 jhhhhhhhhhhh$
+                 jojooooooooo modal
+              </Modal>
+           </Fragment>
+         )}
+       </Toggle> );
     }
 }
  
