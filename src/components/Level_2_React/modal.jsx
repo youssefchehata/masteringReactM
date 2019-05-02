@@ -18,13 +18,11 @@ export default class Modal extends Component {
              <button type="button" className="btn btn-warning " onClick={toggle}><span aria-hidden="true">&times;</span></button>
               </div>
              <div className="col-12"> <div>{children}</div> </div>
-              <hr/>
-          
-             
-             
+                       
+                  
              </div>
-            
-            </div>
+             
+                        </div>
          
               
              

@@ -28,8 +28,9 @@ class Level_2_React extends Component {
 
 
                   </div>
+                  
                 </div>
-
+                <hr/>   
                 <button type="button" class="btn btn-primary mr-2">Save changes</button>
               </div>
             </Modal>
