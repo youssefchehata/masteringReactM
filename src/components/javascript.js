@@ -92,5 +92,12 @@ const another ={...circle}
     );
   }
 }
+// ----------------------------------
+// decimalNumber=(value) =>{
+//   return (
+//     value===0 ? "0": Number.parseFloat(value).toFixed(3))
+//     console.log(this.decimalNumber)
+// }
 
+// ----------------------------------
 export default Javascript;
