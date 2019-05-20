@@ -18,7 +18,7 @@ const CssOne = () => {
         </div>
         </div>
         css1
-     
+      {/* <div className="logo width: 50px; height: 50px"  style={{backgroundImage: `url(${comingsoon}` }}><h1>"Coming..."</h1></div> */}
         </div>
      );
 }
