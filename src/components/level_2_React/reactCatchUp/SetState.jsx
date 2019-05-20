@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 class SetState extends Component {
   state = {
     show: true,
-    counter: 1
+    counter: 1,
+    isButtonDisabled:false
   };
 //   ------------------
 //   toggle = () => {
@@ -38,6 +39,11 @@ toggle = () => {
 //   };
 
 //   -----------------------------------
+handleClick = () => {
+  this.setState({ isButtonDisabled: true });
+  setTimeout(() => this.setState({ isButtonDisabled: false }), 3000);
+};
+
   render() {
     return (
       <div className="container">
@@ -54,6 +60,17 @@ toggle = () => {
           </button>
           <p>{this.state.counter}</p>
         </div>
+        <button
+              type="button "
+              disabled={this.state.isButtonDisabled}
+              className="btn btn-custom-yellow "
+              onClick={e => { 
+                //  this.handleSubmit(e);
+                 this.handleClick();
+                 }}
+              >
+              Enregistrer
+            </button>
       </div>
     );
   }
