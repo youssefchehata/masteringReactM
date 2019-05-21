@@ -32,11 +32,11 @@ toggle = () => {
 //     this.setState({ counter: this.state.counter + 1 });
 //   };
 //   -------------------------------
-// count = () => {
-//     this.setState(state=>{
-//         return { counter: this.state.counter + 1 }
-//     });
-//   };
+count = () => {
+    this.setState(state=>{
+        return { counter: this.state.counter + 1 }
+    });
+  };
 
 //   -----------------------------------
 handleClick = () => {
