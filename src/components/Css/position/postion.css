@@ -1,0 +1,21 @@
+body {
+    margin: 10px;
+}
+body { 
+    background-image: url('bg.svg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center ; 
+    background-size: 100%;
+   z-index: 1;
+    
+  }
+.third{
+  position:relative;
+}
+
+.test{
+  position: absolute;
+  top:120;
+  left:-15px;
+}

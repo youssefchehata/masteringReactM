@@ -27,6 +27,7 @@ import ShowTable      from "./table/showtable"                             ;
 import ContextApi     from "./contextAPI/ContextApi"                       ;
 import Level_2_React  from './level_2_React/level_tow_React/level_2_React' ;
 import ReactCatchUp   from './level_2_React/reactCatchUp/reactCatchUp'     ;
+import Position   from './Css/position/position'     ;
 
 class Routes extends Component {
   render() {
@@ -60,6 +61,7 @@ class Routes extends Component {
           <Route exact path="/contextAPI/ContextApi"                       component={ContextApi     } />
           <Route exact path="/level_2_React/level_tow_React/level_2_React" component={Level_2_React  } />
           <Route exact path="/src/components/level_2_React/reactCatchUp"   component={ReactCatchUp   } />
+          <Route exact path="/Css/position/position"                       component={Position       } />
 
           <Route exact path="/"                              component={App            } />
           {/* <Route path="/movies/:id" component={Movie} /> */}
