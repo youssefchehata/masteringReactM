@@ -92,7 +92,7 @@ const another ={...circle}
     );
   }
 }
-// ----------------------------------
+// ----------------decimal number------------------
 // decimalNumber=(value) =>{
 //   return (
 //     value===0 ? "0": Number.parseFloat(value).toFixed(3))
