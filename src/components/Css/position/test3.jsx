@@ -64,7 +64,7 @@ class Test3 extends Component {
       </div>
         <div className="d-flex   justify-content-center  " style={{margin:'0% 19%'}}>
         
-        <button>Next</button>
+        <button className='Rectangle-525'>Next</button>
         
                   
       </div>

@@ -118,3 +118,14 @@
     color: #333333;
   
   }
+  .Rectangle-525 {
+
+    width: 529px;
+  
+    height: 31px;
+  
+    border-radius: 4px;
+  
+    background-image: linear-gradient(100deg, #f1be1a, #e2a125);
+    margin-top: 31px;
+  }
