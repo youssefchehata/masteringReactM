@@ -27,8 +27,10 @@ import ShowTable      from "./table/showtable"                             ;
 import ContextApi     from "./contextAPI/ContextApi"                       ;
 import Level_2_React  from './level_2_React/level_tow_React/level_2_React' ;
 import ReactCatchUp   from './level_2_React/reactCatchUp/reactCatchUp'     ;
-import Position   from './Css/position/position'     ;
-
+import Position       from './Css/position/position'                       ;
+import Id_Link        from './level_2_React/level_tow_React/id_Link'       ;
+import Params         from './level_2_React/level_tow_React/params'        ;
+import RoutesMosh     from './level_2_React/routesMosh/routesMosh'         ;
 class Routes extends Component {
   render() {
     return (
@@ -62,10 +64,17 @@ class Routes extends Component {
           <Route exact path="/level_2_React/level_tow_React/level_2_React" component={Level_2_React  } />
           <Route exact path="/src/components/level_2_React/reactCatchUp"   component={ReactCatchUp   } />
           <Route exact path="/Css/position/position"                       component={Position       } />
+          <Route exact path="/level_2_React/level_tow_React/id_Link"       component={Id_Link        } />
+          <Route       path="/level_tow_React/:id"                         component={Id_Link        } />
+          <Route       path="/id_Link/:id"                                 component={Params         } />
+          <Route exact path="/level_2_React/routesMosh/routesMosh"         component={RoutesMosh     } />
 
-          <Route exact path="/"                              component={App            } />
-          {/* <Route path="/movies/:id" component={Movie} /> */}
+          <Route exact path="/"                                            component={App            } />
+
           <Redirect to="/not_found" />
+          
+         
+          
         </Switch>
       </div>
     );

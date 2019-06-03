@@ -1,10 +1,29 @@
 import React, { Component, Fragment } from 'react';
 import Toggle from './toggleRenderProps'
 import Modal from './modal'
+import { Link } from "react-router-dom";
+
+
 class Level_2_React extends Component {
   state = {}
   render() {
+    const {url}= this.props.match
     return (
+      <React.Fragment>
+   
+   <div className='d-flex flex-column justify-content-center'>
+     
+      <Link to={`${url}/id_Link`}>one </Link>
+
+      <Link to="Id_Link">tow </Link>
+     
+      
+   
+   </div>
+  
+   
+   
+   
       <Toggle>
 
         {({ on, toggle }) => (
@@ -36,7 +55,10 @@ class Level_2_React extends Component {
             </Modal>
           </Fragment>
         )}
-      </Toggle>);
+      </Toggle>
+      </React.Fragment>
+      )
+      
   }
 }
 

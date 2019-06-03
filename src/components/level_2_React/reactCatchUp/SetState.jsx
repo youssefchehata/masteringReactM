@@ -5,6 +5,8 @@ class SetState extends Component {
     counter: 1,
     isButtonDisabled:false
   };
+
+
 //   ------------------
 //   toggle = () => {
 //     this.setState({ show: !this.state.show });
