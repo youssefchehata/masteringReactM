@@ -30,7 +30,7 @@ import ReactCatchUp   from './level_2_React/reactCatchUp/reactCatchUp'     ;
 import Position       from './Css/position/position'                       ;
 import Id_Link        from './level_2_React/level_tow_React/id_Link'       ;
 import Params         from './level_2_React/level_tow_React/params'        ;
-import ParamRouters        from './level_2_React/routesMosh/paramRoutes'            ;
+import ParamRouters from "./level_2_React/routesMosh/paramRoutes"
 class Routes extends Component {
   render() {
     return (
@@ -65,13 +65,15 @@ class Routes extends Component {
           <Route exact path="/src/components/level_2_React/reactCatchUp"   component={ReactCatchUp   } />
           <Route exact path="/Css/position/position"                       component={Position       } />
           <Route exact path="/level_2_React/level_tow_React/id_Link"       component={Id_Link        } />
+          <Route exact path="/level_2_React/routesMosh/paramRoutes"       component={ParamRouters        } />
+          
           <Route       path="/level_tow_React/:id"                         component={Id_Link        } />
           <Route       path="/id_Link/:id"                                 component={Params         } />
-          <Route exact path="/level_2_React/routesMosh/paramRoutes"       component={ParamRouters  } />
+          
 
           <Route exact path="/"                                            component={App            } />
 
-          {/* <Redirect to="/not_found" /> */}
+          <Redirect to="/not_found" />
           
          
           
