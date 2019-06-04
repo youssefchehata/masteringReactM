@@ -2,7 +2,7 @@ import React from 'react'
 const Page1 = () => {
     return (
         <div className="div container">
-        routes configuration with Mosh :page1
+        routes configuration with Mosh :nested route
     </div> 
     )
 }
