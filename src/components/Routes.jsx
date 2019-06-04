@@ -78,7 +78,7 @@ class Routes extends Component {
 
           <Route exact path="/"                                            component={App            } />
 
-          {/* <Redirect to="/not_found" /> */}
+          <Redirect to="/not_found" />
           
          
           

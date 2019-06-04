@@ -6,7 +6,7 @@ class ProductDetails extends Component {
         return ( 
                <div>
             ProductDetails ID:  {match.params.id}
-         {/* <button >save</button> */}
+         <button >save</button>
         </div>
          )
     }
