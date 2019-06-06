@@ -10,7 +10,7 @@ class Search extends Component {
       <p className="lead text-center">Get the lyrics for any song</p>
         <form >
           <input type="text" className="form-control form-control-lg" placeholder="Search..." />
-          <button className="btn btn-primary btn-lg btn-block mb-5" type="submit">
+          <button className="btn btn-primary btn-lg btn-block my-4" type="submit">
           Get Track Lyrics
         </button>
         </form>

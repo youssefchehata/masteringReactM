@@ -35,6 +35,7 @@ import Products       from './level_2_React/routesMosh/products'           ;
 import ProductDetails from './level_2_React/routesMosh/ProductDetails';
 import Page1 from './level_2_React/routesMosh/page1';
 import Tracks from './tracks/tracks';
+import Lyrics from './tracks/layout/lyrics';
 class Routes extends Component {
   render() {
     return (
@@ -73,14 +74,15 @@ class Routes extends Component {
           <Route exact path="/level_2_React/routesMosh/paramRoutes"        component={ParamRouters   } />
           {/* ************************************************************** */}
           <Route path="/products/:id" component={ProductDetails}/>
-          {/* ---------------------------------------------------------------- */}
-          <Route path="/level_2_React/routesMosh/products"
-           render={props=><Products sortBy='neweset'{...props}/>} />
+          
+          <Route path="/level_2_React/routesMosh/products" render={props=><Products sortBy='neweset'{...props}/>} />
           {/* *********************************************************************** */}
           {/* <Route       path="/level_tow_React/:id"                         component={Id_Link        } />
           <Route       path="/id_Link/:id"                                 component={Params         } /> */}
           
           <Route exact path="/tracks/tracks" component={Tracks} />
+          <Route exact path="/ysf/:id" component={Lyrics} />
+          
           <Route exact path="/"                                            component={App            } />
           <Redirect to="/not_found" />
           <Redirect from='/ms'to="/level_2_React/routesMosh/products" />

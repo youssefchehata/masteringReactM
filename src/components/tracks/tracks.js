@@ -7,8 +7,8 @@ import axios from 'axios';
 class Tracks extends Component {
   state = {
     track_list: [
-        // {track:{artist_name:'abc'}},
-        // {track:{artist_name:'123'}},
+        // {track:{track_id:1, artist_name:'abc'}},
+        // {track:{track_id:2, artist_name:'123'}},
     ],
     heading: 'Top 10 Tracks'
   };
@@ -33,19 +33,22 @@ class Tracks extends Component {
     if (track_list.length === 0 || track_list === undefined) return <Spinner />;
     else
       return (
-        <div className="">
-          {/* <Navbar /> */}
+        <React.Fragment>
+           <Navbar />
+        <div className="container">
+        
           <Search />
-          <h3 className="text-center">{heading}</h3>
+          <h3 className="text-center mb-5">{heading}</h3>
+          <div className="row  justify-content-center ">
           {track_list.map(item => (
             <Track key={item.track.track_id} track={item.track} />
           ))}
-          {/* <div className="text-center">
-            {this.state.track_list.map(item => ( <li key={item.id}> {item.track.artist_name}  </li> ))}
-          </div> */}
-           
-        verifier api
         </div>
+        
+        {/* {this.state.track_list.map(item => ( <li key={item.id}> {item.track.artist_name}  </li> ))} */}
+        </div>
+        </React.Fragment>
+         
       );
   }
 }

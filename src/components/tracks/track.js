@@ -1,10 +1,11 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 class Track extends Component {
     state = {}
     render() { 
         const {track}=this.props
         return ( 
-            <div className="col-md-6">
+            <div className="col-md-4">
       <div className="card mb-4 shadow-sm">
         <div className="card-body">
           <h5>{track.artist_name}</h5>
@@ -17,12 +18,8 @@ class Track extends Component {
             </strong>
             : {track.album_name}
           </p>
-          {/* <Link
-            to={`lyrics/track/${track.track_id}`}
-            className="btn btn-dark btn-block"
-          >
-            <i className="fas fa-chevron-right" /> View Lyrics
-          </Link> */}
+          <Link to={`/ysf/${track.track_id}`} className="btn btn-dark btn-block" >
+             <i className="fas fa-chevron-right" /> View Lyrics </Link>
         </div>
       </div>
     </div>
