@@ -7,8 +7,8 @@ import axios from 'axios';
 class Tracks extends Component {
   state = {
     track_list: [
-        {track:{artist_name:'abc'}},
-        {track:{artist_name:'123'}},
+        // {track:{artist_name:'abc'}},
+        // {track:{artist_name:'123'}},
     ],
     heading: 'Top 10 Tracks'
   };
@@ -16,12 +16,12 @@ class Tracks extends Component {
   componentDidMount = () => {
     axios
       .get(
-        ` https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/chart.tracks.get?chart_name=top&page=1&page_size=10&country=us&f_has_lyrics=1&apikey=02b394b42e0e97a4372d9754855b7d37`
+        `https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/chart.tracks.get?page=1&page_size=10&country=us&f_has_lyrics=1&apikey=02b394b42e0e97a4372d9754855b7d37`
         
         )
       .then(res => {
-        console.log(res.data)
-        // this.setState({ track_list: res.data.message.body.track });
+        // console.log(res.data)
+        this.setState({ track_list: res.data.message.body.track_list });
       })
       .catch(err => console.log(err));
   };
@@ -37,14 +37,14 @@ class Tracks extends Component {
           {/* <Navbar /> */}
           <Search />
           <h3 className="text-center">{heading}</h3>
-          {/* {track_list.map(item => (
+          {track_list.map(item => (
             <Track key={item.track.track_id} track={item.track} />
-          ))} */}
-          <div className="text-center">
+          ))}
+          {/* <div className="text-center">
             {this.state.track_list.map(item => ( <li key={item.id}> {item.track.artist_name}  </li> ))}
-          </div>
+          </div> */}
            
-        
+        verifier api
         </div>
       );
   }
