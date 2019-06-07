@@ -60,6 +60,7 @@ class Lyrics extends Component {
           <Link to="/" className="btn btn-dark btn-sm mb-4">
             Go Back
           </Link>
+          <button onClick={()=>{this.props.history.push('/tracks/tracks')}}>props.history.push</button>
           <div className="card ">
             <h5 className="card-header">
               {track.track_name} by
