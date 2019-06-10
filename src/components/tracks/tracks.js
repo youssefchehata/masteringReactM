@@ -15,10 +15,8 @@ class Tracks extends Component {
   // setfilter = (filterlist) => { this.setState({ track_list: filterlist }); };
   
   search = (title) => {
-   
-    let url = `https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.search?q_track=${title}&page_size=10&page=1&s_track_rating=desc&apikey=02b394b42e0e97a4372d9754855b7d37`;
-   
-    axios
+   let url = `https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.search?q_track=${title}&page_size=10&page=1&s_track_rating=desc&apikey=02b394b42e0e97a4372d9754855b7d37`;
+       axios
       .get(url)
       .then(res => {
         // console.log(res.data);
