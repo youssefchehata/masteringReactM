@@ -14,19 +14,10 @@ class Search extends Component {
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
-  handleSubmit = e => {
-    const { trackTitle } = this.state;
-    let url = `https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.search?q_track=${trackTitle}&page_size=10&page=1&s_track_rating=desc&apikey=02b394b42e0e97a4372d9754855b7d37`;
-    e.preventDefault();
-    axios
-      .get(url)
-      .then(res => {
-        // console.log(res.data);
-        this.props.setfilter(res.data.message.body.track_list);
-      })
-      .catch(err => { console.log(err); });
-  };
-
+  handleSubmit=(e)=>{
+ e.preventDefault()
+ this.props.search(this.state.trackTitle)
+  }
   render() {
     console.log(this.state.track_list);
 
