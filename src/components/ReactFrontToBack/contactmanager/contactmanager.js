@@ -11,7 +11,7 @@ import Header from './header';
     render() {
         const {name,email,phone}=this.state
         return (
-            <div>
+            <div className='container'>
                
                <Header
                 branding={'Contact Manager'}
