@@ -31,6 +31,7 @@ const Family = (props) => (
 )
 
 class Person extends Component {
+  
   render() {
     return (
       <div className="person">

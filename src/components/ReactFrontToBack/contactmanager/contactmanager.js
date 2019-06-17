@@ -14,7 +14,7 @@ import Header from './header';
             <div>
                
                <Header
-                // branding={'Contact Manager'}
+                branding={'Contact Manager'}
                 />
                <Contact name={name} email={email}phone={phone} />
             </div>

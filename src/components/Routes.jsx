@@ -29,7 +29,7 @@ import Level_2_React  from './level_2_React/level_tow_React/level_2_React' ;
 import ReactCatchUp   from './level_2_React/reactCatchUp/reactCatchUp'     ;
 import Position       from './Css/position/position'                       ;
 import Id_Link        from './level_2_React/level_tow_React/id_Link'       ;
-import Params         from './level_2_React/level_tow_React/params'        ;
+// import Params         from './level_2_React/level_tow_React/params'        ;
 import ParamRouters   from "./level_2_React/routesMosh/paramRoutes"        ;
 import Products       from './level_2_React/routesMosh/products'           ;
 import ProductDetails from './level_2_React/routesMosh/ProductDetails';
