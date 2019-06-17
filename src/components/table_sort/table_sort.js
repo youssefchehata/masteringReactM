@@ -62,8 +62,8 @@ class Table_sort extends React.Component {
     const id = target.id;
     let allIcon = Array.from(target.parentNode.querySelectorAll('i'));
     allIcon.map(item => {
-      return;
-      item.className = 'fas fa-sort ml-3';
+      return item.className = 'fas fa-sort ml-3'
+      
     });
     let targetIcon = target.querySelector('i');
     if (this.state.orderAsc) {
@@ -88,7 +88,7 @@ class Table_sort extends React.Component {
     });
   };
   next = e => {
-    const { currentPage, totlePage, dates, results } = this.state;
+    const { currentPage, totlePage, results } = this.state;
     let totalPager = Math.ceil(results.length / totlePage);
     if (totalPager === currentPage) return false;
     this.setState({
@@ -104,9 +104,9 @@ class Table_sort extends React.Component {
     this.filter(input, rows);
   };
   filter = (input, rows) => {
-    Array.from(rows).map(row => {
+    Array.from(rows).map(row =>  {
       const text = row.textContent.toLowerCase(),
-        val = input.value.toLowerCase();
+             val = input.value.toLowerCase();
       row.style.display = text.indexOf(val) === -1 ? 'none' : 'table-row';
     });
   };
@@ -143,7 +143,7 @@ class Table_sort extends React.Component {
           <td className="d-inline-block col-12 col-md-2">{val.release_date}</td>
           <td className="d-inline-block col-12 col-md-2">{val.title}</td>
           <td className="d-inline-block col-12 col-md-4">
-            <img
+            <img alt=''
               src={'https://image.tmdb.org/t/p/w500' + val.poster_path}
               className="img-fluid"
             />

@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+
 class Modal extends Component {
     // state = {
     //     showCreate: this.props.showCreate,
@@ -28,7 +29,8 @@ class Modal extends Component {
     render() { 
         // const { submitted, model } = this.state;
         return (
-         " Modal2"
+        <p>" Modal2"</p>
+         
           //   <Modal
           //   show={this.state.showCreate}
           //   onHide={this.props.handleHide}

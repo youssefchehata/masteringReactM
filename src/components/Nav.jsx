@@ -29,7 +29,7 @@ class Nav extends Component {
             </div>
             {/* Bootstrap */}
             <div className="btn-group">
-              <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" > Bootstrap </button>
+              <button type="button" className="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" > Bootstrap </button>
               <div className="dropdown-menu">
                
              <Link className="dropdown-item" to="/input"                 > Inputs     </Link>
@@ -53,12 +53,12 @@ class Nav extends Component {
             
             
           
-            <div class="btn-group">
+            <div className="btn-group">
               <button
                 type="button" className="btn btn-warning dropdown-toggle mr-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                Level_2_React
               </button>
-              <div class="dropdown-menu">
+              <div className="dropdown-menu">
                
                 <Link className="dropdown-item" to="/level_2_React/level_tow_React/level_2_React" >Level_tow_React</Link>
                 <Link className="dropdown-item" to="/src/components/level_2_React/reactCatchUp" >ReactCatch-up</Link>
@@ -72,12 +72,12 @@ class Nav extends Component {
               </div>
               
             </div>
-            <div class="btn-group">
+            <div className="btn-group">
               <button
                 type="button" className="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                 dropdown
               </button>
-              <div class="dropdown-menu">
+              <div className="dropdown-menu">
                
                 <Link className="dropdown-item" to="/axios/axios"                   > axios          </Link>
                 <Link className="dropdown-item" to="/axiosMosh/axiosMosh"           > AxiosMosh      </Link>
