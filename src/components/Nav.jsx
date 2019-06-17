@@ -83,6 +83,7 @@ class Nav extends Component {
                 <Link className="dropdown-item" to="/axiosMosh/axiosMosh"           > AxiosMosh      </Link>
                 <Link className="dropdown-item" to="/props_children/props_children" > props_children </Link>
                 <Link className="dropdown-item" to="/tracks/tracks" > Tracks </Link>
+                <Link className="dropdown-item" to="/ReactFrontToBack/contactmanager/contactmanager" > ContactManager </Link>
 
                
 
