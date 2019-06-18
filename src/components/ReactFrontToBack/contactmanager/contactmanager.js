@@ -1,24 +1,17 @@
-import React, { Component } from 'react'
-import Contact from './contact';
+import React, { Component } from 'react';
+import Contacts from './contacts';
 import Header from './header';
 
- class Contactmanager extends Component {
-     state={
-         name:'jhon Doe',
-         email:'jdoe@gmail.com',
-         phone:'555-555-555'
-     }
-    render() {
-        const {name,email,phone}=this.state
-        return (
-            <div className='container'>
-               
-               <Header
-                branding={'Contact Manager'}
-                />
-               <Contact name={name} email={email}phone={phone} />
-            </div>
-        )
-    }
+class Contactmanager extends Component {
+  
+  render() {
+    
+    return (
+      <div className="container">
+        <Header branding={'Contact Manager'} />
+        <Contacts   />
+      </div>
+    );
+  }
 }
 export default Contactmanager;

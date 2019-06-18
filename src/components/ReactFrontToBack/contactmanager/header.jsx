@@ -21,22 +21,8 @@ const Header = ({ branding }) => {
                   Home
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link
-                  to="/ReactFrontToBack/contactmanager/contactmanager"
-                  className="nav-Link"
-                >
-                  Home
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link
-                  to="/ReactFrontToBack/contactmanager/contactmanager"
-                  className="nav-Link"
-                >
-                  Home
-                </Link>
-              </li>
+         
+         
             </ul>
           </div>
         </a>

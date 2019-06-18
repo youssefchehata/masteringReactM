@@ -7,16 +7,16 @@ class Contact extends Component {
     state = {}
  
     render() { 
-        const {name,email,phone}=this.props
+        const {contact,id}=this.props
         return (
             <div className='card card-body mb-3'>
-                  <h4>{name}</h4>
+                  <h4>{contact.name}</h4>
                   <h4>{this.props.nom}</h4>
             <ul className='list-group'>
-                <li className='list-group-item'>Email:{email}
-                <span class="badge badge-primary badge-pill">14</span>
+                <li className='list-group-item'>Email:{contact.email}
+                <span className="badge badge-primary badge-pill">{id}</span>
                 </li>
-                <li className='list-group-item'>phone: {phone}</li>
+                <li className='list-group-item'>phone: {contact.phone}</li>
             </ul>   
             </div>
        
@@ -24,7 +24,7 @@ class Contact extends Component {
     }
 }
 Contact.defaultProps={
-    nom:'ysf'
+    nom:'defaultProps'
 }
 Contact.prototypes={
     name:PropTypes.string.isRequired,
