@@ -37,6 +37,8 @@ import Page1 from './level_2_React/routesMosh/page1';
 import Tracks from './tracks/tracks';
 import Lyrics from './tracks/layout/lyrics';
 import Contactmanager from './ReactFrontToBack/contactmanager/contactmanager';
+import Redux from './ReactFrontToBack/redux/redux';
+import ContextAPI from "./ReactFrontToBack/contextApi/contextApi";
 class Routes extends Component {
   render() {
     return (
@@ -84,6 +86,8 @@ class Routes extends Component {
           <Route exact path="/tracks/tracks" component={Tracks} />
           <Route exact path="/ysf/:id" component={Lyrics} />
           <Route exact path="/ReactFrontToBack/contactmanager/contactmanager" component={Contactmanager} />
+          <Route exact path="/ReactFrontToBack/redux/redux" component={Redux} />
+          <Route exact path="/ReactFrontToBack/contextApi/contextApi" component={ContextAPI} />
           
           <Route exact path="/"                                            component={App            } />
           <Redirect to="/not_found" />

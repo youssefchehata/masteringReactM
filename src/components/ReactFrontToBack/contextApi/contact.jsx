@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import {Consumer} from './context';
+
 
 
 
@@ -12,17 +14,22 @@ this.setState(state=>{
     return{showContactInfo:!state.showContactInfo}
 })
  }
- onDeleteClick=()=>{
-     this.props.deleteClickHandler()
+ onDeleteClick=(id,dispatch)=>{
+     dispatch({type:'DELETE_CONTACT',payload:id})
+  
     
  }
     render() { 
         const {contact,id}=this.props
         return (
-            <div className='card card-body mb-3'>
+            <Consumer>
+                {value=>{
+                    const {dispatch}=value
+             return(
+                 <div className='card card-body mb-3'>
                   <h4>{contact.name}
                   <i className='fas fa-sort-down'onClick={this.onShowClick}style={{cursor:'pointer'}}/>
-                  <i className='fas fa-times'onClick={this.onDeleteClick} style={{color:'red',cursor:'pointer',float:'right'}} />
+                  <i className='fas fa-times'onClick={this.onDeleteClick.bind(this,id,dispatch)} style={{color:'red',cursor:'pointer',float:'right'}} />
                   </h4>
                   <h4>{this.props.nom}</h4>
                   {this.state.showContactInfo?<ul className='list-group'>
@@ -33,6 +40,15 @@ this.setState(state=>{
             </ul>  :null }
             
             </div>
+             )
+         }
+        
+        }
+            </Consumer>
+         
+
+
+            
        
         )
     }

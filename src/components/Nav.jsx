@@ -23,8 +23,8 @@ class Nav extends Component {
                 < Link className="dropdown-item" to="/modal/modal2/modal_view2" > Modal_view_2 </Link >
                 < Link className="dropdown-item" to="/navs/navsViews"           > navsView     </Link >
                 < Link className="dropdown-item" to="/toggle/toggleView_1"      > toggleView_1 </Link >
-                < Link className="dropdown-item" to="/checkBox/CheckBoxView"    >CheckBoxView </Link >
-                < Link className="dropdown-item" to="/contextAPI/ContextApi"    >ContextAPI </Link >
+                < Link className="dropdown-item" to="/checkBox/CheckBoxView"    > CheckBoxView </Link >
+                < Link className="dropdown-item" to="/contextAPI/ContextApi"    > ContextAPI   </Link >
               </div>
             </div>
             {/* Bootstrap */}
@@ -60,10 +60,10 @@ class Nav extends Component {
               </button>
               <div className="dropdown-menu">
                
-                <Link className="dropdown-item" to="/level_2_React/level_tow_React/level_2_React" >Level_tow_React</Link>
-                <Link className="dropdown-item" to="/src/components/level_2_React/reactCatchUp" >ReactCatch-up</Link>
-                <Link className="dropdown-item" to="/level_2_React/routesMosh/paramRoutes" >Router</Link>
-                <Link className="dropdown-item" to="/level_2_React/routesMosh/products" >Products</Link>
+                <Link className="dropdown-item" to="/level_2_React/level_tow_React/level_2_React" >Level_tow_React   </Link>
+                <Link className="dropdown-item" to="/src/components/level_2_React/reactCatchUp"   >ReactCatch     -up</Link>
+                <Link className="dropdown-item" to="/level_2_React/routesMosh/paramRoutes"        >Router            </Link>
+                <Link className="dropdown-item" to="/level_2_React/routesMosh/products"           >Products          </Link>
                
             
 
@@ -79,12 +79,13 @@ class Nav extends Component {
               </button>
               <div className="dropdown-menu">
                
-                <Link className="dropdown-item" to="/axios/axios"                   > axios          </Link>
-                <Link className="dropdown-item" to="/axiosMosh/axiosMosh"           > AxiosMosh      </Link>
-                <Link className="dropdown-item" to="/props_children/props_children" > props_children </Link>
-                <Link className="dropdown-item" to="/tracks/tracks" > Tracks </Link>
+                <Link className="dropdown-item" to="/axios/axios"                                    > axios          </Link>
+                <Link className="dropdown-item" to="/axiosMosh/axiosMosh"                            > AxiosMosh      </Link>
+                <Link className="dropdown-item" to="/props_children/props_children"                  > props_children </Link>
+                <Link className="dropdown-item" to="/tracks/tracks"                                  > Tracks         </Link>
                 <Link className="dropdown-item" to="/ReactFrontToBack/contactmanager/contactmanager" > ContactManager </Link>
-
+                <Link className="dropdown-item" to="/ReactFrontToBack/contextApi/contextApi"         > ContextAPI     </Link>
+                <Link className="dropdown-item" to="/ReactFrontToBack/redux/redux"                   > redux          </Link>
                
 
               </div>
