@@ -38,7 +38,7 @@ export default class Provider extends Component {
           phone: '222-555-555'
         }
       ],
-      dispatch:action=>this.setState(state=>
+      dispatch:action=>this.setState(state =>
         reducer(state,action))
    }
     render() {

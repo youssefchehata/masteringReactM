@@ -29,10 +29,11 @@ class Contacts extends Component {
          return (
            <React.Fragment>
              {contacts.map(contact => (
-               <Contact key={contact.id}
+               <Contact 
+               key={contact.id}
               contact={contact}
                id={contact.id}
-               deleteClickHandler={this.deleteClickHandler.bind(this,contact.id)}
+              //  deleteClickHandler={this.deleteClickHandler.bind(this,contact.id)}
                />
              ))}
              }
