@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Contacts from './contacts';
-import Header from './header';
+import Contacts from './contacts/contacts';
+import Header from './layout/header';
 import Provider from './context';
-
+import AddContact from './contacts/addContact';
 
 class ContextAPI extends Component {
   render() {
@@ -10,6 +10,7 @@ class ContextAPI extends Component {
       <Provider>
         <div className="container">
           <Header branding={'Contact Manager'} />
+          <AddContact />
           <Contacts />
         </div>
       </Provider>
