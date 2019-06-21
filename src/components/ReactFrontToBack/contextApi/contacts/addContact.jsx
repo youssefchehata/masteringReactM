@@ -6,7 +6,8 @@ class AddContact extends Component {
   state = {
     name: '',
     email: '',
-    phone: ''
+    phone: '',
+    error: {}
   };
   onChange = e => {
     this.setState({ [e.target.name]: e.target.value });
@@ -14,12 +15,21 @@ class AddContact extends Component {
   onSubmit = (dispatch, e) => {
     e.preventDefault();
     // console.log(this.state);
-    const { name, email, phone } = this.state;
+    const { name, email, phone, error } = this.state;
+
     const newContact = { id: uuid(), name, email, phone };
+    //error
+    if (email===''){this.setState({error:{email:'email is required'}})}
+    if (phone===''){this.setState({error:{phone:'phone is required'}})}
+   
     dispatch({ type: 'ADD_CONTACT', payload: newContact });
+    //clear input
+    this.setState({name:'',email:'',phone:'',error:''})
+    
   };
+
   render() {
-    const { name, email, phone } = this.state;
+    const { name, email, phone, error } = this.state;
     return (
       <Consumer>
         {value => {
@@ -28,7 +38,9 @@ class AddContact extends Component {
             <div className="card mb-3">
               <div className="card-header">Add Contact</div>
               <div className="card-body">
-                <form onSubmit={this.onSubmit.bind(this, dispatch)}>
+                <form 
+                // noValidate 
+                onSubmit={this.onSubmit.bind(this, dispatch)}>
                   <TextInputGroup
                     label={'Name'}
                     htmlFor={'name'}
@@ -41,18 +53,21 @@ class AddContact extends Component {
 
                   <div className="form-group">
                     <label htmlFor="email">email</label>
-                    <input
+                    <input 
                       type="email"
                       name="email"
                       value={email}
                       onChange={this.onChange}
+                     
                       className="form-control form-control-lg"
                       placeholder="Enter email"
                     />
+                   {error.email}
                   </div>
                   <div className="form-group">
                     <label htmlFor="phone">phone</label>
-                    <input
+                    <input 
+                    // required
                       type="text"
                       name="phone"
                       value={phone}
@@ -66,6 +81,11 @@ class AddContact extends Component {
                     value="Add Contact"
                     className="btn btn-light btn-block"
                   />
+                   {email.length === 0 && (
+                      <span style={{ color: 'red' }}>some input is empty</span>
+                    )}
+                    <br />
+                    {email.length > 5 ? 'good' : 'bad'}
                 </form>
               </div>
             </div>

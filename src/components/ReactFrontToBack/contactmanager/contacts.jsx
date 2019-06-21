@@ -39,7 +39,8 @@ class Contacts extends Component {
           <Contact key={contact.id}
          contact={contact}
           id={contact.id}
-          deleteClickHandler={this.deleteClickHandler.bind(this,contact.id)}
+          // deleteClickHandler={this.deleteClickHandler.bind(this,contact.id)}
+          deleteClickHandler={()=>this.deleteClickHandler(contact.id)}
           />
         ))}
         }
