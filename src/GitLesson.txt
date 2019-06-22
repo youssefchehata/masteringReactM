@@ -55,7 +55,17 @@ git push origin Development
 git checkout master =>go master branch to merge
 git merge Development 
 
+exemple:
+git branch => show branch
+git branch scroll => create new branch named scroll
+git checkout scroll => to go in scroll branch
+git status 
+.....
+git add *
+git commit -m "testingBranch"
+git push origin scroll
 
-
+git checkout master =>go master branch to merge
+git merge Development 
 
 
