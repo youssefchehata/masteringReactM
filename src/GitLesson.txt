@@ -38,6 +38,24 @@ get fork => edit => pull request => from another branch created
 -------------
 alias > snippet 
 git config --global --edit
+---------------
+12 - Learn About Branching And Merging
+git branch => show branch
+git branch scroll => create new branch named scroll
+git checkout scroll => to go in scroll branch
+git branch -d scroll => to delete branch
+git checkout -b DevFeature => create branch and going in directly
+exemple:*****
+git branch -m Development => rename branch
+git status 
+.....
+git add *
+git commit -m "testingBranch"
+git push origin Development  
+git checkout master =>go master branch to merge
+git merge Development 
+
+
 
 
 
