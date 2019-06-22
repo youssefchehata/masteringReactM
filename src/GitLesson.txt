@@ -1,0 +1,24 @@
+repository 
+branch
+local repo
+remote repo
+commit
+clone
+push
+pull
+pull request =>tell other about your change
+=>create repository for every prject
+=> create a new branch for every feature
+******
+git status
+git add *
+git status
+git reset head youssef.js ->cancel uploading file
+git commit -m "xxxxx"
+git branch -> branchName
+          *master
+git remote -v  -> remoteName 
+git push remoteName branchName
+         origin     master
+
+
