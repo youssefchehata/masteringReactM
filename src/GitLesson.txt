@@ -20,5 +20,24 @@ git branch -> branchName
 git remote -v  -> remoteName 
 git push remoteName branchName
          origin     master
+access to another repository for edit 
+git pull origin 
+
+configuration  :git help config by exemple ==> git config --global user.email
+
+====>08 - Generate And Test Github Public Key
+
+ssh-keygen -t rsa -b 4096 -c "jsf.ch6@gmail.com"
+cat ~/.ssh/id_rsa.pub
+to verify access to my git account: ssh -T git@github
+
+===>09 - Create Repository From Existing Project
+
+na3mal fork i can edit=> pull request from master bransh directly after accept najm delete fork
+get fork => edit => pull request => from another branch created 
+-------------
+alias > snippet 
+git config --global --edit
+
 
 
