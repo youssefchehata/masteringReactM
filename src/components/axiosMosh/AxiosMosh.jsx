@@ -195,7 +195,11 @@ class httpMosh extends Component {
     const renderPageNumbers = pageNumbers.map(number => {
       return (
         <div class="pagination d-inline-flex">
-          <ul className="page-item p-1  ">
+          <ul
+            className={
+              number === currentPage ? 'page-item p-1 active' : 'page-item p-1'
+            }
+          >
             <li
               className="page-link"
               key={number}
@@ -211,12 +215,11 @@ class httpMosh extends Component {
     return (
       <React.Fragment>
         <div>
-          <ul>{/* {renderTodos} */}</ul>
-          <ul id="page-numbers">{renderPageNumbers}</ul>
+          <ul>{renderPageNumbers}</ul>
         </div>
-        {/* {this.state.loading===true? <h1>Loading...</h1>:"hhh" } */}
+
         {this.state.loading && <h1>Loading...</h1>}
-        {this.state.loading.posts}
+
         <ToastContainer />
         <button className="btn btn-primary" onClick={this.handleAdd}>
           Add
