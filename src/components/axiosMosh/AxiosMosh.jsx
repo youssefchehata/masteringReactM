@@ -1,13 +1,13 @@
-import React, { Component } from "react";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import config from "./config.json";
-import http from "./services/httpService";
+import React, { Component } from 'react';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import config from './config.json';
+import http from './services/httpService';
 // import { Table, Thead, Tbody, Tr, Th, Td } from 'react-amazing-table-sorter';
 // import _ from "lodash";
 
 // import SortBy from './SortBy';
-import axios from "axios";
+import axios from 'axios';
 
 // const apiEndpoint = "https://jsonplaceholder.typicode.com/posts";
 // rce
@@ -16,33 +16,44 @@ class httpMosh extends Component {
     posts: [],
     // sortColumn: { path: "title", order: "asc" },
     direction: {
-      title: "asc"
+      title: 'asc'
     },
-    orderBy: "",
+    orderBy: '',
     orderAsc: true,
-    loading:false
+    loading: false,
+    currentPage: 1,
+    postsPerPage: 10
+  };
+  handleClick = event => {
+    this.setState({
+      currentPage: Number(event.target.id)
+    });
   };
 
   // async componentDidMount() {
   //   const { data: posts } = await http.get(config.apiEndpoint);
   //   this.setState({ posts });
   // }
-  componentDidMount=()=> {
-    this.setState({loading:true})
-    let url=`https://jsonplaceholder.typicode.com/posts`
-   axios
-   .get(url)
-   .then(res=>{
-    //  console.log(res.data);
-     this.setState({posts:res.data})
-   })
-  //  this.setState({loading:!this.state.loading})
-   .catch(err=>{console.log(err);})
-  }
+
+  componentDidMount = () => {
+    let url = `https://jsonplaceholder.typicode.com/posts`;
+    axios
+      .get(url)
+
+      .then(res => {
+        //  console.log(res.data);
+        this.setState({ posts: res.data });
+      })
+
+      .catch(err => {
+        // console.log(err);
+        this.setState({ loading: !this.state.loading });
+      });
+  };
 
   handleAdd = async () => {
     // console.log('Add');
-    const obj = { title: "a", body: "b" };
+    const obj = { title: 'a', body: 'b' };
     const { data: post } = await http.post(config.apiEndpoint, obj);
     //    console.log(post)
     const posts = [post, ...this.state.posts];
@@ -51,9 +62,9 @@ class httpMosh extends Component {
 
   handleUpdate = async post => {
     // console.log('Update', post);
-    post.title = "UPDATED";
+    post.title = 'UPDATED';
 
-    const { data } = await http.put(config.apiEndpoint + "/" + post.id, post);
+    const { data } = await http.put(config.apiEndpoint + '/' + post.id, post);
     // http.patch(apiEndpoint + "/" + post.id, { title: post.title });
     const posts = [...this.state.posts];
 
@@ -71,10 +82,10 @@ class httpMosh extends Component {
 
     try {
       // await http.delete(apiEndpoint + "/" + post.id);
-      await http.delete(config.apiEndpoint + "/");
+      await http.delete(config.apiEndpoint + '/');
     } catch (ex) {
       if (ex.response && ex.response.status === 404)
-        alert("This post has already been deleted.");
+        alert('This post has already been deleted.');
 
       this.setState({ posts: originalPosts });
     }
@@ -85,12 +96,12 @@ class httpMosh extends Component {
 
     this.setState({
       data: data.sort((a, b) =>
-        this.state.direction[key] === "asc"
+        this.state.direction[key] === 'asc'
           ? parseFloat(a[key]) - parseFloat(b[key])
           : parseFloat(b[key]) - parseFloat(a[key])
       ),
       direction: {
-        [key]: this.state.direction[key] === "asc" ? "desc" : "asc"
+        [key]: this.state.direction[key] === 'asc' ? 'desc' : 'asc'
       }
     });
   };
@@ -100,12 +111,12 @@ class httpMosh extends Component {
 
     this.setState({
       data: data.sort((a, b) =>
-        this.state.direction[key] === "asc"
+        this.state.direction[key] === 'asc'
           ? a[key].localeCompare(b[key])
           : b[key].localeCompare(a[key])
       ),
       direction: {
-        [key]: this.state.direction[key] === "asc" ? "desc" : "asc"
+        [key]: this.state.direction[key] === 'asc' ? 'desc' : 'asc'
       }
     });
   };
@@ -149,15 +160,15 @@ class httpMosh extends Component {
     const { posts = [] } = this.state;
     const target = e.target;
     const id = target.id;
-    let allIcon = Array.from(target.parentNode.querySelectorAll("i"));
+    let allIcon = Array.from(target.parentNode.querySelectorAll('i'));
     allIcon.map(item => {
-      item.className = "fas fa-sort ml-3";
+      item.className = 'fas fa-sort ml-3';
     });
-    let targetIcon = target.querySelector("i");
+    let targetIcon = target.querySelector('i');
     if (this.state.orderAsc) {
-      targetIcon.className = "fas fa-caret-down ml-3";
+      targetIcon.className = 'fas fa-caret-down ml-3';
     } else {
-      targetIcon.className = "fas fa-caret-up ml-3";
+      targetIcon.className = 'fas fa-caret-up ml-3';
     }
 
     this.setState({
@@ -167,11 +178,45 @@ class httpMosh extends Component {
     });
   };
   render() {
-    if(this.state.loading=true)
-    return <h1>loading...</h1>
-    else
+    //get current posts
+    const { posts, currentPage, postsPerPage } = this.state;
+
+    // Logic for displaying todos
+    const indexOfLastTodo = currentPage * postsPerPage;
+    const indexOfFirstTodo = indexOfLastTodo - postsPerPage;
+    const currentPosts = posts.slice(indexOfFirstTodo, indexOfLastTodo);
+
+    // Logic for displaying page numbers
+    const pageNumbers = [];
+    for (let i = 1; i <= Math.ceil(posts.length / postsPerPage); i++) {
+      pageNumbers.push(i);
+    }
+
+    const renderPageNumbers = pageNumbers.map(number => {
+      return (
+        <div class="pagination d-inline-flex">
+          <ul className="page-item p-1  ">
+            <li
+              className="page-link"
+              key={number}
+              id={number}
+              onClick={this.handleClick}
+            >
+              {number}
+            </li>
+          </ul>
+        </div>
+      );
+    });
     return (
       <React.Fragment>
+        <div>
+          <ul>{/* {renderTodos} */}</ul>
+          <ul id="page-numbers">{renderPageNumbers}</ul>
+        </div>
+        {/* {this.state.loading===true? <h1>Loading...</h1>:"hhh" } */}
+        {this.state.loading && <h1>Loading...</h1>}
+        {this.state.loading.posts}
         <ToastContainer />
         <button className="btn btn-primary" onClick={this.handleAdd}>
           Add
@@ -179,19 +224,21 @@ class httpMosh extends Component {
         <table className="table">
           <thead>
             <tr>
-              <th 
-              style={{ cursor: "pointer" }}
-              id="title" onClick={this.sorter}>
+              <th
+                style={{ cursor: 'pointer' }}
+                id="title"
+                onClick={this.sorter}
+              >
                 sorter <i class="fas fa-sort ml-3" />
               </th>
               <th>
-                <button onClick={() => this.onSort("title")}>onSort</button>
+                <button onClick={() => this.onSort('title')}>onSort</button>
               </th>
               <th>
-                <button onClick={() => this.sortBy("id")}>sortBy</button>
+                <button onClick={() => this.sortBy('id')}>sortBy</button>
               </th>
               <th>
-                <button onClick={() => this.sort("id")}>sort</button>
+                <button onClick={() => this.sort('id')}>sort</button>
               </th>
 
               <th>Update</th>
@@ -199,7 +246,7 @@ class httpMosh extends Component {
             </tr>
           </thead>
           <tbody>
-            {this.state.posts.map(post => (
+            {currentPosts.map(post => (
               <tr key={post.id}>
                 <td>{post.title}</td>
                 <td>{post.title}</td>
