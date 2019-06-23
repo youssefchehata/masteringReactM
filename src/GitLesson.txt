@@ -46,7 +46,7 @@ git checkout scroll => to go in scroll branch
 git branch -d scroll => to delete branch
 git checkout -b DevFeature => create branch and going in directly
 exemple:*****
-git branch -m Development => rename branch
+git branch -m Development => rename branch emmm
 git status 
 .....
 git add *
