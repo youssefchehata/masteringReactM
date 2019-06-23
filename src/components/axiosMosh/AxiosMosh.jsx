@@ -7,6 +7,7 @@ import http from "./services/httpService";
 // import _ from "lodash";
 
 // import SortBy from './SortBy';
+import axios from "axios";
 
 // const apiEndpoint = "https://jsonplaceholder.typicode.com/posts";
 // rce
@@ -18,12 +19,25 @@ class httpMosh extends Component {
       title: "asc"
     },
     orderBy: "",
-    orderAsc: true
+    orderAsc: true,
+    loading:false
   };
 
-  async componentDidMount() {
-    const { data: posts } = await http.get(config.apiEndpoint);
-    this.setState({ posts });
+  // async componentDidMount() {
+  //   const { data: posts } = await http.get(config.apiEndpoint);
+  //   this.setState({ posts });
+  // }
+  componentDidMount=()=> {
+    this.setState({loading:true})
+    let url=`https://jsonplaceholder.typicode.com/posts`
+   axios
+   .get(url)
+   .then(res=>{
+    //  console.log(res.data);
+     this.setState({posts:res.data})
+   })
+  //  this.setState({loading:!this.state.loading})
+   .catch(err=>{console.log(err);})
   }
 
   handleAdd = async () => {
@@ -153,6 +167,9 @@ class httpMosh extends Component {
     });
   };
   render() {
+    if(this.state.loading=true)
+    return <h1>loading...</h1>
+    else
     return (
       <React.Fragment>
         <ToastContainer />
