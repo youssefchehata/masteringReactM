@@ -39,6 +39,7 @@ import Lyrics from './tracks/layout/lyrics';
 import Contactmanager from './ReactFrontToBack/contactmanager/contactmanager';
 import Redux from './ReactFrontToBack/redux/redux';
 import ContextAPI from "./ReactFrontToBack/contextApi/contextApi";
+import AboutParams from './ReactFrontToBack/contextApi/aboutParams';
 class Routes extends Component {
   render() {
     return (
@@ -85,6 +86,7 @@ class Routes extends Component {
           
           <Route exact path="/tracks/tracks" component={Tracks} />
           <Route exact path="/ysf/:id" component={Lyrics} />
+          <Route exact path="/traversy/:id" component={AboutParams} />
           <Route exact path="/ReactFrontToBack/contactmanager/contactmanager" component={Contactmanager} />
           <Route exact path="/ReactFrontToBack/redux/redux" component={Redux} />
           <Route exact path="/ReactFrontToBack/contextApi/contextApi" component={ContextAPI} />
