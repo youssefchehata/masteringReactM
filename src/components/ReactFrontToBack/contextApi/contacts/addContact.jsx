@@ -35,6 +35,8 @@ class AddContact extends Component {
     dispatch({ type: 'ADD_CONTACT', payload: newContact });
     //clear input
     this.setState({ name: '', email: '', phone: '', error: {} });
+    //return to another path
+    // this.props.history.push('/ReactFrontToBack/redux/redux'); to verifiy not work
   };
   classes = () => {
     const { name } = this.state;

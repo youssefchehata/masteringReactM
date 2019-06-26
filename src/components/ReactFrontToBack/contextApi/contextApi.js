@@ -5,13 +5,17 @@ import Provider from './context';
 import AddContact from './contacts/addContact';
 import AddContact1 from './contacts/addContact1';
 
+import { Link } from 'react-router-dom';
+
 class ContextAPI extends Component {
   // App component
-  render() {
+  render(props) {
     return (
       <Provider>
         <div className="container">
           <div className="row">
+          <Link to={`/traversy/1`} className="btn btn-dark btn-block" >
+             <i className="fas fa-chevron-right" /> View About </Link>
             <div className="col-12">
               <Header branding={'Contact Manager'} />
             </div>
