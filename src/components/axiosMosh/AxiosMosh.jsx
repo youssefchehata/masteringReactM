@@ -3,11 +3,13 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import config from './config.json';
 import http from './services/httpService';
+
 // import { Table, Thead, Tbody, Tr, Th, Td } from 'react-amazing-table-sorter';
 // import _ from "lodash";
 
 // import SortBy from './SortBy';
 import axios from 'axios';
+import Pagination from './pagination';
 
 // const apiEndpoint = "https://jsonplaceholder.typicode.com/posts";
 // rce
@@ -24,9 +26,9 @@ class httpMosh extends Component {
     currentPage: 1,
     postsPerPage: 10
   };
-  handleClick = event => {
+  handleClick = e => {
     this.setState({
-      currentPage: Number(event.target.id)
+      currentPage: Number(e.target.id)
     });
   };
 
@@ -209,10 +211,12 @@ class httpMosh extends Component {
       );
     });
     return (
-      <React.Fragment>
+      
+<React.Fragment>
         <div>
           <ul>{/* {renderTodos} */}</ul>
-          <ul id="page-numbers">{renderPageNumbers}</ul>
+          {/* <ul id="page-numbers">{renderPageNumbers}</ul> */}
+          <Pagination posts={posts} postsPerPage={postsPerPage}handleClick={this.handleClick}paginate={this.paginate}/>
         </div>
         {/* {this.state.loading===true? <h1>Loading...</h1>:"hhh" } */}
         {this.state.loading && <h1>Loading...</h1>}
@@ -274,6 +278,8 @@ class httpMosh extends Component {
           </tbody>
         </table>
       </React.Fragment>
+      
+      
     );
   }
 }
