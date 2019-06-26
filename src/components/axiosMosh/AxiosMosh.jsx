@@ -221,7 +221,7 @@ class httpMosh extends Component {
             handleClick={this.handleClick}
             
           />
-          <PaginationTraversy 
+          <PaginationTraversy  
           postsPerPage={postsPerPage}
           totalPosts={posts.length}
           paginate={this.paginate}
