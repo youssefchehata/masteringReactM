@@ -217,23 +217,7 @@ class httpMosh extends Component {
     return (
       <React.Fragment>
         <div>
-<<<<<<< HEAD
           <ul>{renderPageNumbers}</ul>
-=======
-          <ul>{/* {renderTodos} */}</ul>
-          {/* <ul id="page-numbers">{renderPageNumbers}</ul> */}
-          <Pagination
-            posts={posts}
-            postsPerPage={postsPerPage}
-            handleClick={this.handleClick}
-            
-          />
-          <PaginationTraversy 
-          postsPerPage={postsPerPage}
-          totalPosts={posts.length}
-          paginate={this.paginate}
-          />
->>>>>>> newbranch
         </div>
 
         {this.state.loading && <h1>Loading...</h1>}
