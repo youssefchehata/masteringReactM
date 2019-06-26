@@ -3,11 +3,14 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import config from './config.json';
 import http from './services/httpService';
+
 // import { Table, Thead, Tbody, Tr, Th, Td } from 'react-amazing-table-sorter';
 // import _ from "lodash";
 
 // import SortBy from './SortBy';
 import axios from 'axios';
+import Pagination from './pagination';
+import PaginationTraversy from './paginationTraversy.jsx';
 
 // const apiEndpoint = "https://jsonplaceholder.typicode.com/posts";
 // rce
@@ -24,11 +27,9 @@ class httpMosh extends Component {
     currentPage: 1,
     postsPerPage: 10
   };
-  handleClick = event => {
-    this.setState({
-      currentPage: Number(event.target.id)
-    });
-  };
+   // Change page
+   paginate =(Number)=>  { this.setState({currentPage:Number})};
+  handleClick = e => { this.setState({ currentPage: Number(e.target.id) }); };
 
   // async componentDidMount() {
   //   const { data: posts } = await http.get(config.apiEndpoint);
@@ -185,7 +186,8 @@ class httpMosh extends Component {
     const indexOfLastTodo = currentPage * postsPerPage;
     const indexOfFirstTodo = indexOfLastTodo - postsPerPage;
     const currentPosts = posts.slice(indexOfFirstTodo, indexOfLastTodo);
-
+  
+ 
     // Logic for displaying page numbers
     const pageNumbers = [];
     for (let i = 1; i <= Math.ceil(posts.length / postsPerPage); i++) {
@@ -215,7 +217,23 @@ class httpMosh extends Component {
     return (
       <React.Fragment>
         <div>
+<<<<<<< HEAD
           <ul>{renderPageNumbers}</ul>
+=======
+          <ul>{/* {renderTodos} */}</ul>
+          {/* <ul id="page-numbers">{renderPageNumbers}</ul> */}
+          <Pagination
+            posts={posts}
+            postsPerPage={postsPerPage}
+            handleClick={this.handleClick}
+            
+          />
+          <PaginationTraversy 
+          postsPerPage={postsPerPage}
+          totalPosts={posts.length}
+          paginate={this.paginate}
+          />
+>>>>>>> newbranch
         </div>
 
         {this.state.loading && <h1>Loading...</h1>}
