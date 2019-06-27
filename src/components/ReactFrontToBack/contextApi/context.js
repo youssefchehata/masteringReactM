@@ -22,7 +22,14 @@ const reducer = (state, action) => {
 
 export default class Provider extends Component {
   state = {
-    contacts: [],
+    contacts: [
+      // {
+      //   id: 1,
+      //   name: 'jhon Doe',
+      //   email: 'jdoe@gmail.com',
+      //   phone: '555-555-555'
+      // },
+    ],
     dispatch: action => this.setState(state => reducer(state, action))
   };
   componentDidMount(){
