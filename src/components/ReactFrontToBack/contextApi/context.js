@@ -32,13 +32,28 @@ export default class Provider extends Component {
     ],
     dispatch: action => this.setState(state => reducer(state, action))
   };
-  componentDidMount(){
-    axios
-    .get(`https://jsonplaceholder.typicode.com/users`)
-    .then(res=>{
-      console.log(res);
+  // componentDidMount(){
+  //   axios
+  //   .get(`https://jsonplaceholder.typicode.com/users`)
+  //   .then(res=>{
+  //     console.log(res);
+  //     this.setState({contacts:res.data})
+  //   })
+  //   .catch(err=>{
+  //     console.log(err);
+  //   })
+  // }
+  //  async componentDidMount() {
+  //     const { data: contacts } = await axios.get(`https://jsonplaceholder.typicode.com/users`);
+  //     this.setState({ contacts });
+  //   }
+  async componentDidMount() {
+   const  res= await axios
+   .get(`https://jsonplaceholder.typicode.com/users`)
+   
+   
       this.setState({contacts:res.data})
-    })
+    
     .catch(err=>{
       console.log(err);
     })
