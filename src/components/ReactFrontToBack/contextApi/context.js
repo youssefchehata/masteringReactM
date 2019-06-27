@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import  axios  from 'axios';
+import axios from 'axios';
 const Context = React.createContext();
 const reducer = (state, action) => {
   switch (action.type) {
@@ -48,15 +48,11 @@ export default class Provider extends Component {
   //     this.setState({ contacts });
   //   }
   async componentDidMount() {
-   const  res= await axios
-   .get(`https://jsonplaceholder.typicode.com/users`)
-   
-   
-      this.setState({contacts:res.data})
-    
-    .catch(err=>{
+    const res = await axios.get(`https://jsonplaceholder.typicode.com/users`);
+    this.setState({ contacts: res.data })
+    .catch(err => {
       console.log(err);
-    })
+    });
   }
   render() {
     return (
