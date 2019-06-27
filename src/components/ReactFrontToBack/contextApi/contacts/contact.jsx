@@ -11,12 +11,16 @@ this.setState(state=>{
     return{showContactInfo:!state.showContactInfo}
 })
  }
- onDeleteClick=(id,dispatch)=>{
-
-    axios
+//  onDeleteClick=(id,dispatch)=>{
+//     axios
+//     .delete(`https://jsonplaceholder.typicode.com/users/${id}`)
+//     .then(res=>dispatch({type:'DELETE_CONTACT',payload:id}))
+//     //  dispatch({type:'DELETE_CONTACT',payload:id})
+//        }
+ onDeleteClick= async(id,dispatch)=>{
+   await axios
     .delete(`https://jsonplaceholder.typicode.com/users/${id}`)
-    .then(res=>dispatch({type:'DELETE_CONTACT',payload:id}))
-    //  dispatch({type:'DELETE_CONTACT',payload:id})
+         dispatch({type:'DELETE_CONTACT',payload:id})
        }
     render() { 
         const {contact,id}=this.props
