@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-
+import axios from 'axios'
 
 
 class Contact extends Component {
@@ -12,10 +12,17 @@ this.setState(state=>{
     return{showContactInfo:!state.showContactInfo}
 })
  }
- onDeleteClick=()=>{
-     this.props.deleteClickHandler()
+ onDeleteClick=(id)=>{
+
+    axios
+    .delete(`https://jsonplaceholder.typicode.com/users/${id}`)
+    .then(res=>this.props.deleteClickHandler(id))
     
- }
+       }
+//  onDeleteClick=()=>{
+//      this.props.deleteClickHandler()
+    
+//  }
     render() { 
         const {contact,id}=this.props
         return (
