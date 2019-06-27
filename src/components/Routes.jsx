@@ -40,6 +40,7 @@ import Contactmanager from './ReactFrontToBack/contactmanager/contactmanager';
 import Redux from './ReactFrontToBack/redux/redux';
 import ContextAPI from "./ReactFrontToBack/contextApi/contextApi";
 import AboutParams from './ReactFrontToBack/contextApi/aboutParams';
+import NotFound from './ReactFrontToBack/contextApi/layout/NotFound';
 class Routes extends Component {
   render() {
     return (
@@ -90,7 +91,7 @@ class Routes extends Component {
           <Route exact path="/ReactFrontToBack/contactmanager/contactmanager" component={Contactmanager} />
           <Route exact path="/ReactFrontToBack/redux/redux" component={Redux} />
           <Route exact path="/ReactFrontToBack/contextApi/contextApi" component={ContextAPI} />
-          
+          <Route component={NotFound} />
           <Route exact path="/"                                            component={App            } />
           <Redirect to="/not_found" />
           <Redirect from='/ms'to="/level_2_React/routesMosh/products" />

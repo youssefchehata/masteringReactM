@@ -5,8 +5,8 @@ const AboutParams = (props) => {
         <div className="container">
            <h1>about Params</h1> 
             <h2>{props.match.params.id}</h2>
-            <button className="btn"
-           onClick={()=>{props.history.push('/ReactFrontToBack/contextApi/contextApi')}}>props.history.push
+            <button className="btn btn-warning"
+           onClick={()=>{props.history.push('/')}}>props.history.push
             
                 back
             </button>
