@@ -43,7 +43,7 @@ class AddContact extends Component {
     //clear input
     this.setState({ name: '', email: '', phone: '', error: {} });
     //return to another path
-    // this.props.history.push('/ReactFrontToBack/redux/redux'); to verifiy not work
+    // this.props.history.push('/tracks/tracks');
   };
   classes = () => {
     const { name } = this.state;
@@ -66,6 +66,7 @@ class AddContact extends Component {
       <Consumer>
         {value => {
           const { dispatch } = value;
+          console.log(value)
           return (
             <div className="card mb-3">
               <div className="card-header">Add Contact</div>

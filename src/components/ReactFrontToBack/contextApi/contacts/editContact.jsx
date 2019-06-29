@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import  Consumer  from '../context';
+import  {Consumer}  from '../context';
 // import uuid from 'uuid';
 import axios from 'axios'
 import TextInputGroup from '../layout/textInputGroup';
@@ -13,14 +13,23 @@ class EditContact extends Component {
   onChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
-  onSubmit =async  (dispatch, e) => {
+//  async componentDidMount() {
+//    const {id}=this.props.match.params
+//     const res = await axios.get(`https://jsonplaceholder.typicode.com/users/${id}`);
+//    const contact = res.data
+//     this.setState({ name:contact.name,email:contact.email,phone:contact.phone, });
+//   }
+ async componentDidMount() {
+  const {id}=this.props.match.params
+    const { data: contact } = await axios.get(`https://jsonplaceholder.typicode.com/users/${id}`);
+    this.setState({ name:contact.name,email:contact.email,phone:contact.phone, });
+  }
+  onSubmit = async (dispatch, e) => {
     e.preventDefault();
     // console.log(this.state);
     const { name, email, phone } = this.state;
 
-    const newContact = { 
-      // id: uuid(),
-       name, email, phone };
+    
     //error
     if (name === '') {
       this.setState({ error: { name: 'name is required' } });
@@ -34,15 +43,33 @@ class EditContact extends Component {
       this.setState({ error: { phone: 'phone is required' } });
       return;
     }
+    const updContact = {
+      name,
+      email,
+      phone
+    };
 
-   await axios
-   .post(`https://jsonplaceholder.typicode.com/users/`,newContact)
-  //  .then(res=>dispatch({ type: 'ADD_CONTACT', payload: res.data }))
-    dispatch({ type: 'ADD_CONTACT', payload: newContact });
-    //clear input
-    this.setState({ name: '', email: '', phone: '', error: {} });
-    //return to another path
-    // this.props.history.push('/ReactFrontToBack/redux/redux'); to verifiy not work
+    const { id } = this.props.match.params;
+
+    // const res = await axios.put(
+    //   `https://jsonplaceholder.typicode.com/users/${id}`,
+    //   updContact
+    // );
+    const {data} = await axios.put(
+      `https://jsonplaceholder.typicode.com/users/${id}`,
+      updContact
+    );
+
+    dispatch({ type: 'UPDATE_CONTACT', payload: data });
+
+    // Clear State
+    this.setState({
+      name: '',
+      email: '',
+      phone: '',
+      errors: {}
+    });
+    this.props.history.push('/ReactFrontToBack/contextApi/contextApi');
   };
   classes = () => {
     const { name } = this.state;
@@ -65,6 +92,7 @@ class EditContact extends Component {
       <Consumer>
         {value => {
           const { dispatch } = value;
+          console.log(value)
           return (
             <div className="card mb-3">
               <div className="card-header">Edit Contact</div>
@@ -127,7 +155,8 @@ class EditContact extends Component {
               </div>
             </div>
           );
-        }}
+        }
+      }
       </Consumer>
     );
   }
