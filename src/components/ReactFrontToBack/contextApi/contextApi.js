@@ -23,22 +23,16 @@ class ContextAPI extends Component {
             <div className="col-12">
               <Header branding={'Contact Manager'} />
             </div>
-            <div className="col-md-3">
+            <div className="col-md-4">
               <AddContact1 />
             </div>
-            <div className="col-md-3">
+            <div className="col-md-4">
               <AddContact />
             </div>
-            <div className="col-md-3">
+            <div className="col-md-4">
               <Contacts />
             </div>
-            <div className="col-md-3">
-             
-                {/* <Routes>
-                  <Route exact path="/edit/:id" component={EditContact} />
-                </Routes> */}
-             
-            </div>
+       
           </div>
         </div>
       </Provider>

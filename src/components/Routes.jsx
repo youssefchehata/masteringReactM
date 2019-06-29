@@ -98,7 +98,8 @@ class Routes extends Component {
             <Route exact path="/edit/:id" component={EditContact} />
           </Provider>
           <Route component={NotFound} />
-          <Route exact path="/"                                            component={App            } />
+
+          <Route exact path="/"                                            component={App } />
           <Redirect to="/not_found" />
           <Redirect from='/ms'to="/level_2_React/routesMosh/products" />
           
