@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/youssefchehata/masteringReactM/precache-manifest.935386f5ed594f64d8268c17b689e330.js"
+  "/masteringReactM/precache-manifest.1f2488de7432e140a592a91cdb007880.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/youssefchehata/masteringReactM/index.html", {
+workbox.routing.registerNavigationRoute("/masteringReactM/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
