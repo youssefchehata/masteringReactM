@@ -43,17 +43,17 @@ class Javascript extends Component {
 
   render() {
     // ----------this Keyword-------------
-const video = {
-  title:"a",
-  play(){
-    console.log(this)
-  }
-};
-function video(title){
-  this.title=title
-  console.log(this)
-}
-const v = new video("b")//{}
+// const video = {
+//   title:"a",
+//   play(){
+//     console.log(this)
+//   }
+// };
+// function video(title){
+//   this.title=title
+//   console.log(this)
+// }
+// const v = new video("b")//{}
 // ------------cloning-------------
 const circle={
   radius:1,
