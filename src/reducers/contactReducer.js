@@ -13,7 +13,20 @@
   import { GET_CONTACTS } from '../actions/types';
   
   const INITIAL_STATE = {
-
+    contacts: [
+        {
+          id: 1,
+          name: 'jhonny Doeeo',
+          email: 'jdoe@gmail.com',
+          phone: '555-555-555'
+        },
+        {
+          id: 2,
+          name: 'aa y!y',
+          email: 'oo@gmail.com',
+          phone: '222-555-555'
+        },
+      ]
   };
   
   /**
