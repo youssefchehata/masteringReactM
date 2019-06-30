@@ -43,6 +43,7 @@ import AboutParams from './ReactFrontToBack/contextApi/aboutParams';
 import NotFound from './ReactFrontToBack/contextApi/layout/NotFound';
 import EditContact from './ReactFrontToBack/contextApi/contacts/editContact';
 import Provider from './ReactFrontToBack/contextApi/context'
+import EditContactRedux from './ReactFrontToBack/redux/editContactRedux';
 class Routes extends Component {
   render() {
     return (
@@ -93,6 +94,9 @@ class Routes extends Component {
           <Route exact path="/ReactFrontToBack/contactmanager/contactmanager" component={Contactmanager} />
           <Route exact path="/ReactFrontToBack/redux/redux" component={Redux} />
           <Route exact path="/ReactFrontToBack/contextApi/contextApi" component={ContextAPI} />
+          
+
+          <Route exact path="/EditRedux/:id" component={EditContactRedux} />
           
           <Provider>
             <Route exact path="/edit/:id" component={EditContact} />
