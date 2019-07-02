@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import uuid from 'uuid';
+// import uuid from 'uuid';
 // import axios from 'axios'
 import TextInputGroup from '../contextApi/layout/textInputGroup';
 import { connect } from 'react-redux';
@@ -36,7 +36,7 @@ class AddContact extends Component {
     }
 
     const newContact = {
-      id: uuid(),
+      // id: uuid(),
       name,
       email,
       phone
