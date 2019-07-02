@@ -1,6 +1,6 @@
 
 import {  GET_CONTACTS,DELETE_CONTACT,ADD_CONTACT } from './types';
-//rn thunk
+//rn thunk rn action
 export const getContacts = () => {
     return (dispatch) => {
         dispatch({
@@ -19,11 +19,14 @@ export const deleteContact = (id) => {
         });
     };
 };
-export const addContact = (contact) => {
+
+
+
+export const  addContact= (contact) => {
     return (dispatch) => {
         dispatch({
             payload:contact ,
-            type: ADD_CONTACT,
+            type:ADD_CONTACT ,
         });
     };
 };

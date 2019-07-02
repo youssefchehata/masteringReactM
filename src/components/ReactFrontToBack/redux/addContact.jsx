@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import uuid from 'uuid';
 // import axios from 'axios'
 import TextInputGroup from '../contextApi/layout/textInputGroup';
-import { addContact } from '../../../actions/contactsActions';
 import { connect } from 'react-redux';
+import { addContact } from '../../../actions/contactsActions';
 import PropTypes from 'prop-types';
 
 class AddContact extends Component {
@@ -138,7 +138,7 @@ class AddContact extends Component {
     );
   }
 }
-AddContact.propTypes = {
+AddContact.prototypes = {
   addContact: PropTypes.func.isRequired
 };
 export default connect(
