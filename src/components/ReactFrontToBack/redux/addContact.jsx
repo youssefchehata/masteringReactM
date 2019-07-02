@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
-// import uuid from 'uuid';
-import axios from 'axios'
+import uuid from 'uuid';
+// import axios from 'axios'
 import TextInputGroup from '../contextApi/layout/textInputGroup';
+import { addContact } from '../../../actions/contactsActions';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+
 class AddContact extends Component {
   state = {
     name: '',
@@ -12,14 +16,11 @@ class AddContact extends Component {
   onChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
-  onSubmit =  ( e) => {
+  onSubmit = e => {
     e.preventDefault();
     // console.log(this.state);
-    const { name, email, phone, error } = this.state;
+    const { name, email, phone } = this.state;
 
-    const newContact = { 
-      // id: uuid(),
-       name, email, phone };
     //error
     if (name === '') {
       this.setState({ error: { name: 'name is required' } });
@@ -34,6 +35,20 @@ class AddContact extends Component {
       return;
     }
 
+    const newContact = {
+      id: uuid(),
+      name,
+      email,
+      phone
+    };
+    this.props.addContact(newContact);
+    // Clear State
+    this.setState({
+      name: '',
+      email: '',
+      phone: '',
+      errors: {}
+    });
   };
   classes = () => {
     const { name } = this.state;
@@ -45,7 +60,9 @@ class AddContact extends Component {
     const { phone, email } = this.state;
     let classNameErrorMsg = '';
     classNameErrorMsg +=
-      phone.length === 0 || email.length === 0 ? 'form-control form-control-lg is-invalid' : 'form-control form-control-lg';
+      phone.length === 0 || email.length === 0
+        ? 'form-control form-control-lg is-invalid'
+        : 'form-control form-control-lg';
 
     return classNameErrorMsg;
   };
@@ -58,7 +75,7 @@ class AddContact extends Component {
         <div className="card-body">
           <form
             // noValidate
-            onSubmit={()=>this.onSubmit()}
+            onSubmit={this.onSubmit}
           >
             <TextInputGroup
               label={'Name'}
@@ -98,7 +115,12 @@ class AddContact extends Component {
                 placeholder="Enter phone"
               />
               {error.phone}
-              {phone.length === 0 ?( <div className="invalid-feedback"> phone must be longer than 3 characters </div> )  :null }
+              {phone.length === 0 ? (
+                <div className="invalid-feedback">
+                  {' '}
+                  phone must be longer than 3 characters{' '}
+                </div>
+              ) : null}
             </div>
             <input
               type="submit"
@@ -116,5 +138,10 @@ class AddContact extends Component {
     );
   }
 }
-
-export default AddContact;
+AddContact.propTypes = {
+  addContact: PropTypes.func.isRequired
+};
+export default connect(
+  null,
+  { addContact }
+)(AddContact);
