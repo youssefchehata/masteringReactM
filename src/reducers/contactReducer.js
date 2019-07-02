@@ -39,7 +39,7 @@
           case GET_CONTACTS:
               return {
                   ...state,
-                  // ...action.payload
+                contacts:action.payload
               };
           case DELETE_CONTACT:
               return {
