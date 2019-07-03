@@ -10,7 +10,7 @@
 //         return state;
 //     }
 //   }
-  import { GET_CONTACTS,GET_CONTACT,DELETE_CONTACT,ADD_CONTACT } from '../actions/types';
+  import { GET_CONTACTS,GET_CONTACT,DELETE_CONTACT,ADD_CONTACT,UPDATE_CONTACT } from '../actions/types';
   
   const INITIAL_STATE = {
     contacts: [
@@ -60,6 +60,16 @@
                   contacts:[ action.payload,...state.contacts]
                     
               };
+              case UPDATE_CONTACT:
+                return {
+                  ...state,
+                  contacts: state.contacts.map(
+                    contact =>
+                      contact.id === action.payload.id
+                        ? (contact = action.payload)
+                        : contact
+                  )
+                };
  
           default: return state;
       }

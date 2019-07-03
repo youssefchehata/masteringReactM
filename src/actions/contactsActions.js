@@ -1,4 +1,4 @@
-import { GET_CONTACTS,GET_CONTACT, DELETE_CONTACT, ADD_CONTACT } from './types';
+import { GET_CONTACTS,GET_CONTACT, DELETE_CONTACT, ADD_CONTACT,UPDATE_CONTACT } from './types';
 import axios from 'axios';
 //rn thunk rn action
 
@@ -13,15 +13,19 @@ export const getContacts = () => {
     });
   };
 };
-
 export const getContact = (id) => {
-    return (dispatch) => {
-        dispatch({
-            payload:id ,
-            type:GET_CONTACT ,
-        });
-    };
+  return async dispatch => {
+    let { data: contact } = await axios.get(
+      `https://jsonplaceholder.typicode.com/users/${id}`
+    );
+    dispatch({
+      payload: contact,
+      type: GET_CONTACT
+    });
+  };
 };
+
+
 export const deleteContact = id => {
   return async dispatch => {
        await axios.delete(`https://jsonplaceholder.typicode.com/users/${id}`)
@@ -34,10 +38,21 @@ export const deleteContact = id => {
 
 export const addContact = contact => {
   return async dispatch => {
-      axios.post(`https://jsonplaceholder.typicode.com/users`,contact)
+    await  axios.post(`https://jsonplaceholder.typicode.com/users`,contact)
     dispatch({
       payload: contact,
       type: ADD_CONTACT
+    });
+  };
+};
+
+
+export const updateContact = (contact) => {
+  return async (dispatch) => {
+  const {data} = await axios.put(`https://jsonplaceholder.typicode.com/users/${contact.id}`,contact)
+     dispatch({
+      payload:data ,
+      type:UPDATE_CONTACT ,
     });
   };
 };
