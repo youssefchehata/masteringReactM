@@ -1,4 +1,4 @@
-import { GET_CONTACTS, DELETE_CONTACT, ADD_CONTACT } from './types';
+import { GET_CONTACTS,GET_CONTACT, DELETE_CONTACT, ADD_CONTACT } from './types';
 import axios from 'axios';
 //rn thunk rn action
 
@@ -14,6 +14,14 @@ export const getContacts = () => {
   };
 };
 
+export const getContact = (id) => {
+    return (dispatch) => {
+        dispatch({
+            payload:id ,
+            type:GET_CONTACT ,
+        });
+    };
+};
 export const deleteContact = id => {
   return async dispatch => {
        await axios.delete(`https://jsonplaceholder.typicode.com/users/${id}`)

@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 
 // import uuid from 'uuid';
-import axios from 'axios';
+
 import TextInputGroup from '../contextApi/layout/textInputGroup';
+import { connect } from 'react-redux';
+import { getContact } from '../../../actions/contactsActions';
+import PropTypes from 'prop-types'
+
 class EditContactRedux extends Component {
   state = {
     name: '',
@@ -13,13 +17,20 @@ class EditContactRedux extends Component {
   onChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
-
+// componentWillReceiveProps(nextProps, nextState) {
+//   const {name,email,phone} = nextProps.contact;
+//   this.setState({ name,email,phone });
+// }
+ componentDidMount(){
+  const {id}= this.props.match.params
+  this.props.getContact(id)
+}
 
   onSubmit =  ( e) => {
     e.preventDefault();
     // console.log(this.state);
     const { name, email, phone } = this.state;
-
+        
     
     //error
     if (name === '') {
@@ -125,5 +136,11 @@ class EditContactRedux extends Component {
     );
   }
 }
-
-export default EditContactRedux;
+EditContactRedux.propTypes={
+  contact:PropTypes.object.isRequired,
+  getContact:PropTypes.func.isRequired
+}
+const mapStateToProps = state => ({
+  contact: state.contact.contact
+});
+export default connect(mapStateToProps,{getContact}) (EditContactRedux);

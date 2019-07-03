@@ -10,7 +10,7 @@
 //         return state;
 //     }
 //   }
-  import { GET_CONTACTS,DELETE_CONTACT,ADD_CONTACT } from '../actions/types';
+  import { GET_CONTACTS,GET_CONTACT,DELETE_CONTACT,ADD_CONTACT } from '../actions/types';
   
   const INITIAL_STATE = {
     contacts: [
@@ -26,7 +26,8 @@
           email: 'oo@gmail.com',
           phone: '222-555-555'
         },
-      ]
+      ],
+      contact:{}
   };
   
   /**
@@ -40,6 +41,11 @@
               return {
                   ...state,
                 contacts:action.payload
+              };
+          case GET_CONTACT:
+              return {
+                  ...state,
+                contact:action.payload
               };
           case DELETE_CONTACT:
               return {
