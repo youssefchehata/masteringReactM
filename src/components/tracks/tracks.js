@@ -4,6 +4,7 @@ import Search from './search';
 import Spinner from './layout/Spinner';
 import Navbar from './layout/Navbar';
 import axios from 'axios';
+import service from './service'
 class Tracks extends Component {
   state = {
     track_list: [
@@ -28,9 +29,9 @@ class Tracks extends Component {
 
 
   componentDidMount = () => {
-    axios
+    service
       .get(
-        `https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/chart.tracks.get?page=1&page_size=10&country=us&f_has_lyrics=1&apikey=02b394b42e0e97a4372d9754855b7d37`
+        `/chart.tracks.get?page=1&page_size=10&country=us&f_has_lyrics=1&apikey=02b394b42e0e97a4372d9754855b7d37`
       )
       .then(res => {
         // console.log(res.data)
