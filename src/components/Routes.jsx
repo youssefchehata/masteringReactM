@@ -44,6 +44,7 @@ import NotFound from './ReactFrontToBack/contextApi/layout/NotFound';
 import EditContact from './ReactFrontToBack/contextApi/contacts/editContact';
 import Provider from './ReactFrontToBack/contextApi/context'
 import EditContactRedux from './ReactFrontToBack/redux/editContactRedux';
+import Redux_1 from './dotit/redux-1/Redux_1';
 class Routes extends Component {
   render() {
     return (
@@ -80,6 +81,7 @@ class Routes extends Component {
           <Route exact path="/level_2_React/level_tow_React/id_Link"       component={Id_Link        } />
           <Route exact path="/level_2_React/routesMosh/page1"              component={Page1        } />
           <Route exact path="/level_2_React/routesMosh/paramRoutes"        component={ParamRouters   } />
+          <Route exact path="/dotit/redux-1/Redux_1"        component={Redux_1   } />
           {/* ************************************************************** */}
           <Route path="/products/:id" component={ProductDetails}/>
           

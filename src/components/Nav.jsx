@@ -66,9 +66,12 @@ class Nav extends Component {
                 <Link className="dropdown-item" to="/level_2_React/routesMosh/products"           >Products          </Link>
                
             
-
+              </div>
+              <div className="dropdown-menu">
                
-
+                <Link className="dropdown-item" to="/dotit/redux-1/Redux_1" >Redux_1  </Link>
+               
+            
               </div>
               
             </div>
@@ -90,6 +93,18 @@ class Nav extends Component {
 
               </div>
               
+            </div>
+            <div className="btn-group">
+              <button
+                type="button" className="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                DotIt
+              </button>
+              <div className="dropdown-menu">
+               
+               <Link className="dropdown-item" to="/dotit/redux-1/Redux_1" >Redux_1  </Link>
+              
+           
+             </div>
             </div>
           </ul>
           <form className="form-inline my-2 my-lg-0">
