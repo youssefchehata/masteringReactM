@@ -4,15 +4,17 @@ import { fetchUser } from './actions/fetchUser';
 
 
 class UserHeader extends Component {
-  // componentDidMount() {
-  //   this.props.fetchUser(this.props.userId);
-  // }
+  componentDidMount() {
+    this.props.fetchUser(this.props.userId);
+  }
   render() {
     const user = this.props.users.find(user => user.id === this.props.userId);
     if (!user) {
       return <span>Loading...</span>;
     }
-    return <div>{user.phone}</div>;
+    return <div>
+      {user.phone}
+    </div>;
   }
 }
 
@@ -23,5 +25,5 @@ const mapStateToProps = state => {
   };
 };
 
-export default (UserHeader);
-// connect(mapStateToProps, { fetchUser })
+export default connect(mapStateToProps, { fetchUser }) (UserHeader);
+// 

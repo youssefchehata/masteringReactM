@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import  {fetchTrendingHotel}  from './actions/fetchTrendingHotel';
-// import UserHeader from './UserHeader';
+import UserHeader from './UserHeader';
+
+
 
 class TrendingHotel extends Component {
  
@@ -13,13 +15,13 @@ class TrendingHotel extends Component {
   
 
   ysf=()=>{
-    return(this.props.items.map(item=>{
+    return(this.props.items.map(item => {
       return(
         <div key={item.id}>
 <div>
       <span>{item.title}</span> 
 </div>
-{/* <UserHeader userId={item.userId}/> */}
+<UserHeader userId={item.userId}/>
     
 
    
@@ -28,7 +30,7 @@ class TrendingHotel extends Component {
     }))
   }
   render() {
-    // console.log(this.props.items);
+    console.log(this.props.items);
     return (
       <div className='container-fluid ' style={{ backgroundColor: '#EDEDED' }}>
         <h1 className='text-center p-4'>
@@ -47,7 +49,7 @@ class TrendingHotel extends Component {
   }
 }
 const mapStateToProps = (state) => {
-  console.log(state);
+  // console.log(state);
   return {
     items: state.items
   }
