@@ -8,16 +8,18 @@ import 'font-awesome/css/font-awesome.css';
 import { Provider } from 'react-redux';
 // import store from './store';
 // ---------------
-import {createStore} from 'redux'
+import {createStore, applyMiddleware} from 'redux'
 import  reducers  from './components/dotit/redux-1/song/reducers';
 // ---------------------
+import  thunk  from 'redux-thunk';
+const store = createStore(reducers ,applyMiddleware(thunk))
 ReactDOM.render(
   // <HashRouter>
     <BrowserRouter>
    
     <Provider
-     store={createStore(reducers)}
-    //  store={store}
+    //  store={createStore(reducers)}
+     store={store}
      ><App />
      </Provider>
     </BrowserRouter>
