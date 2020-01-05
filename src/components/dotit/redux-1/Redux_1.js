@@ -16,14 +16,14 @@ class Redux_1 extends Component {
           </div>
         </div>
         <div
-          className='coverflow-auto'
+          className='col-md-8'
           style={{
             overflowY: 'scroll',
             border: '1px solid ',
-            width: '500px',
-            
+            width: '400px',
             height: '500px',
-            // position: 'relative'
+            padding:'22px'
+           
           }}
         >
           <TrendingHotel />
