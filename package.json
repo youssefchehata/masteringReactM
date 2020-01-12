@@ -25,6 +25,7 @@
     "react-spinkit": "^3.0.0",
     "react-toastify": "^4.1.0",
     "redux": "^4.0.1",
+    "redux-form": "^8.2.6",
     "redux-thunk": "^2.3.0",
     "superagent": "^4.1.0",
     "thunk": "0.0.1",
