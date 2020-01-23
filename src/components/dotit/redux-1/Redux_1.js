@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import SongList from './song/SongList';
 import SongDetails from './song/SongDetails';
 import TrendingHotel from './userId/TrendingHotel';
-import GetAll from './getAll&filter/getAll';
+import   GetAllMovies from './getAll&filter/GetAllMovies';
+import HotelsList from './HOTELS&FILTER/hotelsLists';
+ 
 class Redux_1 extends Component {
 
   render() {
@@ -14,9 +16,10 @@ class Redux_1 extends Component {
         </div>
         <div className="row mt-3">
                  
-         <div  className='col-md-6 border' style={{ overflowY: 'scroll',  width: '400px', height: '200px', padding:'22px' }}
+         <div  className='col-md-4 border' style={{ overflowY: 'scroll',  width: '400px', height: '200px', padding:'22px' }}
         > <TrendingHotel /> </div>
-        <div className="col-6"><GetAll/></div>
+        <div className="col-md-4"><GetAllMovies/></div>
+        <div className="col-md-4"><HotelsList/></div>
       </div>
         </div>
 

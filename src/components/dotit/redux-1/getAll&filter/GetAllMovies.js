@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import  {fetchAll}  from './actions/fetchAll';
-import DropDownSelectFilter from './dropdownSelectFilter'
-class GetAll extends Component {
+
+class GetAllMovies extends Component {
     state = {
        
     }
@@ -33,7 +33,7 @@ renderTable =()=>{
         
         return ( 
         <div>
-            <div><DropDownSelectFilter/> </div>
+            
             <div> {this.renderTable()}</div>
            
             </div>
@@ -51,8 +51,8 @@ const mapDispatchToProps = dispatch => {
  const mapStateToProps = (state) => {
     //  console.log("state",state);
      return {
-        movies: state.movies.filtredItems
+        movies: state.movies.ListOfMovies
        
      }
  }
-export default connect(mapStateToProps,mapDispatchToProps) (GetAll);
+export default connect(mapStateToProps,mapDispatchToProps) (GetAllMovies);

@@ -3,6 +3,7 @@ import TrendingHotelReducer from '../../userId/reducerss/TrendingHotelReducer';
 import usersReducer from '../../userId/reducerss/usersReducer';
 import getAllReducers from '../../getAll&filter/reducers/getAllReducers';
 import AllHotelsReducers from '../../getAll&filter/reducers/getAllReducers';
+import AllHotelsReducerss from '../../getAll&filter/reducers/getAllReducers';
 
 const songReducer = () => {
   return [
@@ -25,6 +26,7 @@ export default combineReducers({
   items: TrendingHotelReducer,
   users: usersReducer,
   movies:getAllReducers ,
-  hotels:AllHotelsReducers
+
+ 
   // replaceMe:()=>'aaaa'
 });

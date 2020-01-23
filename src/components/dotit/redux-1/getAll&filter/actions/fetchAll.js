@@ -1,5 +1,5 @@
 
-import { FETCH_ALL, FILTER_BY_VOTE_AVERAGE } from './types';
+import { FETCH_ALL } from './types';
 import moviesApi from '../../apis/moviesApi';
 
 
@@ -10,16 +10,3 @@ export const fetchAll = () => async dispatch => {
 };
 
 
-export const filtreByvote_average = (movies,vote_average) =>  dispatch => {
-
-
-return  dispatch({
-   type: FILTER_BY_VOTE_AVERAGE,
-    payload:{
-        vote_average:vote_average,
-     
-      items:vote_average ===''? movies : movies.filter(a=>a.vote_average.indexOf(vote_average.toUpperCase())>=0 ) }
-   
-  });
-//  console.log('movie',movies);
-};
