@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux';
 import TrendingHotelReducer from '../../userId/reducerss/TrendingHotelReducer';
 import usersReducer from '../../userId/reducerss/usersReducer';
+import getAllReducers from '../../getAll&filter/reducers/getAllReducers';
+import AllHotelsReducers from '../../getAll&filter/reducers/getAllReducers';
 
 const songReducer = () => {
   return [
@@ -21,6 +23,8 @@ export default combineReducers({
   songs: songReducer,
   selectedSong: selectedSongReducer,
   items: TrendingHotelReducer,
-  users: usersReducer
+  users: usersReducer,
+  movies:getAllReducers ,
+  hotels:AllHotelsReducers
   // replaceMe:()=>'aaaa'
 });

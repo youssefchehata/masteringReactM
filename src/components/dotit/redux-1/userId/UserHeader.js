@@ -19,7 +19,7 @@ class UserHeader extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log(state);
+  // console.log(state);
   return {
     users: state.users
   };

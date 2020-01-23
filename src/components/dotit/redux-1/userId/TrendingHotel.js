@@ -30,7 +30,7 @@ class TrendingHotel extends Component {
     }))
   }
   render() {
-    console.log(this.props.items);
+    // console.log(this.props.items);
     return (
       <div className='container-fluid ' style={{ backgroundColor: '#EDEDED' }}>
         <h1 className='text-center p-4'>
