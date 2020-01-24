@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import {fetchListHotels} from './HOTELS&FILTER/actions/fetchListHotels'
 import { Link } from 'react-router-dom';
+import FilterByDropDown from './filterbydrpdown';
 class HotelsList extends Component {
     state = {
         url: `http://voyage.wingygo.com:84/uploads/images/hotel_images/`
@@ -56,15 +57,15 @@ gethotel=()=>{
         return <div className='container-fluid ' style={{ backgroundColor: '#EDEDED' }}>
 
         <div className=' row justify-content-center  '>
-        
+        <FilterByDropDown/>
         {this.gethotel()}
         </div>
       </div>
     }
 }
- const mapStateToProps = (state, ownProps) => {
+ const mapStateToProps = (state) => {
      return {
-         hotels: state.hotels.items
+         hotels: state.hotels.filteredItems
      }
  }
 export default connect(mapStateToProps,{fetchListHotels}) (HotelsList)
