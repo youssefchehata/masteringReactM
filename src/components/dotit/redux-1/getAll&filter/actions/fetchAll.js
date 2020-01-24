@@ -1,5 +1,5 @@
 
-import { FETCH_ALL, ORDER_MOVIES_BY_POPULARITY } from './types';
+import { FETCH_ALL, FILTER_MOVIE_BY_LANGUAGE,ORDER_MOVIES_BY_POPULARITY } from './types';
 import moviesApi from '../../apis/moviesApi';
 
 
@@ -9,21 +9,36 @@ export const fetchAll = () => async dispatch => {
     // console.log('response', response.data);
 };
 
-export const sortMoviesByPopularity = (sort,movies) =>  dispatch => {
-  const m = movies.slice()
-  if(sort !== ''){  m.sort((a,b)=>(sort==='lowest')?(a.popularity > b.popularity ? 1:-1) :(a.popularity < b.popularity ? 1:-1)) 
-  
-  }else{
-    m.sort((a,b)=>(a.id>b.id?1:-1))
-  }
-  
-  dispatch({ type: ORDER_MOVIES_BY_POPULARITY,
-     payload:{
-       sort:sort,
-      items:m
-     }
-       });
-  
-};
 
 
+export const filtredmoviesBYoriginal_language = (movies,original_language) =>  dispatch => {
+
+
+  return  dispatch({
+     type: FILTER_MOVIE_BY_LANGUAGE,
+      payload:{
+        original_language:original_language,
+       
+        items:original_language ===''? movies : movies.filter(a=>a.original_language.indexOf(original_language.toUpperCase())>=0 )
+      }
+     
+    });
+   
+  };
+
+export const sortMoviesByPopularity = (items,sort) =>  dispatch => {
+  const hotels=items.slice()
+    if(sort !== ''){  hotels.sort((a,b)=>(sort==='lowest')?(a.popularity > b.popularity ? 1:-1) :(a.popularity < b.popularity ? 1:-1)) 
+    
+    }else{
+      hotels.sort((a,b)=>(a.id>b.id?1:-1))
+    }
+    
+   return dispatch({ type: ORDER_MOVIES_BY_POPULARITY,
+       payload:{
+         sort:sort,
+        items:hotels
+       }
+         });
+    
+  };

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import  {fetchAll}  from './actions/fetchAll';
 import Sort from './sort'
+import Filter from './filter'
 class GetAllMovies extends Component {
     state = {
        
@@ -24,6 +25,7 @@ renderTable =()=>{
             </td>
             <td className="d-inline-block col-12 col-md-2">{val.popularity}</td>
             <td className="d-inline-block col-12 col-md-2">{val.adult}</td>
+            <td className="d-inline-block col-12 col-md-2">{val.original_language}</td>
           </tr>
         );
       });
@@ -34,6 +36,7 @@ renderTable =()=>{
         return ( 
         <div className='row'>
             <div className="col-sm-12"><Sort/></div>
+            <div className="col-sm-12"><Filter/></div>
             <div className='col-sm-12'> {this.renderTable()}</div>
            
             </div>

@@ -8,8 +8,8 @@ class Sort extends Component {
             <div className="row">
                 <div className="col">
                     <label>Order By</label>
-                    <select className='form-control'value={this.props.sort}
-                    onChange={e=>this.props.sortMoviesByPopularity(this.props.movies,e.target.value)}
+                    <select className='form-control'
+                    onChange={e=>this.props.sortMoviesByPopularity(this.props.items,e.target.value)}
                     >
                         <option value="">Select</option>
                         <option value="lowest">Lowest to highest</option>
@@ -23,6 +23,7 @@ class Sort extends Component {
  const mapStateToProps = (state) => {
      return {
         movies: state.movies.items,
+        items: state.movies.filtredItems,
          sort:state.movies.sort
       
      }
