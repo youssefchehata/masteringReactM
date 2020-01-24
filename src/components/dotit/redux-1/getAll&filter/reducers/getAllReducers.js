@@ -12,7 +12,7 @@ export default (state = INITIAL_STATE, action) => {
   switch (type) {
     case FETCH_ALL:
       return {...state, items:payload ,filtredItems:payload}
-      
+
     case ORDER_MOVIES_BY_POPULARITY:
       return {...state, filtredItems:payload.items ,
       sort:payload.sort

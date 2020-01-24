@@ -9,12 +9,11 @@ class Filter extends Component {
                 <div className="col">
                     <label>Filter By</label>
                     <select className='form-control'
-                   onChange={(e)=>this.props.filtredmoviesBYoriginal_language(this.props.movies,e.target.value)}
+      onChange={(e)=>this.props.filtredmoviesBYoriginal_language(this.props.movies,e.target.value)}
                     >
-                           
-           <option value='en'>en</option>
-           <option value='cn'>cn</option>
-           <option value='ru'>ru</option>
+                    <option value='en'>en</option>
+                    <option value='cn'>cn</option>
+                    <option value='ru'>ru</option>
            
                     </select>
                 </div>
@@ -24,8 +23,8 @@ class Filter extends Component {
 }
  const mapStateToProps = (state) => {
      return {
-        movies: state.movies.items,
-        // moviess: state.movies.filtredItems,
+        ysf: state.movies.items,
+        movies: state.movies.filtredItems,
         original_language:state.movies.original_language
       
      }

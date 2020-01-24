@@ -11,7 +11,7 @@ export const fetchAll = () => async dispatch => {
 
 
 
-export const filtredmoviesBYoriginal_language = (movies,original_language) =>  dispatch => {
+export const filtredmoviesBYoriginal_language = (movies ,original_language) =>  dispatch => {
 
 
   return  dispatch({
@@ -19,8 +19,7 @@ export const filtredmoviesBYoriginal_language = (movies,original_language) =>  d
       payload:{
         original_language:original_language,
        
-        items:original_language ===''? movies : movies.filter(a=>a.original_language.indexOf(original_language.toUpperCase())>=0 )
-      }
+        items:original_language ===''? movies : movies.filter(a=>a.original_language.indexOf(original_language.toUpperCase())>=0 ) }
      
     });
    

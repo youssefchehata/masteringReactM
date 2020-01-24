@@ -12,7 +12,7 @@ class GetAllMovies extends Component {
     }
 
 renderTable =()=>{
-  return  this.props.movies.map((val, idx) => {
+  return  this.props.items.map((val, idx) => {
         return (
           <tr className="row m-0">
             <td className="d-inline-block col-12 col-md-2">{val.release_date}</td>
@@ -54,7 +54,7 @@ const mapDispatchToProps = dispatch => {
  const mapStateToProps = (state) => {
     //  console.log("state",state);
      return {
-        movies: state.movies.filtredItems
+        items: state.movies.filtredItems
        
      }
  }
