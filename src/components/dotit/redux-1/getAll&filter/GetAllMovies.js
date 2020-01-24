@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import  {fetchAll}  from './actions/fetchAll';
-
+import Sort from './sort'
 class GetAllMovies extends Component {
     state = {
        
@@ -32,9 +32,9 @@ renderTable =()=>{
     render() { 
         
         return ( 
-        <div>
-            
-            <div> {this.renderTable()}</div>
+        <div className='row'>
+            <div className="col-sm-12"><Sort/></div>
+            <div className='col-sm-12'> {this.renderTable()}</div>
            
             </div>
          )
@@ -51,7 +51,7 @@ const mapDispatchToProps = dispatch => {
  const mapStateToProps = (state) => {
     //  console.log("state",state);
      return {
-        movies: state.movies.ListOfMovies
+        movies: state.movies.filtredItems
        
      }
  }

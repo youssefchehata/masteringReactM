@@ -1,4 +1,5 @@
 export const FETCH_ALL = 'FETCH_ALL'
+export const ORDER_MOVIES_BY_POPULARITY = 'ORDER_MOVIES_BY_POPULARITY'
 
 
 
