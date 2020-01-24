@@ -9,18 +9,18 @@ export const fetchAll = () => async dispatch => {
     // console.log('response', response.data);
 };
 
-export const sortMoviesByPopularity = (sort,filtredItems) =>  dispatch => {
-  const movies = filtredItems.slice()
-  if(sort !== ''){  movies.sort((a,b)=>(sort==='lowest')?(a.price > b.price ? 1:-1) :(a.price < b.price ? 1:-1)) 
+export const sortMoviesByPopularity = (sort,movies) =>  dispatch => {
+  const m = movies.slice()
+  if(sort !== ''){  m.sort((a,b)=>(sort==='lowest')?(a.popularity > b.popularity ? 1:-1) :(a.popularity < b.popularity ? 1:-1)) 
   
   }else{
-    movies.sort((a,b)=>(a.id>b.id?1:-1))
+    m.sort((a,b)=>(a.id>b.id?1:-1))
   }
   
   dispatch({ type: ORDER_MOVIES_BY_POPULARITY,
      payload:{
        sort:sort,
-      items:movies
+      items:m
      }
        });
   
