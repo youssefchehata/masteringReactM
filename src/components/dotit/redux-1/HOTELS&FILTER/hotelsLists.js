@@ -57,8 +57,10 @@ gethotel=()=>{
         return <div className='container-fluid ' style={{ backgroundColor: '#EDEDED' }}>
 
         <div className=' row justify-content-center  '>
-        <FilterByDropDown/>
-        {this.gethotel()}
+          <div className="col-sm-12"><FilterByDropDown/></div>
+          <div className="col-sm-12">{this.gethotel()}</div>
+        
+        
         </div>
       </div>
     }
