@@ -8,36 +8,23 @@ export const fetchAll = () => async dispatch => {
   dispatch({ type: FETCH_ALL, payload: response.data.results });
     // console.log('response', response.data);
 };
-
-
-
 export const filtredmovies = (fil_items, title) =>  dispatch => {
-
-
   return  dispatch({
      type: FILTER_MOVIE_B_LANGUAGE,
       payload:{
         title,
-       
         items:title ===''? fil_items : fil_items.filter(c=>c.title.indexOf(title.toUpperCase())>=0 ) }
-     
-    });
-   
-  };
-
+         });
+     };
 export const sortMoviesByPopularity = (items,sort) =>  dispatch => {
   const movies=items.slice()
     if(sort !== ''){  movies.sort((a,b)=>(sort==='lowest')?(a.release_date > b.release_date ? 1:-1) :(a.popularity < b.popularity ? 1:-1)) 
-    
-    }else{
+        }else{
       movies.sort((a,b)=>(a.id>b.id?1:-1))
     }
     
    return dispatch({ type: ORDER_MOVIES_BY_POPULARITY,
-       payload:{
-         sort:sort,
-        items:movies
-       }
+       payload:{ sort:sort, items:movies }
          });
     
   };

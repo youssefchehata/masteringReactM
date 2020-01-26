@@ -13,7 +13,7 @@ componentDidMount(){
 gethotel=()=>{
     return this.props.hotels.map(el=>{
     
-   return(<div className="card m-3 " style={{width: "18rem",
+   return(<div key={el.id_hotel} className="card m-3 " style={{width: "18rem",
    boxShadow:" 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"}}>
 <div className="shadow-lg">
     {el.photo_produit.slice(0,1).map(sub=>{ return <img className="card-img-top" src={this.state.url+sub.file_name} alt=""/> })}

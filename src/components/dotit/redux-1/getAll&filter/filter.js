@@ -4,7 +4,7 @@ import { filtredmovies } from './actions/fetchAll';
 class Filter extends Component {
   state = {};
   render() {
-    console.log('movies', this.props.movies);
+    // console.log('movies', this.props.movies);
     return (
       <div className='row'>
         <div className='col'>

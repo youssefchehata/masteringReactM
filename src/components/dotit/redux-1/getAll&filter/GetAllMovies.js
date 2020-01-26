@@ -12,9 +12,9 @@ class GetAllMovies extends Component {
     }
 
 renderTable =()=>{
-  return  this.props.movies.map((val, idx) => {
+  return  this.props.movies.map((val) => {
         return (
-          <tr className="row m-0">
+          <tr key={val.id} className="row m-0">
             <td className="d-inline-block col-12 col-md-2">{val.release_date}</td>
             <td className="d-inline-block col-12 col-md-2">{val.title}</td>
             <td className="d-inline-block col-12 col-md-4">
