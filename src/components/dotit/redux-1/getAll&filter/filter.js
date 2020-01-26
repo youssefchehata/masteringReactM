@@ -1,19 +1,22 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import {filtredmoviesBYoriginal_language} from './actions/fetchAll'
+import {filtredmovies} from './actions/fetchAll'
 class Filter extends Component {
     state = {}
     render() { 
+        console.log('movies',this.props.movies);
         return (  
             <div className="row">
                 <div className="col">
                     <label>Filter By</label>
                     <select className='form-control'
-      onChange={(e)=>this.props.filtredmoviesBYoriginal_language(this.props.movies,e.target.value)}
+      onChange={(e)=>this.props.filtredmovies(this.props.fil_items,e.target.value)}
                     >
-                    <option value='en'>en</option>
-                    <option value='cn'>cn</option>
-                    <option value='ru'>ru</option>
+                         <option value=''>...</option>
+                    <option value='絕地戰警 FOR LIFE'>絕地戰警 FOR LIFE</option>
+                    <option value='STAR WARS：天行者的崛起'>STAR WARS：天行者的崛起</option>
+                    <option value='她們'>"她們"</option>
+                   
            
                     </select>
                 </div>
@@ -22,11 +25,12 @@ class Filter extends Component {
     }
 }
  const mapStateToProps = (state) => {
+    
      return {
-        ysf: state.movies.items,
-        movies: state.movies.filtredItems,
-        original_language:state.movies.original_language
+        movies: state.movies.items,
+        fil_items: state.movies.filtredItems,
+        title:state.movies.title
       
      }
  }
-export default connect(mapStateToProps,{filtredmoviesBYoriginal_language}) (Filter);
+export default connect(mapStateToProps,{filtredmovies}) (Filter);
