@@ -4,7 +4,7 @@ import { FETCH_HOTELS_LIST, FILTER_HOTELS_LIST_BY_CATEGORIE, ORDER_MOVIES } from
 export const fetchListHotels = () => async dispatch => {
   const response = await voyageKom.get(`/api/v1/hotels/all`);
   dispatch({ type: FETCH_HOTELS_LIST, payload: response.data.payload });
-    console.log('response', response.data);
+    // console.log('response', response.data);
 };
 
 
