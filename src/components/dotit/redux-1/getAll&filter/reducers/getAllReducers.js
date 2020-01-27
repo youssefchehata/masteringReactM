@@ -1,10 +1,11 @@
 import {
   FETCH_ALL,
   FILTER_MOVIE_B_LANGUAGE,
-  ORDER_MOVIES_BY_POPULARITY
+  ORDER_MOVIES_BY_POPULARITY,
+  SEARCH
 } from '../actions/types';
 
-const INITIAL_STATE = { items: [], filtredItems: [], title:'', sort:'' };
+const INITIAL_STATE = { items: [], filtredItems: [], title:'', sort:'' ,text:''};
 
 export default (state = INITIAL_STATE, action) => {
   const { type, payload } = action;
@@ -19,10 +20,12 @@ export default (state = INITIAL_STATE, action) => {
       return {
         ...state, filtredItems: payload.items,
         title: payload.title,
-       
+
         
       };
-
+   
+        case SEARCH:
+      return {...state,filteredItems:payload.items, text:payload.text}
     default:
       return state;
   }

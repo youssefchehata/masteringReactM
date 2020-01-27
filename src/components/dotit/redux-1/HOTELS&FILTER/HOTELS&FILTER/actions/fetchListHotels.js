@@ -1,5 +1,5 @@
 import voyageKom from '../../../apis/VoyageKom';
-import { FETCH_HOTELS_LIST, FILTER_HOTELS_LIST_BY_CATEGORIE, ORDER_MOVIES } from './types';
+import { FETCH_HOTELS_LIST, FILTER_HOTELS_LIST_BY_CATEGORIE, ORDER_MOVIES, SEARCH_FORM } from './types';
 
 export const fetchListHotels = () => async dispatch => {
   const response = await voyageKom.get(`/api/v1/hotels/all`);
@@ -38,3 +38,15 @@ const hotels=items.slice()
        });
   
 };
+export const searchform = (hotels,text) =>  dispatch => {
+  return  dispatch({
+     type: SEARCH_FORM,
+      payload:{
+       text,
+       items:text ===''? hotels :hotels.filter((el,i)=>{return el.libelle_hotel.toLowerCase().indexOf(text)>-1})
+      
+        
+      }
+     
+    });
+   };

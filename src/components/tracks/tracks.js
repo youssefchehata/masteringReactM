@@ -41,7 +41,7 @@ class Tracks extends Component {
   };
 
   render() {
-    console.log(this.state.track_list.track);
+    // console.log(this.state.track_list.track);
     const { track_list, heading } = this.state;
 
     if (track_list.length === 0 || track_list === undefined) return <Spinner />;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import {filtredhotelsBYCATEGORIE,sortMovies} from '../HOTELS&FILTER/HOTELS&FILTER/actions/fetchListHotels'
-
+import SearchSideBar from './HOTELS&FILTER/SearchSideBar'
 
 
 class FilterByDropDown extends Component {
@@ -37,6 +37,7 @@ class FilterByDropDown extends Component {
     return ( <div className="row">
         <div>{this.sort()}</div>
         <div>{this.FilterByCatigorie()}</div>
+        <div><SearchSideBar/></div>
     </div>
    )
     }

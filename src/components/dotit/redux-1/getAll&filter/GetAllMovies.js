@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import  {fetchAll}  from './actions/fetchAll';
 import Sort from './sort'
 import Filter from './filter'
+import Search from './Search'
 class GetAllMovies extends Component {
     state = {
        
@@ -37,6 +38,7 @@ renderTable =()=>{
         <div className='row'>
             <div className="col-sm-12"><Sort/></div>
             <div className="col-sm-12"><Filter/></div>
+            <div className="col-sm-12"><Search/></div>
             <div className='col-sm-12'> {this.renderTable()}</div>
            
             </div>

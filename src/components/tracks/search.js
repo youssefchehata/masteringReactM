@@ -14,7 +14,7 @@ class Search extends Component {
  this.props.search(this.state.trackTitle)
   }
   render() {
-    console.log(this.state.track_list);
+    // console.log(this.state.track_list);
 
     return (
       <div className="container">
