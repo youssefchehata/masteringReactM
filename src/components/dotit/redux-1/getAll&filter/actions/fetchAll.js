@@ -1,5 +1,5 @@
 
-import { FETCH_ALL, FILTER_MOVIE_B_LANGUAGE,ORDER_MOVIES_BY_POPULARITY, SEARCH } from './types';
+import { FETCH_ALL, FILTER_MOVIE_B_LANGUAGE,ORDER_MOVIES_BY_POPULARITY, SEARCH, FILTER_BY_DATE } from './types';
 import moviesApi from '../../apis/moviesApi';
 
 
@@ -40,4 +40,11 @@ export const sortMoviesByPopularity = (items,sort) =>  dispatch => {
        
       });
      };
-  
+     export const filtrebydate = (fil_items, startDate,endDate,date) =>  dispatch => {
+      return  dispatch({
+         type: FILTER_BY_DATE,
+          payload:{
+            startDate,endDate,date
+             }
+             });
+         };

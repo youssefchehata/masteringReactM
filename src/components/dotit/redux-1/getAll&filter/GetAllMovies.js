@@ -4,6 +4,7 @@ import  {fetchAll}  from './actions/fetchAll';
 import Sort from './sort'
 import Filter from './filter'
 import Search from './Search'
+import DateP from './datepicker'
 class GetAllMovies extends Component {
     state = {
        
@@ -39,6 +40,7 @@ renderTable =()=>{
             <div className="col-sm-12"><Sort/></div>
             <div className="col-sm-12"><Filter/></div>
             <div className="col-sm-12"><Search/></div>
+            <div className="col-sm-12"><DateP/></div>
             <div className='col-sm-12'> {this.renderTable()}</div>
            
             </div>
