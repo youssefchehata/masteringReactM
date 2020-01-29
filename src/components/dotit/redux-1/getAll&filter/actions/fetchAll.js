@@ -1,7 +1,7 @@
 
 import { FETCH_ALL, FILTER_MOVIE_B_LANGUAGE,ORDER_MOVIES_BY_POPULARITY, SEARCH, FILTER_BY_DATE } from './types';
 import moviesApi from '../../apis/moviesApi';
-
+// import DatePicker from "react-datepicker";
 
 export const fetchAll = () => async dispatch => {
   const response = await moviesApi.get('/3/movie/now_playing?api_key=23785b1559bb39249c40d56934f80e6c&language=zh-TW&page=1'); 
@@ -40,11 +40,11 @@ export const sortMoviesByPopularity = (items,sort) =>  dispatch => {
        
       });
      };
-     export const filtrebydate = (fil_items, startDate,endDate,date) =>  dispatch => {
+     export const filtrebydate = (fil_items, startDate,endDate) =>  dispatch => {
       return  dispatch({
          type: FILTER_BY_DATE,
           payload:{
-            startDate,endDate,date
+            startDate,endDate
              }
              });
          };

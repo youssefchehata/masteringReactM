@@ -6,7 +6,7 @@ import {
   FILTER_BY_DATE
 } from '../actions/types';
 
-const INITIAL_STATE = { items: [], filtredItems: [], title:'', sort:'' ,text:'',endDate:'',startDate:'',date:''};
+const INITIAL_STATE = { items: [], filtredItems: [], title:'', sort:'' ,text:'', endDate: new Date(),startDate: new Date()};
 
 export default (state = INITIAL_STATE, action) => {
   const { type, payload } = action;
@@ -29,7 +29,7 @@ export default (state = INITIAL_STATE, action) => {
       return {...state,filteredItems:payload.items, text:payload.text}
 
         case FILTER_BY_DATE:
-      return {...state,filteredItems:payload.items, endDate:payload.endDate, startDate:payload.startDate, date:payload.date}
+      return {...state,endDate:payload.endDate, startDate:payload.startDate}
     default:
       return state;
   }
