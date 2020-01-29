@@ -40,7 +40,7 @@ export const sortMoviesByPopularity = (items,sort) =>  dispatch => {
        
       });
      };
-     export const filtrebydate = (fil_items, startDate,endDate) =>  dispatch => {
+     export const filtrebydate = ( startDate,endDate) =>  dispatch => {
       return  dispatch({
          type: FILTER_BY_DATE,
           payload:{
