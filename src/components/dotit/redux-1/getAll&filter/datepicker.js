@@ -34,7 +34,7 @@ class DateP extends Component {
               selected={this.props.startDate}
               // onChange={this.handleChange}
               
-              onChange={date=>this.props.filtrebydate(this.props.startDate,this.props.endDate,date)}
+              onChange={date=>this.props.filtrebydate(this.props.startDate,date)}
               selectsStart
               startDate={this.props.startDate}
               endDate={this.props.endDate}
@@ -43,7 +43,7 @@ class DateP extends Component {
              className='form-control'
               selected={this.props.endDate}
               // onChange={date => this.setState({ endDate: date })}
-              onChange={date=>this.props.filtrebydate(this.props.endDate,this.props.startDate,date)}
+              onChange={date=>this.props.filtrebydate(this.props.endDate,date)}
               selectsEnd
               startDate={this.props.startDate}
               endDate={this.props.endDate}
