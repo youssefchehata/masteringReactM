@@ -33,7 +33,7 @@ export default (state = INITIAL_STATE, action) => {
       return {...state,endDate:payload.endDate, startDate:payload.startDate}
 
         case FETCH_POPULARITY:
-
+           
       return {...state,popu:payload.map(el=>el.popularity)}
     default:
       return state;
