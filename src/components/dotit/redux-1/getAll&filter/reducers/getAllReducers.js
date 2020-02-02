@@ -3,10 +3,11 @@ import {
   FILTER_MOVIE_B_LANGUAGE,
   ORDER_MOVIES_BY_POPULARITY,
   SEARCH,
-  FILTER_BY_DATE
+  FILTER_BY_DATE,
+  FETCH_POPULARITY
 } from '../actions/types';
 
-const INITIAL_STATE = { items: [], filtredItems: [], title:'', sort:'' ,text:'', endDate: new Date(),startDate: new Date()};
+const INITIAL_STATE = { items: [], filtredItems: [], title:'', sort:'' ,text:'', endDate: new Date(),startDate: new Date(),popu:[]};
 
 export default (state = INITIAL_STATE, action) => {
   const { type, payload } = action;
@@ -30,6 +31,10 @@ export default (state = INITIAL_STATE, action) => {
 
         case FILTER_BY_DATE:
       return {...state,endDate:payload.endDate, startDate:payload.startDate}
+
+        case FETCH_POPULARITY:
+
+      return {...state,popu:payload.map(el=>el.popularity)}
     default:
       return state;
   }
